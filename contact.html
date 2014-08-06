@@ -8,7 +8,23 @@
 </head>
 <body>
 	<div class="wrapper">
-		<p>Placeholder for Contact Page.</p>
+		<p>
+        Placeholder for Contact Page.
+        <form method="POST" action="http://titan.csit.rmit.edu.au/~e54061/wp/form-tester.php">
+            <b>Email:</b> <input type="email" placeholder="me@example.com"/>
+            <br/>
+            <b>Subject:</b>
+            <select name="subject">
+                <option value="enquiry">Enquiry</option>
+                <option value="feedback">Feedback</option>
+                <option value="other">Other</option>
+            </select>
+            <br/>
+            <b>Message:</b> <textarea cols="100" rows="10" placeholder="Your message"/>
+            <br/>
+            <input type="submit" value="Send"/>
+        </form>
+        </p>
 	</div>
 </body>
 </html>
