@@ -1,31 +1,40 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Contact</title>
-	<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-	<div class="wrapper">
-		<p>
-        Placeholder for Contact Page.
-        <form method="POST" action="http://titan.csit.rmit.edu.au/~e54061/wp/form-tester.php">
-            <b>Email:</b> <input type="email" name="email" required placeholder="me@example.com"/>
-            <br/>
-            <b>Subject:</b>
-            <select name="subject">
-                <option value="enquiry">Enquiry</option>
-                <option value="feedback">Feedback</option>
-                <option value="other">Other</option>
-            </select>
-            <br/>
-            <b>Message:</b>
-            <textarea name="message" required cols="100" rows="10" placeholder="Your message"></textarea>
-            <br/>
-            <input type="submit" value="Send"/>
-        </form>
-        </p>
-	</div>
-</body>
+    <head>
+    	<meta charset="utf-8">
+    	<title>Contact</title>
+        <link rel=stylesheet href="css/style.css">
+        <link href='http://fonts.googleapis.com/css?family=Questrial:400,700' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <header>
+            <div id="titleBar"><a href="index.html">SILVERADO</a></div>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    	<div class="wrapper">
+    		<p>
+            Placeholder for Contact Page.
+            <form method="POST" action="http://titan.csit.rmit.edu.au/~e54061/wp/form-tester.php">
+                <b>Email:</b> <input type="email" name="email" required placeholder="me@example.com"/>
+                <br/>
+                <b>Subject:</b>
+                <select name="subject">
+                    <option value="enquiry">Enquiry</option>
+                    <option value="feedback">Feedback</option>
+                    <option value="other">Other</option>
+                </select>
+                <br/>
+                <b>Message:</b>
+                <textarea name="message" required cols="100" rows="10" placeholder="Your message"></textarea>
+                <br/>
+                <input type="submit" value="Send"/>
+            </form>
+            </p>
+    	</div>
+    </body>
 </html>
