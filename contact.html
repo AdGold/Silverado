@@ -16,25 +16,30 @@
                 <li><a href="contact.html">CONTACT</a></li>
             </ul>
         </nav>
-    	<div class="wrapper">
-    		<p>
-            Placeholder for Contact Page.
+    	<main class="wrapper">
+    	<p>Contact us with this support form and we'll get back to you as soon as possible!</p>
             <form method="POST" action="http://titan.csit.rmit.edu.au/~e54061/wp/form-tester.php">
-                <b>Email:</b> <input type="email" name="email" required placeholder="me@example.com"/>
-                <br/>
-                <b>Subject:</b>
-                <select name="subject">
-                    <option value="enquiry">Enquiry</option>
-                    <option value="feedback">Feedback</option>
-                    <option value="other">Other</option>
-                </select>
-                <br/>
-                <b>Message:</b>
-                <textarea name="message" required cols="100" rows="10" placeholder="Your message"></textarea>
-                <br/>
-                <input type="submit" value="Send"/>
+                <div class="section">
+	                <div class="subhead">Email:</div>
+	                	<input type="email" name="email" required placeholder="me@example.com"/>
+                </div>
+
+                <div class="section">
+	                <div class="subhead">Subject:</div>
+		                <select name="subject">
+		                    <option value="enquiry">Enquiry</option>
+		                    <option value="feedback">Feedback</option>
+		                    <option value="other">Other</option>
+		                </select>
+                </div>
+
+                <div class="section">
+	                <div class="subhead">Message:</div>
+		                <textarea name="message" placeholder="Your message"></textarea>
+		                </br>
+		                <input type="submit" value="Send"/>
+                </div>
             </form>
-            </p>
-    	</div>
+    	</main>
     </body>
 </html>
