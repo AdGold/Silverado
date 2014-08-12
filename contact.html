@@ -7,39 +7,57 @@
         <link href='http://fonts.googleapis.com/css?family=Questrial:400,700' rel='stylesheet' type='text/css'>
     </head>
     <body>
+    <div class="container">
         <header>
             <div id="titleBar"><a href="index.html">SILVERADO</a></div>
         </header>
         <nav>
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-            </ul>
+            <div class="container">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
         </nav>
     	<main class="wrapper">
-    	<p>Contact us with this support form and we'll get back to you as soon as possible!</p>
-            <form method="POST" action="http://titan.csit.rmit.edu.au/~e54061/wp/form-tester.php">
-                <div class="section">
-	                <div class="subhead">Email:</div>
-	                	<input type="email" name="email" required placeholder="me@example.com"/>
-                </div>
+            <h1>Contact Us</h1>
+            <hr/>
+            <div class="columns">
+                <div class="left_column">
+            	<p>Contact us with this support form and we'll get back to you as soon as possible!</p>
+                    <form method="POST" action="http://titan.csit.rmit.edu.au/~e54061/wp/form-tester.php">
+                        <div class="section">
+        	                <div class="subhead">Email:</div>
+        	                	<input type="email" name="email" required placeholder="me@example.com"/>
+                        </div>
 
-                <div class="section">
-	                <div class="subhead">Subject:</div>
-		                <select name="subject">
-		                    <option value="enquiry">Enquiry</option>
-		                    <option value="feedback">Feedback</option>
-		                    <option value="other">Other</option>
-		                </select>
-                </div>
+                        <div class="section">
+        	                <div class="subhead">Subject:</div>
+        		                <select name="subject">
+        		                    <option value="enquiry">Enquiry</option>
+        		                    <option value="feedback">Feedback</option>
+        		                    <option value="other">Other</option>
+        		                </select>
+                        </div>
 
-                <div class="section">
-	                <div class="subhead">Message:</div>
-		                <textarea name="message" placeholder="Your message"></textarea>
-		                </br>
-		                <input type="submit" value="Send"/>
+                        <div class="section">
+        	                <div class="subhead">Message:</div>
+        		                <textarea id="message" name="message" placeholder="Your message"></textarea>
+        		                </br>
+        		                <input type="submit" value="Send"/>
+                        </div>
+                    </form>
                 </div>
-            </form>
+                <div class="right_column">
+                    <h4>Help us help you!</h4>
+                    <p>We want you to be rewarded for watching with us, so we want to provide the best service possible and would love to hear any queries or suggestions you may have!</p>
+                    <hr>
+                    <h4>24/7 Support</h4>
+                    <p>Whenever you need help, we're here for you!</p>
+                    <p>We have experts at any time to assist you with anything, so feel free to contact us!</p>
+                </div>
+            </div>
     	</main>
+    </div>
     </body>
 </html>

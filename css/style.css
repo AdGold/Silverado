@@ -4,26 +4,37 @@ html, body {
 	background: #EFF3F6;
 }
 
+header {
+	width: 100%;
+}
+
+.container {
+
+}
+
 nav {
-	padding: 10px;
+	padding: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	margin: 0 auto 0px;
 	text-align: center;
 	background: #1D242E;
 	color: #FFFFFF;
-	font-family: "Questrial";
+	font-family: Helvetica, Arial, free-sans, clean, sans-serif;
 	font-weight: 700;
 	font-size: 10pt;
+	min-width: 600px;
 }
 
 nav ul {
-	margin: 0;
+	margin: 0px;
 	padding: 0px;
 }
 
 nav li {
 	display: inline;
 	padding: 10px;
-	margin: 0;
+	margin: 0px;
 }
 
 nav li:hover {
@@ -31,11 +42,11 @@ nav li:hover {
 }
 
 #titleBar {
-	max-width: 100%;
+	min-width: 600px;
 	text-align: center;
 	padding: 20px;
 	background: #171D25;
-	font-family: "Questrial";
+	font-family: Helvetica, Arial, free-sans, clean, sans-serif;
 	font-weight: 700;
 	font-size: 25pt;
 }
@@ -52,12 +63,17 @@ a {
 	text-decoration: none;
 }
 
+#message {
+	min-height: 100px;
+	min-width: 300px;
+}
+
 .section {
 
 }
 
 .subhead {
-	font-family: "Questrial";
+	font-family: Helvetica, Arial, free-sans, clean, sans-serif;
 	padding-top: 20px;
 	font-weight: 700;
 }
@@ -66,9 +82,48 @@ a {
 	padding: 20px;
 	margin-left: 20%;
 	margin-right: 20%;
+	min-width: 300px;
 }
 
 p {
-	font-family: "Questrial";
-	font-size: 12pt;
+	font-family: Helvetica, Arial, free-sans, clean, sans-serif;
+	font-size: 10pt;
+}
+
+h1 {
+	font-family: Helvetica, Arial, free-sans, clean, sans-serif;
+	font-weight: 700;
+}
+
+
+/* Column Layout inspired by Github, https://github.com/contact */
+.right_column {
+	padding-left: 2%;
+	width: 32%;
+	float: left;
+	min-width: 100px;
+}
+
+.left_column {
+	float: left;
+	width: 66%;
+	min-width: 300px;
+}
+
+.columns {
+	box-sizing: border-box;
+	min-width: 500px;
+}
+
+h4 {
+	font-family: Helvetica, Arial, free-sans, clean, sans-serif;
+	font-weight: 700;
+	font-size: 14pt;
+	margin: 0;
+	padding: 0;
+	padding-top: 5px;
+}
+
+hr {
+	opacity: 0.2;
 }
