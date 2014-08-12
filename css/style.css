@@ -51,7 +51,7 @@ nav li:hover {
 	font-size: 25pt;
 }
 
-#titlebar > a:link, a:visited {
+a:link, a:visited {
 	color: #ecf0f1;
 }
 
