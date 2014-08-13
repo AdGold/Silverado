@@ -2,6 +2,12 @@ html, body {
 	padding: 0;
 	margin: 0;
 	background: #EFF3F6;
+	height: 100%
+}
+
+body {
+	min-height: 100%;
+	position: relative;
 }
 
 header {
@@ -9,7 +15,8 @@ header {
 }
 
 .container {
-
+	position: relative;
+	min-height: 100%;
 }
 
 nav {
@@ -20,7 +27,7 @@ nav {
 	text-align: center;
 	background: #1D242E;
 	color: #FFFFFF;
-	font-family: Helvetica, Arial, free-sans, clean, sans-serif;
+	font-family: Oswald, Helvetica, Arial, free-sans, clean, sans-serif;
 	font-weight: 700;
 	font-size: 10pt;
 	min-width: 600px;
@@ -46,9 +53,10 @@ nav li:hover {
 	text-align: center;
 	padding: 20px;
 	background: #171D25;
-	font-family: Helvetica, Arial, free-sans, clean, sans-serif;
+	font-family: Oswald, Helvetica, Arial, free-sans, clean, sans-serif;
 	font-weight: 700;
 	font-size: 25pt;
+
 }
 
 a:link, a:visited {
@@ -88,11 +96,26 @@ a {
 p {
 	font-family: Helvetica, Arial, free-sans, clean, sans-serif;
 	font-size: 10pt;
+	font-weight: 400;
+}
+
+footer > p {
+	color: white;
+	font-family: Oswald, Arial, free-sans, clean, sans-serif;
+	font-size: 10pt;
+	padding: 0;
+	margin: 0;
+	line-height: 30px;
+	text-align: right;
+	padding-right: 10px;
 }
 
 h1 {
-	font-family: Helvetica, Arial, free-sans, clean, sans-serif;
+	font-family: Oswald, Helvetica, Arial, free-sans, clean, sans-serif;
 	font-weight: 700;
+	font-size: 18pt;
+	margin: 0;
+	padding: 0;
 }
 
 
@@ -111,8 +134,10 @@ h1 {
 }
 
 .columns {
-	box-sizing: border-box;
+	position: relative;
+	min-height: 400px;
 	min-width: 500px;
+	overflow: hidden;
 }
 
 h4 {
@@ -126,4 +151,51 @@ h4 {
 
 hr {
 	opacity: 0.2;
+}
+
+@-webkit-keyframes zoomIn {
+	0% {
+		opacity: 0;
+		transform: translateY(-150px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes zoomIn {
+	0% {
+		opacity: 0;
+		transform: translateY(-150px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.zoomIn {
+  animation-name: zoomIn;
+  animation-duration: 1s;
+  -webkit-animation-name: zoomIn;
+  -webkit-animation-duration: 1s;
+}
+
+br {
+	padding: 0;
+	margin: 0;
+}
+
+footer {
+	background: #171D25;
+	height: 30px;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	position: absolute;
+}
+
+main {
+	padding-bottom: 30px;
 }
