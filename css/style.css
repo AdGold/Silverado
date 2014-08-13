@@ -17,12 +17,7 @@ header {
 .container, .navigation {
 	position: relative;
 	min-height: 100%;
-    width: 80%;
     margin: 0 auto;
-}
-
-.container {
-	background: #EFF3F6;
 }
 
 nav {
