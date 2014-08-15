@@ -2,7 +2,7 @@ html, body {
 	padding: 0;
 	margin: 0;
 	height: 100%;
-    background: #D3D3D3;
+    background: #ecf0f1;
 }
 
 body {
@@ -26,7 +26,7 @@ nav {
 	padding-bottom: 10px;
 	margin: 0 auto 0px;
 	text-align: center;
-	background: #1D242E;
+	background: #2980b9;
 	color: #FFFFFF;
 	font-family: Oswald, Helvetica, Arial, free-sans, clean, sans-serif;
 	font-weight: 700;
@@ -53,19 +53,33 @@ nav li:hover {
 	min-width: 600px;
 	text-align: center;
 	padding: 20px;
-	background: #171D25;
+	background: #3498db;
 	font-family: Oswald, Helvetica, Arial, free-sans, clean, sans-serif;
 	font-weight: 700;
 	font-size: 25pt;
-
 }
 
 a:link, a:visited {
-	color: #ecf0f1;
+	color: #c0392b;
+	text-decoration: underline;
 }
 
 a:hover, a:active {
+	color: #34495e;
+}
+
+li a:link, li a:visited {
+	color: #ecf0f1;
+	text-decoration: none;
+}
+
+li a:hover, li a:active {
 	color: #FFFFFF;
+}
+
+.zoomIn a {
+	color: #ecf0f1;
+	text-decoration: underline;
 }
 
 a {
@@ -78,7 +92,7 @@ a {
 }
 
 .section {
-
+	padding-bottom: 50px;
 }
 
 .subhead {
@@ -88,16 +102,17 @@ a {
 }
 
 .wrapper {
-	padding: 20px;
-	margin-left: 20%;
-	margin-right: 20%;
+	padding-left: 20%;
+	padding-right: 20%;
 	min-width: 300px;
+	background: #ecf0f1;
 }
 
 p {
 	font-family: Helvetica, Arial, free-sans, clean, sans-serif;
 	font-size: 10pt;
 	font-weight: 400;
+	text-align: center;
 }
 
 footer > p {
@@ -106,7 +121,7 @@ footer > p {
 	font-size: 10pt;
 	padding: 0;
 	margin: 0;
-	line-height: 50px;
+	line-height: 40px;
 	text-align: right;
     vertical-align:middle;
 	padding-right: 10px;
@@ -115,11 +130,41 @@ footer > p {
 h1 {
 	font-family: Oswald, Helvetica, Arial, free-sans, clean, sans-serif;
 	font-weight: 700;
-	font-size: 18pt;
+	font-size: 40pt;
 	margin: 0;
 	padding: 0;
 }
 
+h3 {
+	font-family: Oswald, Helvetica, Arial, free-sans, clean, sans-serif;
+	font-weight: 700;
+	font-size: 30pt;
+	margin: 0;
+	padding: 20px;
+	text-align: center;
+	background: #FFFFFF;
+	width: 166%;
+	margin-left: -34%;
+}
+
+.caption {
+	font-family: Oswald, Helvetica, Arial, free-sans, clean, sans-serif;
+	font-weight: 700;
+	font-size: 20pt;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.subtitle {
+	color: #2c3e50;
+	font-family: Oswald, Helvetica, Arial, free-sans, clean, sans-serif;
+	font-weight: 400;
+	font-size: 15pt;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
 
 /* Column Layout inspired by Github, https://github.com/contact */
 .right_column {
@@ -155,17 +200,6 @@ hr {
 	opacity: 0.2;
 }
 
-@-webkit-keyframes zoomIn {
-	0% {
-		opacity: 0;
-		-webkit-transform: translate3d(0, -100%, 0);
-	}
-	100% {
-		opacity: 1;
-		-webkit-transform: none;
-	}
-}
-
 @keyframes zoomIn {
 	0% {
 		opacity: 0;
@@ -180,8 +214,6 @@ hr {
 .zoomIn {
   animation-name: zoomIn;
   animation-duration: 1s;
-  -webkit-animation-name: zoomIn;
-  -webkit-animation-duration: 1s;
 }
 
 br {
@@ -200,4 +232,39 @@ footer {
 
 main {
 	padding-bottom: 30px;
+}
+
+.referrer {
+	border: 0;
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+	padding-left: 20px;
+}
+
+.featureset {
+	padding-bottom: 50px;
+}
+
+#contact {
+	background: #FFFFFF;
+	width: 166%;
+	margin-left: -34%;
+}
+
+.last {
+	padding-bottom: 13px;
+}
+
+.subsection {
+	margin: 0px auto;
+	text-align: center;
+}
+
+.gap {
+	padding-top: 20px;
+}
+
+.small {
+	font-size: 14px;
 }
