@@ -144,7 +144,9 @@ h3 {
 	text-align: center;
 	background: #FFFFFF;
 	width: 166%;
-	margin-left: -34%;
+	margin-left: -33%;
+	padding-right: 0px;
+	padding-left: 0px;
 }
 
 .caption {
@@ -248,12 +250,11 @@ main {
 
 #contact {
 	background: #FFFFFF;
-	width: 166%;
-	margin-left: -34%;
 }
 
 .last {
 	padding-bottom: 13px;
+	background: #FFFFFF;
 }
 
 .subsection {
@@ -267,4 +268,10 @@ main {
 
 .small {
 	font-size: 14px;
+}
+
+.extend {
+	width: 166%;
+	margin-left: -33%;
+	background: #FFFFFF;
 }
