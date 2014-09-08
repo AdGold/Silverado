@@ -1,89 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="booking">
     <head>
     	<meta charset="utf-8">
     	<title>Contact</title>
         <link rel=stylesheet href="css/style.css">
         <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
-        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-        <script type="text/javascript">
-        $(document).ready(function() {
-            maxPriceMon_Tue = {'Full':12, 'Conc':10, 'Child':8, 'FirstClass-Adult':25, 'FirstClass-Child':20, 'Beanbag':20};
-            maxPriceWed_Sun = {'Full':18, 'Conc':15, 'Child':12, 'FirstClass-Adult':30, 'FirstClass-Child':25, 'Beanbag':30};
-            rivPriceWed_Fri12 = {'Adult':12, 'Conc':10, 'Child':8};
-            rivPriceWed_Fri = {'Adult':18, 'Conc':15, 'Child':12};
-            rivPriceSat_Sun = {'Adult':18, 'Conc':15, 'Child':12};
-            maxMon_Fri = {'6':'Romantic Comedy','9':'Action'};
-            maxSat_Sun = {'3': 'Childrens', '6':'Romantic Comedy','9':'Action'};
-            rivWed_Fri = {'12': 'Childrens', '7':'Art/Foreign'};
-            rivSat_Sun = {'4': 'Action', '7':'Art/Foreign'};
-            details = {
-                'Maxima':{
-                    'Monday':maxMon_Fri,
-                    'Tuesday':maxMon_Fri,
-                    'Wednesday':maxMon_Fri,
-                    'Thursday':maxMon_Fri,
-                    'Friday':maxMon_Fri,
-                    'Saturday':maxSat_Sun,
-                    'Sunday':maxSat_Sun
-                },
-                'Rivola':{
-                    'Wednesday':rivWed_Fri,
-                    'Thursday':rivWed_Fri,
-                    'Friday':rivWed_Fri,
-                    'Saturday':rivSat_Sun,
-                    'Sunday':rivSat_Sun
-                }
-            };
-            prices = {
-                'Maxima':{
-                    'Monday':{'6':maxPriceMon_Tue, '9':maxPriceMon_Tue},
-                    'Tuesday':{'6':maxPriceMon_Tue, '9':maxPriceMon_Tue},
-                    'Wednesday':{'6':maxPriceWed_Sun, '9':maxPriceWed_Sun},
-                    'Thursday':{'6':maxPriceWed_Sun, '9':maxPriceWed_Sun},
-                    'Friday':{'6':maxPriceWed_Sun, '9':maxPriceWed_Sun},
-                    'Saturday':{'3':maxPriceWed_Sun, '6':maxPriceWed_Sun},
-                    'Sunday':{'3':maxPriceWed_Sun, '6':maxPriceWed_Sun}
-                },
-                'Rivola':{
-                    'Wednesday':{'12':rivPriceWed_Fri12, '7':rivPriceWed_Fri},
-                    'Thursday':{'12':rivPriceWed_Fri12, '7':rivPriceWed_Fri},
-                    'Friday':{'12':rivPriceWed_Fri12, '7':rivPriceWed_Fri},
-                    'Saturday':{'4':rivPriceSat_Sun, '7':rivPriceSat_Sun},
-                    'Sunday':{'4':rivPriceSat_Sun, '7':rivPriceSat_Sun}
-                }
-            };
-            $('input[name=cinema]').change(function() {
-                var cinema = $(this).val();
-                var html = '';
-                for (var day in details[cinema])
-                {
-                    html += '<option value="'+day+'">'+day+'</option>';
-                }
-                $('#day').html(html);
-                $('#day').trigger('change');
-            });
-            $('#day').change(function() {
-                var cinema = $('input[name=cinema]:checked').val();
-                var day = $(this).val();
-                var html = '';
-                for (var time in details[cinema][day])
-                {
-                    html += '<option value="'+time+'">'+time+'pm</option>';
-                }
-                $('#time').html(html);
-                $('#time').trigger('change');
-            });
-            $('#time').change(function() {
-                var cinema = $('input[name=cinema]:checked').val();
-                var day = $('#day').val();
-                var time = $(this).val();
-                
-            });
-        });
-        </script>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js'></script>
+        <script src='book.js'></script>
     </head>
-    <body>
+    <body ng-controller='bookingController'>
     <div class="container">
         <header>
             <div id="titleBar">
@@ -105,44 +31,41 @@
             <h3>BOOK A MOVIE</h3>
             <hr/>
             <div class="columns">
-                <div class="left_column">
-            	<p class="subtitle">Contact us with this support form and we'll get back to you as soon as possible!</p>
-                    <form method="POST" action="http://titan.csit.rmit.edu.au/~e54061/wp/form-tester-2.php">
-                        <div class="subsection">
-        	                <div class="subtitle gap">CINEMA</div>
-                            <input type="radio" name="cinema" value="Maxima">Cinema Maxima</input>
-                            <input type="radio" name="cinema" value="Rivola">Cinema Rivola</input>
-                        </div>
+            	<p class="subtitle">Use the form below to reserve tickets to our films!</p>
+                <form method="POST" action="http://titan.csit.rmit.edu.au/~e54061/wp/form-tester-2.php">
+                    <div class="subsection">
+                        <div class="subtitle gap">CINEMA</div>
+                        <input type="radio" name="cinema" value="Maxima" ng-model="cinema" ng-change="cinemaChange()">Cinema Maxima</input>
+                        <input type="radio" name="cinema" value="Rivola" ng-model="cinema" ng-change="cinemaChange()">Cinema Rivola</input>
+                    </div>
 
-                        <div class="subsection">
-        	                <div class="subtitle gap">Day
-                                <select name="day" id="day">
-                                    <option value="null">Select cinema first</option>
-                                </select>
-                            </div>
-        	                <div class="subtitle gap">Time
-                                <select name="time" id="time">
-                                    <option value="null">Select cinema first</option>
-                                </select>
-                            </div>
+                    <div class="subsection">
+                        <div class="subtitle gap">Day
+                            <select ng-model='day' ng-options='d.day for d in days' ng-change='dayChange()'>
+                            </select>
+                            <input type="hidden" name="day" ng-value='day.day'/>
                         </div>
+                        <div class="subtitle gap">Time
+                            <select ng-model='time' ng-options='t.time+"pm" for t in times' ng-change='timeChange()'>
+                            </select>
+                            <input type="hidden" name="time" ng-value='time.time'/>
+                        </div>
+                    </div>
 
-                        <div class="subsection">
-        	                <div class="subtitle gap">MESSAGE</div>
-                            <textarea id="message" name="message" placeholder="Your message"></textarea>
-                            <br/>
-                            <input type="submit" value="Send"/>
-                        </div>
-                    </form>
-                </div>
-                <div class="right_column">
-                    <p class="caption">Help us help you!</p>
-                    <p class="subtitle small">We want you to be rewarded for watching with us, so we want to provide the best service possible and would love to hear any queries or suggestions you may have!</p>
-                    <hr>
-                    <p class="caption">24/7 Support</p>
-                    <p class="subtitle small">Whenever you need help, we're here for you!</p>
-                    <p class="subtitle small">We have experts at any time to assist you with anything, so feel free to contact us!</p>
-                </div>
+                    <div class="subsection">
+                        <div class="subtitle gap">Tickets</div>
+                        <table>
+                            <tr ng-repeat='ticket in tprices'>
+                                <td>{{ticket.type}}</td>
+                                <td>{{ticket.price}}</td>
+                                <td><input type="number" min="0" max="100" step="1" pattern="\d+" ng-model='ticket.count'></td>
+                            </tr>
+                        </table>
+                        <input type="hidden" name="price" ng-value="totalPrice"/>
+                        <p><b>Total price: ${{totalPrice}}</b></p>
+                        <input type="submit" value="Send"/>
+                    </div>
+                </form>
             </div>
     	</main>
     	<footer>
