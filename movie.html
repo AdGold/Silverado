@@ -6,7 +6,7 @@
         <link rel=stylesheet href="css/style.css">
         <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
         <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-		<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js'></script>
+	<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js'></script>
         <script src='movie.js'></script>
     </head>
     <body ng-controller='bookingController'>
@@ -50,6 +50,7 @@
                                 </select>
                                 <input type="hidden" name="time" ng-value='time.time'/>
                             </div>
+                            <b>{{movies[time.genre]}} - {{time.genre}}</b>
                         </div>
 
                         <div class="subsection">
@@ -58,7 +59,7 @@
                                 <tr ng-repeat='ticket in tprices'>
                                     <td>{{ticket.type}}</td>
                                     <td>{{ticket.price}}</td>
-                                    <td><input type="number" min="0" max="100" step="1" pattern="\d+" ng-model='ticket.count'></td>
+                                    <td><input name="{{ticket.type}}" type="number" min="0" max="100" step="1" pattern="\d+" ng-model='ticket.count'></td>
                                 </tr>
                             </table>
                             <input type="hidden" name="price" ng-value="totalPrice"/>
