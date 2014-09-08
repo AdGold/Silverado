@@ -5,6 +5,83 @@
     	<title>Contact</title>
         <link rel=stylesheet href="css/style.css">
         <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            maxPriceMon_Tue = {'Full':12, 'Conc':10, 'Child':8, 'FirstClass-Adult':25, 'FirstClass-Child':20, 'Beanbag':20};
+            maxPriceWed_Sun = {'Full':18, 'Conc':15, 'Child':12, 'FirstClass-Adult':30, 'FirstClass-Child':25, 'Beanbag':30};
+            rivPriceWed_Fri12 = {'Adult':12, 'Conc':10, 'Child':8};
+            rivPriceWed_Fri = {'Adult':18, 'Conc':15, 'Child':12};
+            rivPriceSat_Sun = {'Adult':18, 'Conc':15, 'Child':12};
+            maxMon_Fri = {'6':'Romantic Comedy','9':'Action'};
+            maxSat_Sun = {'3': 'Childrens', '6':'Romantic Comedy','9':'Action'};
+            rivWed_Fri = {'12': 'Childrens', '7':'Art/Foreign'};
+            rivSat_Sun = {'4': 'Action', '7':'Art/Foreign'};
+            details = {
+                'Maxima':{
+                    'Monday':maxMon_Fri,
+                    'Tuesday':maxMon_Fri,
+                    'Wednesday':maxMon_Fri,
+                    'Thursday':maxMon_Fri,
+                    'Friday':maxMon_Fri,
+                    'Saturday':maxSat_Sun,
+                    'Sunday':maxSat_Sun
+                },
+                'Rivola':{
+                    'Wednesday':rivWed_Fri,
+                    'Thursday':rivWed_Fri,
+                    'Friday':rivWed_Fri,
+                    'Saturday':rivSat_Sun,
+                    'Sunday':rivSat_Sun
+                }
+            };
+            prices = {
+                'Maxima':{
+                    'Monday':{'6':maxPriceMon_Tue, '9':maxPriceMon_Tue},
+                    'Tuesday':{'6':maxPriceMon_Tue, '9':maxPriceMon_Tue},
+                    'Wednesday':{'6':maxPriceWed_Sun, '9':maxPriceWed_Sun},
+                    'Thursday':{'6':maxPriceWed_Sun, '9':maxPriceWed_Sun},
+                    'Friday':{'6':maxPriceWed_Sun, '9':maxPriceWed_Sun},
+                    'Saturday':{'3':maxPriceWed_Sun, '6':maxPriceWed_Sun},
+                    'Sunday':{'3':maxPriceWed_Sun, '6':maxPriceWed_Sun}
+                },
+                'Rivola':{
+                    'Wednesday':{'12':rivPriceWed_Fri12, '7':rivPriceWed_Fri},
+                    'Thursday':{'12':rivPriceWed_Fri12, '7':rivPriceWed_Fri},
+                    'Friday':{'12':rivPriceWed_Fri12, '7':rivPriceWed_Fri},
+                    'Saturday':{'4':rivPriceSat_Sun, '7':rivPriceSat_Sun},
+                    'Sunday':{'4':rivPriceSat_Sun, '7':rivPriceSat_Sun}
+                }
+            };
+            $('input[name=cinema]').change(function() {
+                var cinema = $(this).val();
+                var html = '';
+                for (var day in details[cinema])
+                {
+                    html += '<option value="'+day+'">'+day+'</option>';
+                }
+                $('#day').html(html);
+                $('#day').trigger('change');
+            });
+            $('#day').change(function() {
+                var cinema = $('input[name=cinema]:checked').val();
+                var day = $(this).val();
+                var html = '';
+                for (var time in details[cinema][day])
+                {
+                    html += '<option value="'+time+'">'+time+'pm</option>';
+                }
+                $('#time').html(html);
+                $('#time').trigger('change');
+            });
+            $('#time').change(function() {
+                var cinema = $('input[name=cinema]:checked').val();
+                var day = $('#day').val();
+                var time = $(this).val();
+                
+            });
+        });
+        </script>
     </head>
     <body>
     <div class="container">
@@ -33,18 +110,21 @@
                     <form method="POST" action="http://titan.csit.rmit.edu.au/~e54061/wp/form-tester-2.php">
                         <div class="subsection">
         	                <div class="subtitle gap">CINEMA</div>
-                            <input type="radio" name="cinema" value="Maxima"/>
-                            <input type="radio" name="cinema" value="Rivola"/>
+                            <input type="radio" name="cinema" value="Maxima">Cinema Maxima</input>
+                            <input type="radio" name="cinema" value="Rivola">Cinema Rivola</input>
                         </div>
 
                         <div class="subsection">
-        	                <div class="subtitle gap">Day</div>
-                            <select name="subject">
-                                <option value="enquiry">hnquiry</option>
-                                <option value="enquiry">Cinema Hire</option>
-                                <option value="feedback">Feedback</option>
-                                <option value="other">Other</option>
-                            </select>
+        	                <div class="subtitle gap">Day
+                                <select name="day" id="day">
+                                    <option value="null">Select cinema first</option>
+                                </select>
+                            </div>
+        	                <div class="subtitle gap">Time
+                                <select name="time" id="time">
+                                    <option value="null">Select cinema first</option>
+                                </select>
+                            </div>
                         </div>
 
                         <div class="subsection">
