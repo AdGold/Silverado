@@ -61,8 +61,8 @@ booking.controller('bookingController', function($scope) {
             'Wednesday':{'6':maxPriceWed_Sun, '9':maxPriceWed_Sun},
             'Thursday':{'6':maxPriceWed_Sun, '9':maxPriceWed_Sun},
             'Friday':{'6':maxPriceWed_Sun, '9':maxPriceWed_Sun},
-            'Saturday':{'3':maxPriceWed_Sun, '6':maxPriceWed_Sun},
-            'Sunday':{'3':maxPriceWed_Sun, '6':maxPriceWed_Sun}
+            'Saturday':{'3':maxPriceWed_Sun, '6':maxPriceWed_Sun, '9':maxPriceWed_Sun},
+            'Sunday':{'3':maxPriceWed_Sun, '6':maxPriceWed_Sun, '9':maxPriceWed_Sun}
         },
         'Rivola':{
             'Wednesday':{'12':rivPriceWed_Fri12, '7':rivPriceWed_Fri},
