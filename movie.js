@@ -1,6 +1,12 @@
 booking = angular.module('booking', []);
 
 booking.controller('bookingController', function($scope) {
+    $scope.movies = {
+        'Romantic Comedy': 'The Other Woman',
+        'Childrens': 'Teenage Mutant Ninja Turtles',
+        'Action': 'Guardians of the Galaxy',
+        'Art/Foreign': 'Grand Illusion'
+    }
     maxPriceMon_Tue = [
         {'type':'Full','price':12,'count':0},
         {'type':'Conc','price':10,'count':0},
@@ -32,10 +38,23 @@ booking.controller('bookingController', function($scope) {
         {'type':'Conc','price':15,'count':0},
         {'type':'Child','price':12,'count':0}
     ];
-    maxMon_Fri = [{'time':'6','genre':'Romantic Comedy'},{'time':'9','genre':'Action'}];
-    maxSat_Sun = [{'time':'3','genre':'Childrens'}, {'time':'6','genre':'Romantic Comedy'},{'time':'9','genre':'Action'}];
-    rivWed_Fri = [{'time':'12','genre':'Childrens'}, {'time':'7','genre':'Art/Foreign'}];
-    rivSat_Sun = [{'time':'4','genre':'Action'}, {'time':'7','genre':'Art/Foreign'}];
+    maxMon_Fri = [
+        {'time':'6','genre':'Romantic Comedy'},
+        {'time':'9','genre':'Action'}
+    ];
+    maxSat_Sun = [
+        {'time':'3','genre':'Childrens'},
+        {'time':'6','genre':'Romantic Comedy'},
+        {'time':'9','genre':'Action'}
+    ];
+    rivWed_Fri = [
+        {'time':'12','genre':'Childrens'},
+        {'time':'7','genre':'Art/Foreign'}
+    ];
+    rivSat_Sun = [
+        {'time':'4','genre':'Action'},
+        {'time':'7','genre':'Art/Foreign'}
+    ];
     $scope.details = {
         'Maxima':[
             {'day':'Monday','times':maxMon_Fri},
@@ -72,12 +91,6 @@ booking.controller('bookingController', function($scope) {
             'Sunday':{'4':rivPriceSat_Sun, '7':rivPriceSat_Sun}
         }
     };
-    $scope.cinema = '';
-    $scope.days = [{'day':'Select cinema', 'times':{}}];
-    $scope.times = [{'time':'Select cinema', 'genre':''}];
-    $scope.day = $scope.days[0];
-    $scope.time = $scope.times[0];
-    $scope.tprices = [];
     $scope.cinemaChange = function() {
         $scope.days = $scope.details[$scope.cinema];
         $scope.day = $scope.days[0];
@@ -90,10 +103,7 @@ booking.controller('bookingController', function($scope) {
     };
     $scope.timeChange = function() {
         $scope.tprices = $scope.prices[$scope.cinema][$scope.day.day][$scope.time.time];
-        for (var ticket in $scope.tprices)
-        {
-            ticket.count = 0;
-        }
+        for (var ticket in $scope.tprices) { ticket.count = 0; }
         $scope.calculatePrice();
     };
     $scope.calculatePrice = function() {
@@ -107,4 +117,8 @@ booking.controller('bookingController', function($scope) {
     $scope.$watch('tprices', function(newValue, oldValue) {
         $scope.calculatePrice();
     }, true);
+
+    //startup
+    $scope.cinema = 'Maxima';
+    $scope.cinemaChange();
 });
