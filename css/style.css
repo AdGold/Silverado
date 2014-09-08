@@ -234,6 +234,7 @@ footer {
 	left: 0;
 	width: 100%;
 	position: absolute;
+	min-width: 900px;
 }
 
 main {
@@ -242,10 +243,9 @@ main {
 
 .referrer {
 	border: 0;
-	display: inline-block;
 	height: 100%;
 	vertical-align: middle;
-	padding-left: 20px;
+	overflow: auto;
 }
 
 .featureset {

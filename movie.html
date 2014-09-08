@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html ng-app="booking">
+    <head>
+    	<meta charset="utf-8">
+    	<title>Contact</title>
+        <link rel=stylesheet href="css/style.css">
+        <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js'></script>
+        <script src='book.js'></script>
+    </head>
+    <body ng-controller='bookingController'>
+    <div class="container">
+        <header>
+            <div id="titleBar">
+                    <a class="fadeIn" href="index.html">SILVERADO</a>
+            </div>
+        </header>
+        <nav>
+            <div class="navigation">
+                <ul>
+                    <li><a class="fadeIn" href="index.html">HOME</a></li>
+                    <li><a class="fadeIn" href="prices.html">PRICES</a></li>
+                    <li><a class="fadeIn" href="movie.html">BOOK</a></li>
+                    <li><a class="fadeIn" href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav>
+    	<main class="wrapper">
+            <h3>BOOK A MOVIE</h3>
+            <hr/>
+            <div class="columns">
+                <div class="left_column">
+                    <p class="subtitle">Use the form below to reserve tickets to our films!</p>
+                    <form method="POST" action="http://titan.csit.rmit.edu.au/~e54061/wp/form-tester-2.php">
+                        <div class="subsection">
+                            <div class="subtitle gap">CINEMA</div>
+                            <input type="radio" name="cinema" value="Maxima" ng-model="cinema" ng-change="cinemaChange()">Cinema Maxima</input>
+                            <input type="radio" name="cinema" value="Rivola" ng-model="cinema" ng-change="cinemaChange()">Cinema Rivola</input>
+                        </div>
+
+                        <div class="subsection">
+                            <div class="subtitle gap">Day
+                                <select ng-model='day' ng-options='d.day for d in days' ng-change='dayChange()'>
+                                </select>
+                                <input type="hidden" name="day" ng-value='day.day'/>
+                            </div>
+                            <div class="subtitle gap">Time
+                                <select ng-model='time' ng-options='t.time+"pm" for t in times' ng-change='timeChange()'>
+                                </select>
+                                <input type="hidden" name="time" ng-value='time.time'/>
+                            </div>
+                        </div>
+
+                        <div class="subsection">
+                            <div class="subtitle gap">Tickets</div>
+                            <table>
+                                <tr ng-repeat='ticket in tprices'>
+                                    <td>{{ticket.type}}</td>
+                                    <td>{{ticket.price}}</td>
+                                    <td><input type="number" min="0" max="100" step="1" pattern="\d+" ng-model='ticket.count'></td>
+                                </tr>
+                            </table>
+                            <input type="hidden" name="price" ng-value="totalPrice"/>
+                            <p><b>Total price: ${{totalPrice}}</b></p>
+                            <input type="submit" value="Send"/>
+                        </div>
+                    </form>
+                </div>
+                <div class="right_column">
+                    <p class="caption">Cheapest prices in town.</p>
+                    <p class="subtitle small">We have the cheapest prices anywhere, we won't be beaten on value!</p>
+                    <hr>
+                    <p class="caption">Change your seat to your desire.</p>
+                    <p class="subtitle small">Our variety of special seats will have you craving for more!</p>
+                </div>
+            </div>
+    	</main>
+    	<footer>
+            <p>
+                SILVERADO 2014 (C) IS NOT AN ACTUAL CINEMA COMPANY. PLEASE DO NOT CALL US. BY KEVIN VO s3492630 AND ADRIAN GOLDWASER s3493577.
+                <a href="http://jigsaw.w3.org/css-validator/check/referer"><img class="referrer" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS Validator"></a>
+                <a href="http://validator.w3.org/check?uri=referer"><img class="referrer" src="http://www.w3.org/html/logo/downloads/HTML5_Logo_32.png" alt="HTML Validator"></a>
+            </p>
+    	</footer>
+    </div>
+    </body>
+</html>
