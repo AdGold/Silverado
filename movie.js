@@ -103,16 +103,28 @@ booking.controller('bookingController', function($scope) {
     };
     $scope.timeChange = function() {
         $scope.tprices = $scope.prices[$scope.cinema][$scope.day.day][$scope.time.time];
-        for (var ticket in $scope.tprices) { ticket.count = 0; }
         $scope.calculatePrice();
     };
     $scope.calculatePrice = function() {
-        var sum = 0;
-        for (var i = 0; i < $scope.tprices.length; i++)
+        $scope.totalPrice = 0;
+        $scope.normalSeats = 0;
+        $scope.firstClassSeats = 0;
+        $scope.beanbagSeats = 0;
+        /*for (var ticket of $scope.tprices)
         {
-            sum += $scope.tprices[i].price * $scope.tprices[i].count;
+            alert(ticket);
+        }*/
+        for (var i in $scope.tprices)
+        {
+            var ticket = $scope.tprices[i];
+            $scope.totalPrice += ticket.price * ticket.count;
+            if (ticket.type == 'Beanbag')
+                $scope.beanbagSeats += ticket.count;
+            else if (ticket.type.indexOf('FirstClass') > -1)
+                $scope.firstClassSeats += ticket.count;
+            else
+                $scope.normalSeats += ticket.count;
         }
-        $scope.totalPrice = sum;
     }
     $scope.$watch('tprices', function(newValue, oldValue) {
         $scope.calculatePrice();

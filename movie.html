@@ -59,9 +59,12 @@
                                 <tr ng-repeat='ticket in tprices'>
                                     <td>{{ticket.type}}</td>
                                     <td>${{ticket.price}}</td>
-                                    <td><input name="{{ticket.type}}" type="number" min="0" max="100" step="1" pattern="\d+" ng-model='ticket.count'></td>
+                                    <td><input type="number" name="{{ticket.type}}" min="0" max="100" step="1" pattern="\d+" ng-model='ticket.count'></td>
                                 </tr>
                             </table>
+                            <input type="hidden" name="normal-seats" ng-value="normalSeats"/>
+                            <input type="hidden" name="first-class-seats" ng-value="firstClassSeats"/>
+                            <input type="hidden" name="beanbag-seats" ng-value="beanbagSeats"/>
                             <input type="hidden" name="price" ng-value="totalPrice"/>
                             <p><b>Total price: ${{totalPrice}}</b></p>
                             <input type="submit" value="Send"/>
