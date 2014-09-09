@@ -261,6 +261,10 @@ main {
 	background: #FFFFFF;
 }
 
+.bottom {
+	margin-bottom: 20px;
+}
+
 .subsection {
 	margin: 0px auto;
 	text-align: center;
