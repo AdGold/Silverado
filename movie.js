@@ -1,6 +1,63 @@
 booking = angular.module('booking', []);
 
 booking.controller('bookingController', function($scope) {
+    $scope.cinemaChange = function() {
+        $scope.days = $scope.details[$scope.cinema];
+        $scope.day = $scope.days[0];
+        $scope.dayChange();
+    };
+    $scope.dayChange = function() {
+        $scope.times = $scope.day.times;
+        $scope.time = $scope.times[0];
+        $scope.timeChange();
+    };
+    $scope.timeChange = function() {
+        $scope.tprices = $scope.prices[$scope.cinema][$scope.day.day][$scope.time.time];
+        $scope.calculateValidate();
+    };
+    $scope.calculateValidate = function() {
+        $scope.totalPrice = 0;
+        $scope.normalSeats = 0;
+        $scope.firstClassSeats = 0;
+        $scope.beanbagSeats = 0;
+        $scope.isValid = true;
+        for (var i in $scope.tprices)
+        {
+            var ticket = $scope.tprices[i];
+            if (ticket.price % 1 != 0) $scope.isValid=false;
+            $scope.totalPrice += ticket.price * ticket.count;
+            if (ticket.type == 'Beanbag')
+                $scope.beanbagSeats += ticket.count;
+            else if (ticket.type.indexOf('FirstClass') > -1)
+                $scope.firstClassSeats += ticket.count;
+            else
+                $scope.normalSeats += ticket.count;
+        }
+        $scope.errors = [];
+        if ($scope.normalSeats > $scope.cinemaCapacity[$scope.cinema]['normal'])
+        {
+            $scope.errors.push('Too many standard seats booked');
+            $scope.isValid = false;
+        }
+        if ($scope.firstClassSeats > $scope.cinemaCapacity[$scope.cinema]['first-class'])
+        {
+            $scope.errors.push('Too many First Class seats booked');
+            $scope.isValid = false;
+        }
+        if ($scope.beanbagSeats > $scope.cinemaCapacity[$scope.cinema]['beanbag'])
+        {
+            $scope.errors.push('Too many beanbag seats booked');
+            $scope.isValid = false;
+        }
+    }
+    $scope.$watch('tprices', function(newValue, oldValue) {
+        $scope.calculateValidate();
+    }, true);
+
+    $scope.cinemaCapacity = {
+        'Rivola':{'normal':40, 'first-class':0, 'beanbag':0},
+        'Maxima':{'normal':40, 'first-class':12, 'beanbag':13}
+    }
     $scope.movies = {
         'Romantic Comedy': 'The Other Woman',
         'Childrens': 'Teenage Mutant Ninja Turtles',
@@ -91,44 +148,6 @@ booking.controller('bookingController', function($scope) {
             'Sunday':{'4':rivPriceSat_Sun, '7':rivPriceSat_Sun}
         }
     };
-    $scope.cinemaChange = function() {
-        $scope.days = $scope.details[$scope.cinema];
-        $scope.day = $scope.days[0];
-        $scope.dayChange();
-    };
-    $scope.dayChange = function() {
-        $scope.times = $scope.day.times;
-        $scope.time = $scope.times[0];
-        $scope.timeChange();
-    };
-    $scope.timeChange = function() {
-        $scope.tprices = $scope.prices[$scope.cinema][$scope.day.day][$scope.time.time];
-        $scope.calculatePrice();
-    };
-    $scope.calculatePrice = function() {
-        $scope.totalPrice = 0;
-        $scope.normalSeats = 0;
-        $scope.firstClassSeats = 0;
-        $scope.beanbagSeats = 0;
-        /*for (var ticket of $scope.tprices)
-        {
-            alert(ticket);
-        }*/
-        for (var i in $scope.tprices)
-        {
-            var ticket = $scope.tprices[i];
-            $scope.totalPrice += ticket.price * ticket.count;
-            if (ticket.type == 'Beanbag')
-                $scope.beanbagSeats += ticket.count;
-            else if (ticket.type.indexOf('FirstClass') > -1)
-                $scope.firstClassSeats += ticket.count;
-            else
-                $scope.normalSeats += ticket.count;
-        }
-    }
-    $scope.$watch('tprices', function(newValue, oldValue) {
-        $scope.calculatePrice();
-    }, true);
 
     //startup
     $scope.cinema = 'Maxima';
