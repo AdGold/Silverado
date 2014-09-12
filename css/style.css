@@ -173,6 +173,14 @@ h3 {
 	text-align: center;
 }
 
+.big_submit {
+    font-size: 18px;
+}
+
+.error {
+    color: #FF0000;
+}
+
 /* Column Layout inspired by Github, https://github.com/contact */
 .right_column {
 	padding-left: 2%;
