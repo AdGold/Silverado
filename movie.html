@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="booking">
+<html data-ng-app="booking">
     <head>
     	<meta charset="utf-8">
     	<title>Contact</title>
@@ -9,7 +9,7 @@
 	<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js'></script>
         <script src='movie.js'></script>
     </head>
-    <body ng-controller='bookingController'>
+    <body data-ng-controller='bookingController'>
     <div class="container">
         <header>
             <div id="titleBar">
@@ -35,20 +35,20 @@
                     <form method="POST" action="http://titan.csit.rmit.edu.au/~e54061/wp/form-tester-2.php">
                         <div class="subsection">
                             <div class="subtitle gap">CINEMA</div>
-                            <input type="radio" name="cinema" value="Maxima" ng-model="cinema" ng-change="cinemaChange()">Cinema Maxima</input>
-                            <input type="radio" name="cinema" value="Rivola" ng-model="cinema" ng-change="cinemaChange()">Cinema Rivola</input>
+                            <input type="radio" name="cinema" value="Maxima" data-ng-model="cinema" data-ng-change="cinemaChange()">Cinema Maxima</input>
+                            <input type="radio" name="cinema" value="Rivola" data-ng-model="cinema" data-ng-change="cinemaChange()">Cinema Rivola</input>
                         </div>
 
                         <div class="subsection">
                             <div class="subtitle gap">Day
-                                <select ng-model='day' ng-options='d.day for d in days' ng-change='dayChange()'>
+                                <select data-ng-model='day' data-ng-options='d.day for d in days' data-ng-change='dayChange()'>
                                 </select>
-                                <input type="hidden" name="day" ng-value='day.day'/>
+                                <input type="hidden" name="day" data-ng-value='day.day'/>
                             </div>
                             <div class="subtitle gap">Time
-                                <select ng-model='time' ng-options='t.time+"pm - "+movies[t.genre] for t in times' ng-change='timeChange()'>
+                                <select data-ng-model='time' data-ng-options='t.time+"pm - "+movies[t.genre] for t in times' data-ng-change='timeChange()'>
                                 </select>
-                                <input type="hidden" name="time" ng-value='time.time'/>
+                                <input type="hidden" name="time" data-ng-value='time.time'/>
                             </div>
                         </div>
 
@@ -56,23 +56,23 @@
                             <b></b>
                             <div class="subtitle gap">{{movies[time.genre]}} ({{time.genre}}) - Tickets</div>
                             <table>
-                                <tr ng-repeat='ticket in tprices'>
+                                <tr data-ng-repeat='ticket in tprices'>
                                     <td>{{ticket.type}}</td>
                                     <td>${{ticket.price}}</td>
-                                    <td><input type="number" name="{{ticket.type}}" min="0" max="100" step="1" pattern="\d+" ng-model='ticket.count'></td>
+                                    <td><input type="number" name="{{ticket.type}}" min="0" max="100" step="1" pattern="\d+" data-ng-model='ticket.count'></td>
                                 </tr>
                             </table>
-                            <input type="hidden" name="normal-seats" ng-value="normalSeats"/>
-                            <input type="hidden" name="first-class-seats" ng-value="firstClassSeats"/>
-                            <input type="hidden" name="beanbag-seats" ng-value="beanbagSeats"/>
-                            <input type="hidden" name="price" ng-value="totalPrice"/>
+                            <input type="hidden" name="normal-seats" data-ng-value="normalSeats"/>
+                            <input type="hidden" name="first-class-seats" data-ng-value="firstClassSeats"/>
+                            <input type="hidden" name="beanbag-seats" data-ng-value="beanbagSeats"/>
+                            <input type="hidden" name="price" data-ng-value="totalPrice"/>
 
                             <div class="subtitle">Total price: ${{totalPrice}}</div>
-                            <div class="error" ng-repeat="error in errors track by $index">
+                            <div class="error" data-ng-repeat="error in errors track by $index">
                                 {{error}}
                             </div>
                             <br/>
-                            <input class="bottom big_submit" type="submit" value="Book tickets" ng-disabled="!isValid"/>
+                            <input class="bottom big_submit" type="submit" value="Book tickets" data-ng-disabled="!isValid"/>
                         </div>
                     </form>
                 </div>
