@@ -349,3 +349,11 @@ th, tr, td {
 	text-align: left;
 	font-size: 1em;
 }
+
+.hero {
+	color: #c0392b;
+}
+
+.enlarge {
+	font-size: 40px;
+}

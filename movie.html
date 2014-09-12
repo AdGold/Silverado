@@ -35,27 +35,28 @@
                     <p class="subtitle">Use the form below to book tickets to our films!</p>
                     <form method="POST" action="http://titan.csit.rmit.edu.au/~e54061/wp/form-tester-2.php">
                         <div class="subsection">
-                            <div class="subtitle gap">CINEMA</div>
+                            <div class="subtitle gap hero">CINEMA</div>
                             <input type="radio" name="cinema" value="Maxima" data-ng-model="cinema" data-ng-change="cinemaChange()"/>Cinema Maxima
                             <input type="radio" name="cinema" value="Rivola" data-ng-model="cinema" data-ng-change="cinemaChange()"/>Cinema Rivola
                         </div>
 
                         <div class="subsection">
-                            <div class="subtitle gap">Day
+                            <div class="subtitle gap hero">DAY</div>
                                 <select data-ng-model='day' data-ng-options='d.day for d in days' data-ng-change='dayChange()'>
                                 </select>
                                 <input type="hidden" name="day" data-ng-value='day.day'/>
-                            </div>
-                            <div class="subtitle gap">Time
+                        </div>
+
+                        <div class="subsection">
+                            <div class="subtitle gap hero">TIME</div>
                                 <select data-ng-model='time' data-ng-options='t.time+"pm - "+movies[t.genre] for t in times' data-ng-change='timeChange()'>
                                 </select>
                                 <input type="hidden" name="time" data-ng-value='time.time'/>
-                            </div>
                         </div>
 
                         <div class="subsection">
                             <b></b>
-                            <div class="subtitle gap">{{movies[time.genre]}} ({{time.genre}}) - Tickets</div>
+                            <div class="caption gap hero">{{movies[time.genre]}} ({{time.genre}}) - Tickets</div>
                             <table>
                                 <tr data-ng-repeat='ticket in tprices'>
                                     <td>{{ticket.type}}</td>
@@ -67,8 +68,10 @@
                             <input type="hidden" name="first-class-seats" data-ng-value="firstClassSeats"/>
                             <input type="hidden" name="beanbag-seats" data-ng-value="beanbagSeats"/>
                             <input type="hidden" name="price" data-ng-value="totalPrice"/>
-
-                            <div class="subtitle">Total price: ${{totalPrice}}</div>
+                            <br>
+                            <div class="subtitle">TOTAL PRICE: 
+                                <div class="hero enlarge">${{totalPrice}}</div>
+                            </div>
                             <div class="error" data-ng-repeat="error in errors track by $index">
                                 {{error}}
                             </div>
