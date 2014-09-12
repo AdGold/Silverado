@@ -35,8 +35,8 @@
                     <form method="POST" action="http://titan.csit.rmit.edu.au/~e54061/wp/form-tester-2.php">
                         <div class="subsection">
                             <div class="subtitle gap">CINEMA</div>
-                            <input type="radio" name="cinema" value="Maxima" data-ng-model="cinema" data-ng-change="cinemaChange()">Cinema Maxima</input>
-                            <input type="radio" name="cinema" value="Rivola" data-ng-model="cinema" data-ng-change="cinemaChange()">Cinema Rivola</input>
+                            <input type="radio" name="cinema" value="Maxima" data-ng-model="cinema" data-ng-change="cinemaChange()"/>Cinema Maxima
+                            <input type="radio" name="cinema" value="Rivola" data-ng-model="cinema" data-ng-change="cinemaChange()"/>Cinema Rivola
                         </div>
 
                         <div class="subsection">
@@ -59,7 +59,7 @@
                                 <tr data-ng-repeat='ticket in tprices'>
                                     <td>{{ticket.type}}</td>
                                     <td>${{ticket.price}}</td>
-                                    <td><input type="number" name="{{ticket.type}}" min="0" max="100" step="1" pattern="\d+" data-ng-model='ticket.count'></td>
+                                    <td><input type="number" name="{{ticket.type}}" min="0" max="100" step="1" data-ng-model='ticket.count'></td>
                                 </tr>
                             </table>
                             <input type="hidden" name="normal-seats" data-ng-value="normalSeats"/>
