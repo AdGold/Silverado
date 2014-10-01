@@ -1,116 +1,80 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Home</title>
-        <link rel=stylesheet href="css/style.css">
-        <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
-    </head>
-    <body>
-        <div class="container">
-            <header>
-                <div id="titleBar">
-                        <a class="fadeIn" href="index.html">SILVERADO</a>
-                </div>
-            </header>
-            <nav>
-                <div class="navigation">
-                    <ul>
-                        <li><a class="fadeIn" href="index.html">HOME</a></li>
-                        <li><a class="fadeIn" href="prices.html">PRICES</a></li>
-                        <li><a class="fadeIn" href="movies.html">MOVIES</a></li>
-                        <li><a class="fadeIn" href="movie.html">BOOK</a></li>
-                        <li><a class="fadeIn" href="contact.html">CONTACT</a></li>
-                    </ul>
-                </div>
-            </nav>
-            <main class="wrapper">
-                <div class="featureset">
-                    <h3>SILVERADO CINEMA</h3>
-                    <hr/>
-                    <div class="section">
-                        <p class="caption">
-                            THE BEST CINEMA EXPERIENCE TO DATE.
-                        </p>
-                        <p class="subtitle">
-                            Have a specific way to watch movies? On beanbags perhaps? Or maybe on first class seating?
-                        </p>
-                    </div>
+<?php include_once("header.php"); ?>
+<div class="featureset">
+    <h3>SILVERADO CINEMA</h3>
+    <hr/>
+    <div class="section">
+        <p class="caption">
+            THE BEST CINEMA EXPERIENCE TO DATE.
+        </p>
+        <p class="subtitle">
+            Have a specific way to watch movies? On beanbags perhaps? Or maybe on first class seating?
+        </p>
+    </div>
 
-                    <div class="section">
-                        <p class="caption">
-                            SICK OF 2D MOVIES? WHY NOT TRY 3D?
-                        </p>
-                        <p class="subtitle">
-                            Our wide range of 3D movies will have you craving for more!
-                        </p>
-                    </div>
+    <div class="section">
+        <p class="caption">
+            SICK OF 2D MOVIES? WHY NOT TRY 3D?
+        </p>
+        <p class="subtitle">
+            Our wide range of 3D movies will have you craving for more!
+        </p>
+    </div>
 
-                    <div class="section">
-                        <p class="caption">
-                            NOT ENOUGH SEATS? NOT FOR US.
-                        </p>
-                        <p class="subtitle">
-                            With our newly renovated Cinema Maxima alongside our Cinema Rivola, we're sure to have enough seats for you and your friends!
-                        </p>
-                    </div>
-                </div>
+    <div class="section">
+        <p class="caption">
+            NOT ENOUGH SEATS? NOT FOR US.
+        </p>
+        <p class="subtitle">
+            With our newly renovated Cinema Maxima alongside our Cinema Rivola, we're sure to have enough seats for you and your friends!
+        </p>
+    </div>
+</div>
 
-                <div class="featureset">
-                    <h3>WHAT WE OFFER</h3>
-                    <hr/>
-                    <div class="section">
-                        <p class="caption">
-                            CINEMA RIVOLA (40 SEATS)
-                        </p>
-                        <p class="subtitle">
-                            A FEATURE RICH DISPLAY, SHOWING THE BEST 2D FILMS TO DATE.
-                        </p>
-                        <p class="subtitle">
-                            PERFECT FOR SCHOOLS AND LOCAL BUSINESSES.
-                        </p>
-                    </div>
-                    <div class="section">
-                        <p class="caption">
-                            CINEMA MAXIMA (65 ASSORTED SEATS)
-                        </p>
-                        <p class="subtitle">
-                            AN ENRICHING 3D EXPERIENCE DISPLAYED ON THE HIGHEST QUALITY DISPLAY. VIEW ALL THE TOP MOVIES HERE TODAY.
-                        </p>
-                        <p class="subtitle">
-                            FIT WITH MANY DIFFERENT SEATING OPTIONS, BEANBAGS, FIRST CLASS AND NORMAL SEATS AVAILABLE!
-                        </p>
-                    </div>
-                </div>
+<div class="featureset">
+    <h3>WHAT WE OFFER</h3>
+    <hr/>
+    <div class="section">
+        <p class="caption">
+            CINEMA RIVOLA (40 SEATS)
+        </p>
+        <p class="subtitle">
+            A FEATURE RICH DISPLAY, SHOWING THE BEST 2D FILMS TO DATE.
+        </p>
+        <p class="subtitle">
+            PERFECT FOR SCHOOLS AND LOCAL BUSINESSES.
+        </p>
+    </div>
+    <div class="section">
+        <p class="caption">
+            CINEMA MAXIMA (65 ASSORTED SEATS)
+        </p>
+        <p class="subtitle">
+            AN ENRICHING 3D EXPERIENCE DISPLAYED ON THE HIGHEST QUALITY DISPLAY. VIEW ALL THE TOP MOVIES HERE TODAY.
+        </p>
+        <p class="subtitle">
+            FIT WITH MANY DIFFERENT SEATING OPTIONS, BEANBAGS, FIRST CLASS AND NORMAL SEATS AVAILABLE!
+        </p>
+    </div>
+</div>
 
-                <div class="featureset">
-                    <h3>WANT TO SEE OUR RATES?</h3>
-                    <div class="joined">
-                        <p class="subtitle extend">
-                            <a class="fadeIn" href="prices.html">VIEW OUR PRICES HERE!</a>
-                        </p>
-                    </div>
-                </div>
+<div class="featureset">
+    <h3>WANT TO SEE OUR RATES?</h3>
+    <div class="joined">
+        <p class="subtitle extend">
+            <a class="fadeIn" href="prices.html">VIEW OUR PRICES HERE!</a>
+        </p>
+    </div>
+</div>
 
-                <div class="bottom">
-                    <div class="joined">
-                        <h3>SPECIAL OCCASIONS?</h3>
-                        <p class="caption extend">
-                            WE'RE HAPPY TO SERVE YOU AT ANY TIME!
-                        </p>
-                        <p class="subtitle extend">
-                            <a class="fadeIn" href="contact.html">CONTACT US HERE</a>
-                        </p>
-                    </div>
-                </div>
-            </main>
-            <footer>
-                <p>
-                    SILVERADO 2014 (C) IS NOT AN ACTUAL CINEMA COMPANY. PLEASE DO NOT CALL US. BY KEVIN VO s3492630 AND ADRIAN GOLDWASER s3493577.
-                    <a href="http://jigsaw.w3.org/css-validator/check/referer"><img class="referrer" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS Validator"></a>
-                    <a href="http://validator.w3.org/check?uri=referer"><img class="referrer" src="http://www.w3.org/html/logo/downloads/HTML5_Logo_32.png" alt="HTML Validator"></a>
-                </p>
-            </footer>
-        </div>
-    </body>
-</html>
+<div class="bottom">
+    <div class="joined">
+        <h3>SPECIAL OCCASIONS?</h3>
+        <p class="caption extend">
+            WE'RE HAPPY TO SERVE YOU AT ANY TIME!
+        </p>
+        <p class="subtitle extend">
+            <a class="fadeIn" href="contact.html">CONTACT US HERE</a>
+        </p>
+    </div>
+</div>
+<?php include_once("footer.php"); ?>

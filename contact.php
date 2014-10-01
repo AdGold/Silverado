@@ -1,76 +1,40 @@
-<!DOCTYPE html>
-<html>
-    <head>
-    	<meta charset="utf-8">
-    	<title>Contact</title>
-        <link rel=stylesheet href="css/style.css">
-        <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
-    </head>
-    <body>
-    <div class="container">
-        <header>
-            <div id="titleBar">
-                    <a class="fadeIn" href="index.html">SILVERADO</a>
+<?php include_once("header.php"); ?>
+<h3>CONTACT US</h3>
+<hr/>
+<div class="columns">
+    <div class="left_column">
+    <p class="subtitle">Contact us with this support form and we'll get back to you as soon as possible!</p>
+        <form method="POST" action="http://titan.csit.rmit.edu.au/~e54061/wp/form-tester.php">
+            <div class="subsection">
+                <div class="subtitle gap">EMAIL</div>
+                <input type="email" name="email" required placeholder="me@example.com"/>
             </div>
-        </header>
-        <nav>
-            <div class="navigation">
-                <ul>
-                    <li><a class="fadeIn" href="index.html">HOME</a></li>
-                    <li><a class="fadeIn" href="prices.html">PRICES</a></li>
-                    <li><a class="fadeIn" href="movies.html">MOVIES</a></li>
-                    <li><a class="fadeIn" href="movie.html">BOOK</a></li>
-                    <li><a class="fadeIn" href="contact.html">CONTACT</a></li>
-                </ul>
-            </div>
-        </nav>
-    	<main class="wrapper">
-            <h3>CONTACT US</h3>
-            <hr/>
-            <div class="columns">
-                <div class="left_column">
-            	<p class="subtitle">Contact us with this support form and we'll get back to you as soon as possible!</p>
-                    <form method="POST" action="http://titan.csit.rmit.edu.au/~e54061/wp/form-tester.php">
-                        <div class="subsection">
-        	                <div class="subtitle gap">EMAIL</div>
-                            <input type="email" name="email" required placeholder="me@example.com"/>
-                        </div>
 
-                        <div class="subsection">
-        	                <div class="subtitle gap">SUBJECT</div>
-                            <select name="subject">
-                                <option value="enquiry">Enquiry</option>
-                                <option value="enquiry">Cinema Hire</option>
-                                <option value="feedback">Feedback</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-
-                        <div class="subsection">
-        	                <div class="subtitle gap">MESSAGE</div>
-                            <textarea id="message" name="message" placeholder="Your message"></textarea>
-                            <br/>
-                            <input class="bottom" type="submit" value="Send"/>
-                        </div>
-                    </form>
-                </div>
-                <div class="right_column">
-                    <p class="caption">Help us help you!</p>
-                    <p class="subtitle small">We want you to be rewarded for watching with us, so we want to provide the best service possible and would love to hear any queries or suggestions you may have!</p>
-                    <hr>
-                    <p class="caption">24/7 Support</p>
-                    <p class="subtitle small">Whenever you need help, we're here for you!</p>
-                    <p class="subtitle small">We have experts at any time to assist you with anything, so feel free to contact us!</p>
-                </div>
+            <div class="subsection">
+                <div class="subtitle gap">SUBJECT</div>
+                <select name="subject">
+                    <option value="enquiry">Enquiry</option>
+                    <option value="hire">Cinema Hire</option>
+                    <option value="feedback">Feedback</option>
+                    <option value="other">Other</option>
+                </select>
             </div>
-    	</main>
-    	<footer>
-            <p>
-                SILVERADO 2014 (C) IS NOT AN ACTUAL CINEMA COMPANY. PLEASE DO NOT CALL US. BY KEVIN VO s3492630 AND ADRIAN GOLDWASER s3493577.
-                <a href="http://jigsaw.w3.org/css-validator/check/referer"><img class="referrer" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS Validator"></a>
-                <a href="http://validator.w3.org/check?uri=referer"><img class="referrer" src="http://www.w3.org/html/logo/downloads/HTML5_Logo_32.png" alt="HTML Validator"></a>
-            </p>
-    	</footer>
+
+            <div class="subsection">
+                <div class="subtitle gap">MESSAGE</div>
+                <textarea id="message" name="message" placeholder="Your message"></textarea>
+                <br/>
+                <input class="bottom" type="submit" value="Send"/>
+            </div>
+        </form>
     </div>
-    </body>
-</html>
+    <div class="right_column">
+        <p class="caption">Help us help you!</p>
+        <p class="subtitle small">We want you to be rewarded for watching with us, so we want to provide the best service possible and would love to hear any queries or suggestions you may have!</p>
+        <hr>
+        <p class="caption">24/7 Support</p>
+        <p class="subtitle small">Whenever you need help, we're here for you!</p>
+        <p class="subtitle small">We have experts at any time to assist you with anything, so feel free to contact us!</p>
+    </div>
+</div>
+<?php include_once("footer.php"); ?>
