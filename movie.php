@@ -1,4 +1,4 @@
-<?php $page_title = "movie"; include_once("header.php"); ?>
+<?php $page_title = "Book"; include_once("header.php"); ?>
 <h3>BOOK A MOVIE</h3>
 <hr/>
 <div class="columns">

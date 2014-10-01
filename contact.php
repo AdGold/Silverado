@@ -1,4 +1,4 @@
-<?php include_once("header.php"); ?>
+<?php $page_title="Contact"; include_once("header.php"); ?>
 <h3>CONTACT US</h3>
 <hr/>
 <div class="columns">

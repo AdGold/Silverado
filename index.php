@@ -1,4 +1,4 @@
-<?php include_once("header.php"); ?>
+<?php $page_title="Home"; include_once("header.php"); ?>
 <div class="featureset">
     <h3>SILVERADO CINEMA</h3>
     <hr/>

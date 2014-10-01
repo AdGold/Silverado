@@ -1,4 +1,4 @@
-<?php include_once("header.php"); ?>
+<?php $page_title="Movies"; include_once("header.php"); ?>
 <h3>MOVIES</h3>
 <hr/>
 
