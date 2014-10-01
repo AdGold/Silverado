@@ -61,7 +61,7 @@
     <h3>WANT TO SEE OUR RATES?</h3>
     <div class="joined">
         <p class="subtitle extend">
-            <a class="fadeIn" href="prices.html">VIEW OUR PRICES HERE!</a>
+            <a class="fadeIn" href="prices.php">VIEW OUR PRICES HERE!</a>
         </p>
     </div>
 </div>
@@ -73,7 +73,7 @@
             WE'RE HAPPY TO SERVE YOU AT ANY TIME!
         </p>
         <p class="subtitle extend">
-            <a class="fadeIn" href="contact.html">CONTACT US HERE</a>
+            <a class="fadeIn" href="contact.php">CONTACT US HERE</a>
         </p>
     </div>
 </div>

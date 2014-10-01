@@ -12,17 +12,17 @@
         <div class="container">
             <header>
                 <div id="titleBar">
-                        <a class="fadeIn" href="index.html">SILVERADO</a>
+                        <a class="fadeIn" href="index.php">SILVERADO</a>
                 </div>
             </header>
             <nav>
                 <div class="navigation">
                     <ul>
-                        <li><a class="fadeIn" href="index.html">HOME</a></li>
-                        <li><a class="fadeIn" href="prices.html">PRICES</a></li>
-                        <li><a class="fadeIn" href="movies.html">MOVIES</a></li>
-                        <li><a class="fadeIn" href="movie.html">BOOK</a></li>
-                        <li><a class="fadeIn" href="contact.html">CONTACT</a></li>
+                        <li><a class="fadeIn" href="index.php">HOME</a></li>
+                        <li><a class="fadeIn" href="prices.php">PRICES</a></li>
+                        <li><a class="fadeIn" href="movies.php">MOVIES</a></li>
+                        <li><a class="fadeIn" href="movie.php">BOOK</a></li>
+                        <li><a class="fadeIn" href="contact.php">CONTACT</a></li>
                     </ul>
                 </div>
             </nav>
