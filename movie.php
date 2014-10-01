@@ -59,4 +59,4 @@
         <p class="subtitle small">Our variety of special seats will have you craving for more!</p>
     </div>
 </div>
-<?php include_once("footer.php" ?>
+<?php include_once("footer.php"); ?>
