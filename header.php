@@ -6,7 +6,11 @@
         <link rel=stylesheet href="css/style.css">
         <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
         <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-        <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js'></script>
+        if ($page_title == "movie")
+        {
+            <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js'></script>
+            <script scr="movie.js"></script>
+        }
     </head>
     <body>
         <div class="container">
