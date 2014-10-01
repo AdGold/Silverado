@@ -1,4 +1,4 @@
-<?php $page_title="Prices" include_once("header.php"); ?>
+<?php $page_title="Prices"; include_once("header.php"); ?>
 <h3>PRICES</h3>
 <hr/>
 <p class="hero caption">
