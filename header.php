@@ -8,7 +8,7 @@
         <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
         <?php if ($page_title == "movie") { ?>
             <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js'></script>
-            <script scr="movie.js"></script>
+            <script src="movie.js"></script>
         <?php } ?>
     </head>
     <body>
