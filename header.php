@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html <?php if ($page_title == "movie") ?> data-ng-app="booking" <?php } ?> >
     <head>
         <meta charset="utf-8">
         <title><?php echo $page_title; ?></title>
@@ -11,7 +11,7 @@
             <script src="movie.js"></script>
         <?php } ?>
     </head>
-    <body>
+    <body <?php if ($page_title == "movie") ?> data-ng-controller="bookingController" <?php } ?> >
         <div class="container">
             <header>
                 <div id="titleBar">
