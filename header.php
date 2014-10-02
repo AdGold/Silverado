@@ -7,15 +7,17 @@
         <link rel=stylesheet href="css/style.css">
         <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
         <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js'></script>
         <script>
             <?php echo 'var server="' . $_SERVER['SERVER_NAME'] . '";'; ?>
         </script>
-        <?php if ($page_title == "Book") { ?>
-            <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js'></script>
-            <script src="movie.js"></script>
-        <?php } if ($page_title == "Movies") { ?>
-            <script src="movies.js"></script>
-        <?php } ?>
+        <?php
+        $file_name = str_replace(" ", "_", strtolower($page_title)) . ".js";
+        if (file_exists($file_name))
+        {
+            echo "<script src='$file_name'></script>";
+        }
+        ?>
     </head>
     <body <?php if ($page_title == "Book") { ?> data-ng-controller="bookingController" <?php } ?> >
         <div class="container">
@@ -36,7 +38,7 @@
                 </div>
                 <?php if (isset($_SESSION['cart'])) { ?>
                 <div class="cart">
-                    <a href="movie.php">Cart Total: $<?php echo $_SESSION['totalPrice'] ?></a>
+                    <a href="submit.php">Cart Total: $<?php echo $_SESSION['totalPrice'] ?></a>
                 </div>
                 <?php } ?>
             </nav>
