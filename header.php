@@ -6,9 +6,17 @@
         <link rel=stylesheet href="css/style.css">
         <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
         <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script>
+        <?php
+        echo 'var server="' . $_SERVER['SERVER_NAME'] . '";';
+        ?>
+        </script>
         <?php if ($page_title == "Book") { ?>
             <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js'></script>
             <script src="movie.js"></script>
+        <?php } ?>
+        <?php if ($page_title == "Movies") { ?>
+            <script src="movies.js"></script>
         <?php } ?>
     </head>
     <body <?php if ($page_title == "Book") { ?> data-ng-controller="bookingController" <?php } ?> >
