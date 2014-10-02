@@ -13,7 +13,7 @@
     $("#movie-search").click(function(){
       $('#status').html('Searching for movies ...');
       $.post(
-      "http://titan.csit.rmit.edu.au/~e54061/wp/movie-service.php" ,
+      "http://<?php echo $_SERVER['SERVER_NAME']; ?>/~e54061/wp/movie-service.php" ,
       {
         CRC:'s3493577',
         filmID:'RC'//$("#type").val()
