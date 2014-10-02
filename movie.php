@@ -4,7 +4,7 @@
 <div class="columns">
     <div class="left_column">
         <p class="subtitle">Use the form below to book tickets to our films!</p>
-        <form method="POST" action="submit.php">
+        <form method="POST" action="reserve.php">
             <div class="subsection">
                 <div class="subtitle gap hero">CINEMA</div>
                 <input type="radio" name="cinema" value="Maxima" data-ng-model="cinema" data-ng-change="cinemaChange()"/>Cinema Maxima

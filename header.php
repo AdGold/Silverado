@@ -38,7 +38,7 @@
                 </div>
                 <?php if (isset($_SESSION['cart'])) { ?>
                 <div class="cart">
-                    <a href="submit.php">Cart Total: $<?php echo $_SESSION['totalPrice'] ?></a>
+                    <a href="reserve.php">Cart Total: $<?php echo $_SESSION['totalPrice'] ?></a>
                 </div>
                 <?php } ?>
             </nav>
