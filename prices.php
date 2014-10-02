@@ -120,4 +120,4 @@
         7pm - Grand Illusion</td>
     </tr>
 </table>
-<?php include_once("footer.html"); ?>
+<?php include_once("footer.php"); ?>
