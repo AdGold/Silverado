@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html <?php if ($page_title == "Book") { ?> data-ng-app="booking" <?php } ?> >
     <head>
@@ -33,5 +34,10 @@
                         <li><a class="fadeIn" href="contact.php">CONTACT</a></li>
                     </ul>
                 </div>
+                <?php if (isset($_SESSION['cart'])) { ?>
+                <div class="cart">
+                    <a href="movie.php">Cart Total: $<?php echo $_SESSION['totalPrice'] ?></a>
+                </div>
+                <?php } ?>
             </nav>
             <main class="wrapper">
