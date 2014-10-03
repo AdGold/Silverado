@@ -59,7 +59,7 @@ foreach ($types as $type)
 
             <div class="subsection">
                 <div class="caption gap hero">Seats</div>
-                <table>
+                <table id="ticket-table">
                     <tr data-ng-repeat='(seat,info) in seatsLeft'>
                         <td>{{seat}}</td>
                         <td>${{info.price}}</td>
@@ -71,6 +71,7 @@ foreach ($types as $type)
                 </table>
                 <br>
                 <input type="hidden" name="price" data-ng-value="totalPrice"/>
+                <input type="hidden" name="tickets" data-ng-value="ticketString"/>
                 <div class="subtitle">TOTAL PRICE: 
                     <div class="hero enlarge">${{totalPrice}}</div>
                 </div>

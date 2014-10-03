@@ -2,12 +2,11 @@ booking = angular.module('booking', []);
 
 booking.controller('bookingController', function($scope, $http) {
     $scope.movieChange = function() {
-        if ($scope.cinema != 'Rivola' && $scope.cinema != 'Maxima')
+        if ($scope.cinema != 'Rivola' && $scope.cinema != 'Maxima' ||
+            $scope.cinema == 'Rivola' && !$scope.details[$scope.movie].hasOwnProperty('Rivola') )
             $scope.cinema = 'Maxima';
         if ($scope.cinema == 'Maxima' && !$scope.details[$scope.movie].hasOwnProperty('Maxima'))
             $scope.cinema = 'Rivola';
-        if ($scope.cinema == 'Rivola' && !$scope.details[$scope.movie].hasOwnProperty('Rivola'))
-            $scope.cinema = 'Maxima';
         $scope.cinemaChange();
     }
     $scope.cinemaChange = function() {
@@ -20,7 +19,8 @@ booking.controller('bookingController', function($scope, $http) {
         $scope.totalPrice = 0;
         $scope.tprices = $scope.prices[$scope.cinema][$scope.day][$scope.time];
         var data = 'cinema='+$scope.cinema+'&day='+$scope.day+'&time='+$scope.time;
-        $http.post('seatsleft.php', data, {headers: {'Content-Type': 'application/x-www-form-urlencoded'} }).success(function(data) {
+        var header = {headers: {'Content-Type': 'application/x-www-form-urlencoded'} };
+        $http.post('seatsleft.php', data, header).success(function(data) {
             var seats = data.trim().split(' ');
             $scope.seatsLeft = {};
             for (var i in seats)
@@ -38,6 +38,18 @@ booking.controller('bookingController', function($scope, $http) {
         newPrice = parseInt(newPrice);
         $scope.totalPrice += newPrice-oldPrice;
         $scope.isValid = true;
+        $scope.updateTickets();
+    }
+    $scope.updateTickets = function()
+    {
+        $scope.ticketString = '';
+        for (var seat in $scope.seatsLeft)
+        {
+            if ($scope.seatsLeft[seat].type != 'None')
+            {
+                $scope.ticketString += seat + ':' + $scope.seatsLeft[seat].type + ' ';
+            }
+        }
     }
     $scope.getTicketTypes = function(seatName, cinema)
     {
@@ -45,55 +57,6 @@ booking.controller('bookingController', function($scope, $http) {
         else if (seatName[0] <= 'D') return ['None', 'Beanbag'];
         else if (seatName[1] == '0' && '6' <= seatName[2]) return ['None', 'FirstClass-Adult', 'FirstClass-Child'];
         else return ['None', 'Adult', 'Conc', 'Child'];
-    }
-    $scope.calculateValidate = function() {
-        $scope.totalPrice = 0;
-        $scope.normalSeats = 0;
-        $scope.firstClassSeats = 0;
-        $scope.beanbagSeats = 0;
-        $scope.isValid = true;
-        for (var i in $scope.tprices)
-        {
-            var ticket = $scope.tprices[i];
-            if (ticket.price % 1 != 0) $scope.isValid=false;
-            $scope.totalPrice += ticket.price * ticket.count;
-            if (ticket.type == 'Beanbag')
-                $scope.beanbagSeats += ticket.count;
-            else if (ticket.type.indexOf('FirstClass') > -1)
-                $scope.firstClassSeats += ticket.count;
-            else
-                $scope.normalSeats += ticket.count;
-        }
-        $scope.errors = [];
-        if ($scope.normalSeats > $scope.cinemaCapacity[$scope.cinema]['normal'])
-        {
-            $scope.errors.push('Too many standard seats booked');
-            $scope.isValid = false;
-        }
-        if ($scope.firstClassSeats > $scope.cinemaCapacity[$scope.cinema]['first-class'])
-        {
-            $scope.errors.push('Too many First Class seats booked');
-            $scope.isValid = false;
-        }
-        if ($scope.beanbagSeats > $scope.cinemaCapacity[$scope.cinema]['beanbag'])
-        {
-            $scope.errors.push('Too many beanbag seats booked');
-            $scope.isValid = false;
-        }
-    }
-    //$scope.$watch('tprices', function(newValue, oldValue) {
-    //    $scope.calculateValidate();
-    //}, true);
-
-    $scope.cinemaCapacity = {
-        'Rivola':{'normal':40, 'first-class':0, 'beanbag':0},
-        'Maxima':{'normal':40, 'first-class':12, 'beanbag':13}
-    }
-    $scope.movies = {
-        'Romantic Comedy': 'Once a Princess',
-        'Childrens': 'Planes: Fire and Rescue',
-        'Action': 'Guardians of the Galaxy',
-        'Art/Foreign': 'Mardaani'
     }
     maxPriceMon_Tue = {
         'Adult':12, 'Conc':10, 'Child':8, 'FirstClass-Adult':25, 'FirstClass-Child':20, 'Beanbag':20, 'None':0
@@ -115,21 +78,21 @@ booking.controller('bookingController', function($scope, $http) {
         AC:{ Maxima:{time:'9', days:allDays}, Rivola:{time:'4', days:Sat_Sun}  }
     };
     $scope.prices = {
-        'Maxima':{
-            'Monday':{'6':maxPriceMon_Tue, '9':maxPriceMon_Tue},
-            'Tuesday':{'6':maxPriceMon_Tue, '9':maxPriceMon_Tue},
-            'Wednesday':{'6':maxPriceWed_Sun, '9':maxPriceWed_Sun},
-            'Thursday':{'6':maxPriceWed_Sun, '9':maxPriceWed_Sun},
-            'Friday':{'6':maxPriceWed_Sun, '9':maxPriceWed_Sun},
-            'Saturday':{'3':maxPriceWed_Sun, '6':maxPriceWed_Sun, '9':maxPriceWed_Sun},
-            'Sunday':{'3':maxPriceWed_Sun, '6':maxPriceWed_Sun, '9':maxPriceWed_Sun}
+        Maxima:{
+            Monday:{'6':maxPriceMon_Tue, '9':maxPriceMon_Tue},
+            Tuesday:{'6':maxPriceMon_Tue, '9':maxPriceMon_Tue},
+            Wednesday:{'6':maxPriceWed_Sun, '9':maxPriceWed_Sun},
+            Thursday:{'6':maxPriceWed_Sun, '9':maxPriceWed_Sun},
+            Friday:{'6':maxPriceWed_Sun, '9':maxPriceWed_Sun},
+            Saturday:{'3':maxPriceWed_Sun, '6':maxPriceWed_Sun, '9':maxPriceWed_Sun},
+            Sunday:{'3':maxPriceWed_Sun, '6':maxPriceWed_Sun, '9':maxPriceWed_Sun}
         },
-        'Rivola':{
-            'Wednesday':{'12':rivPriceWed_Fri12, '7':rivPriceWed_Fri},
-            'Thursday':{'12':rivPriceWed_Fri12, '7':rivPriceWed_Fri},
-            'Friday':{'12':rivPriceWed_Fri12, '7':rivPriceWed_Fri},
-            'Saturday':{'4':rivPriceSat_Sun, '7':rivPriceSat_Sun},
-            'Sunday':{'4':rivPriceSat_Sun, '7':rivPriceSat_Sun}
+        Rivola:{
+            Wednesday:{'12':rivPriceWed_Fri12, '7':rivPriceWed_Fri},
+            Thursday:{'12':rivPriceWed_Fri12, '7':rivPriceWed_Fri},
+            Friday:{'12':rivPriceWed_Fri12, '7':rivPriceWed_Fri},
+            Saturday:{'4':rivPriceSat_Sun, '7':rivPriceSat_Sun},
+            Sunday:{'4':rivPriceSat_Sun, '7':rivPriceSat_Sun}
         }
     };
 

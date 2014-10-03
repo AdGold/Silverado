@@ -174,6 +174,13 @@ h3 {
     font-size: 18px;
 }
 
+#ticket-table {
+    height: 300px;
+    overflow: auto;
+    display: block;
+    width: 100%;
+}
+
 .error {
     color: #FF0000;
 }
