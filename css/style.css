@@ -22,9 +22,6 @@ header {
 }
 
 nav {
-	padding: 20px;
-	padding-top: 10px;
-	padding-bottom: 10px;
 	margin: 0 auto 0px;
 	text-align: center;
 	background: #2980b9;
@@ -35,13 +32,13 @@ nav {
 	min-width: 600px;
 }
 
-nav ul {
+ul {
 	margin: 0px;
 	padding: 0px;
 }
 
-nav li {
-	display: inline;
+li {
+	display: inline-block;
 	padding: 10px;
 	margin: 0px;
 }
@@ -356,4 +353,10 @@ th, tr, td {
 
 .enlarge {
 	font-size: 40px;
+}
+
+#cart {
+	position: absolute;
+	right: 0;
+	background: #2c3e50;
 }

@@ -35,15 +35,13 @@ if (session_status() == PHP_SESSION_NONE) {
                         <li><a class="fadeIn" href="index.php">HOME</a></li>
                         <li><a class="fadeIn" href="prices.php">PRICES</a></li>
                         <li><a class="fadeIn" href="movies.php">MOVIES</a></li>
-                        <li><a class="fadeIn" href="movie.php">BOOK</a></li>
+                        <li><a class="fadeIn" href="book.php">BOOK</a></li>
                         <li><a class="fadeIn" href="contact.php">CONTACT</a></li>
+                    <?php 
+                    if (isset($_SESSION['cart'])) { ?>
+                        <li id="cart"><a class="fadeIn" href="reserve.php">CART TOTAL: $<?php echo $_SESSION['totalPrice'] ?></a></li>
+                    <?php } ?>
                     </ul>
                 </div>
-                <?php 
-                if (isset($_SESSION['cart'])) { ?>
-                <div class="cart">
-                    <a href="reserve.php">Cart Total: $<?php echo $_SESSION['totalPrice'] ?></a>
-                </div>
-                <?php } ?>
             </nav>
             <main class="wrapper">

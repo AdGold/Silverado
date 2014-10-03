@@ -15,10 +15,11 @@ if (isset($_POST['cinema']))
 $page_title = "Reserve Tickets";
 include_once("header.php");
 ?>
+
 <h3>Reserve tickets</h3>
 <hr />
 <p>Either reserve tickets here or continue browsing and add more to your cart</p>
-<p>Enter promotional code: <input type='text' id='code' placeholder='Enter code'/>i</p>
+<p>Enter promotional code: <input type='text' id='code' placeholder='Enter code'/></p>
 <p id="result"></p>
 
 <form method="POST" action="reserve-tickets.php">
