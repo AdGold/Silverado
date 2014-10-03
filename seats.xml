@@ -3,23 +3,1674 @@
 <seats>
     <Monday>
         <Maxima>
-            <x7>
-                <A01 full='true' />
+            <x6>
+                <A01 full='false' />
+                <A02 full='false' />
+               
+                <B01 full='false' />
+                <B02 full='false' />
+                <B03 full='false' />
+
+                <C01 full='false' />
+                <C02 full='false' />
+                <C03 full='false' />
+                <C04 full='true' />
+
+                <D01 full='false' />
+                <D02 full='false' />
+                <D03 full='false' />
+                <D04 full='true' />
+
+                <E01 full='false' />
+                <E02 full='false' />
+                <E03 full='false' />
+                <E04 full='true' />
+                <E05 full='false' />
+                <E06 full='false' />
+                <E07 full='false' />
+                <E08 full='false' />
+                <E09 full='true' />
+                <E10 full='true' />
+                <E11 full='true' />
+                <E12 full='true' />
+                <E13 full='true' />
+                <E14 full='true' />
+
+                <F01 full='false' />
+                <F02 full='false' />
+                <F03 full='false' />
+                <F04 full='true' />
+                <F05 full='false' />
+                <F06 full='false' />
+                <F07 full='false' />
+                <F08 full='false' />
+                <F09 full='true' />
+                <F10 full='true' />
+                <F11 full='true' />
+                <F12 full='true' />
+                <F13 full='true' />
+                <F14 full='true' />
+
+                <G01 full='false' />
+                <G02 full='false' />
+                <G03 full='false' />
+                <G04 full='true' />
+                <G05 full='false' />
+                <G06 full='false' />
+                <G07 full='false' />
+                <G08 full='false' />
+                <G09 full='true' />
+                <G10 full='true' />
+                <G11 full='true' />
+                <G12 full='true' />
+                <G13 full='true' />
+                <G14 full='true' />
+
+                <H01 full='false' />
+                <H02 full='false' />
+                <H03 full='false' />
+                <H04 full='true' />
+                <H05 full='false' />
+                <H10 full='true' />
+                <H11 full='true' />
+                <H12 full='true' />
+                <H13 full='true' />
+                <H14 full='true' />
+            </x6>
+            <x9>
+                <A01 full='false' />
+                <A02 full='false' />
+               
+                <B01 full='false' />
+                <B02 full='false' />
+                <B03 full='false' />
+
+                <C01 full='false' />
+                <C02 full='false' />
+                <C03 full='false' />
+                <C04 full='true' />
+
+                <D01 full='false' />
+                <D02 full='false' />
+                <D03 full='false' />
+                <D04 full='true' />
+
+                <E01 full='false' />
+                <E02 full='false' />
+                <E03 full='false' />
+                <E04 full='true' />
+                <E05 full='false' />
+                <E06 full='false' />
+                <E07 full='false' />
+                <E08 full='false' />
+                <E09 full='true' />
+                <E10 full='true' />
+                <E11 full='true' />
+                <E12 full='true' />
+                <E13 full='true' />
+                <E14 full='true' />
+
+                <F01 full='false' />
+                <F02 full='false' />
+                <F03 full='false' />
+                <F04 full='true' />
+                <F05 full='false' />
+                <F06 full='false' />
+                <F07 full='false' />
+                <F08 full='false' />
+                <F09 full='true' />
+                <F10 full='true' />
+                <F11 full='true' />
+                <F12 full='true' />
+                <F13 full='true' />
+                <F14 full='true' />
+
+                <G01 full='false' />
+                <G02 full='false' />
+                <G03 full='false' />
+                <G04 full='true' />
+                <G05 full='false' />
+                <G06 full='false' />
+                <G07 full='false' />
+                <G08 full='false' />
+                <G09 full='true' />
+                <G10 full='true' />
+                <G11 full='true' />
+                <G12 full='true' />
+                <G13 full='true' />
+                <G14 full='true' />
+
+                <H01 full='false' />
+                <H02 full='false' />
+                <H03 full='false' />
+                <H04 full='true' />
+                <H05 full='false' />
+                <H10 full='true' />
+                <H11 full='true' />
+                <H12 full='true' />
+                <H13 full='true' />
+                <H14 full='true' />
+            </x9>
+        </Maxima>
+    </Monday>
+    <Tuesday>
+        <Maxima>
+            <x6>
+                <A01 full='false' />
+                <A02 full='false' />
+               
+                <B01 full='false' />
+                <B02 full='false' />
+                <B03 full='false' />
+
+                <C01 full='false' />
+                <C02 full='false' />
+                <C03 full='false' />
+                <C04 full='true' />
+
+                <D01 full='false' />
+                <D02 full='false' />
+                <D03 full='false' />
+                <D04 full='true' />
+
+                <E01 full='false' />
+                <E02 full='false' />
+                <E03 full='false' />
+                <E04 full='true' />
+                <E05 full='false' />
+                <E06 full='false' />
+                <E07 full='false' />
+                <E08 full='false' />
+                <E09 full='true' />
+                <E10 full='true' />
+                <E11 full='true' />
+                <E12 full='true' />
+                <E13 full='true' />
+                <E14 full='true' />
+
+                <F01 full='false' />
+                <F02 full='false' />
+                <F03 full='false' />
+                <F04 full='true' />
+                <F05 full='false' />
+                <F06 full='false' />
+                <F07 full='false' />
+                <F08 full='false' />
+                <F09 full='true' />
+                <F10 full='true' />
+                <F11 full='true' />
+                <F12 full='true' />
+                <F13 full='true' />
+                <F14 full='true' />
+
+                <G01 full='false' />
+                <G02 full='false' />
+                <G03 full='false' />
+                <G04 full='true' />
+                <G05 full='false' />
+                <G06 full='false' />
+                <G07 full='false' />
+                <G08 full='false' />
+                <G09 full='true' />
+                <G10 full='true' />
+                <G11 full='true' />
+                <G12 full='true' />
+                <G13 full='true' />
+                <G14 full='true' />
+
+                <H01 full='false' />
+                <H02 full='false' />
+                <H03 full='false' />
+                <H04 full='true' />
+                <H05 full='false' />
+                <H10 full='true' />
+                <H11 full='true' />
+                <H12 full='true' />
+                <H13 full='true' />
+                <H14 full='true' />
+            </x6>
+            <x9>
+                <A01 full='false' />
+                <A02 full='false' />
+               
+                <B01 full='false' />
+                <B02 full='false' />
+                <B03 full='false' />
+
+                <C01 full='false' />
+                <C02 full='false' />
+                <C03 full='false' />
+                <C04 full='true' />
+
+                <D01 full='false' />
+                <D02 full='false' />
+                <D03 full='false' />
+                <D04 full='true' />
+
+                <E01 full='false' />
+                <E02 full='false' />
+                <E03 full='false' />
+                <E04 full='true' />
+                <E05 full='false' />
+                <E06 full='false' />
+                <E07 full='false' />
+                <E08 full='false' />
+                <E09 full='true' />
+                <E10 full='true' />
+                <E11 full='true' />
+                <E12 full='true' />
+                <E13 full='true' />
+                <E14 full='true' />
+
+                <F01 full='false' />
+                <F02 full='false' />
+                <F03 full='false' />
+                <F04 full='true' />
+                <F05 full='false' />
+                <F06 full='false' />
+                <F07 full='false' />
+                <F08 full='false' />
+                <F09 full='true' />
+                <F10 full='true' />
+                <F11 full='true' />
+                <F12 full='true' />
+                <F13 full='true' />
+                <F14 full='true' />
+
+                <G01 full='false' />
+                <G02 full='false' />
+                <G03 full='false' />
+                <G04 full='true' />
+                <G05 full='false' />
+                <G06 full='false' />
+                <G07 full='false' />
+                <G08 full='false' />
+                <G09 full='true' />
+                <G10 full='true' />
+                <G11 full='true' />
+                <G12 full='true' />
+                <G13 full='true' />
+                <G14 full='true' />
+
+                <H01 full='false' />
+                <H02 full='false' />
+                <H03 full='false' />
+                <H04 full='true' />
+                <H05 full='false' />
+                <H10 full='true' />
+                <H11 full='true' />
+                <H12 full='true' />
+                <H13 full='true' />
+                <H14 full='true' />
+            </x9>
+        </Maxima>
+    </Tuesday>
+    <Wednesday>
+        <Maxima>
+            <x6>
+                <A01 full='false' />
+                <A02 full='false' />
+               
+                <B01 full='false' />
+                <B02 full='false' />
+                <B03 full='false' />
+
+                <C01 full='false' />
+                <C02 full='false' />
+                <C03 full='false' />
+                <C04 full='true' />
+
+                <D01 full='false' />
+                <D02 full='false' />
+                <D03 full='false' />
+                <D04 full='true' />
+
+                <E01 full='false' />
+                <E02 full='false' />
+                <E03 full='false' />
+                <E04 full='true' />
+                <E05 full='false' />
+                <E06 full='false' />
+                <E07 full='false' />
+                <E08 full='false' />
+                <E09 full='true' />
+                <E10 full='true' />
+                <E11 full='true' />
+                <E12 full='true' />
+                <E13 full='true' />
+                <E14 full='true' />
+
+                <F01 full='false' />
+                <F02 full='false' />
+                <F03 full='false' />
+                <F04 full='true' />
+                <F05 full='false' />
+                <F06 full='false' />
+                <F07 full='false' />
+                <F08 full='false' />
+                <F09 full='true' />
+                <F10 full='true' />
+                <F11 full='true' />
+                <F12 full='true' />
+                <F13 full='true' />
+                <F14 full='true' />
+
+                <G01 full='false' />
+                <G02 full='false' />
+                <G03 full='false' />
+                <G04 full='true' />
+                <G05 full='false' />
+                <G06 full='false' />
+                <G07 full='false' />
+                <G08 full='false' />
+                <G09 full='true' />
+                <G10 full='true' />
+                <G11 full='true' />
+                <G12 full='true' />
+                <G13 full='true' />
+                <G14 full='true' />
+
+                <H01 full='false' />
+                <H02 full='false' />
+                <H03 full='false' />
+                <H04 full='true' />
+                <H05 full='false' />
+                <H10 full='true' />
+                <H11 full='true' />
+                <H12 full='true' />
+                <H13 full='true' />
+                <H14 full='true' />
+            </x6>
+            <x9>
+                <A01 full='false' />
+                <A02 full='false' />
+               
+                <B01 full='false' />
+                <B02 full='false' />
+                <B03 full='false' />
+
+                <C01 full='false' />
+                <C02 full='false' />
+                <C03 full='false' />
+                <C04 full='true' />
+
+                <D01 full='false' />
+                <D02 full='false' />
+                <D03 full='false' />
+                <D04 full='true' />
+
+                <E01 full='false' />
+                <E02 full='false' />
+                <E03 full='false' />
+                <E04 full='true' />
+                <E05 full='false' />
+                <E06 full='false' />
+                <E07 full='false' />
+                <E08 full='false' />
+                <E09 full='true' />
+                <E10 full='true' />
+                <E11 full='true' />
+                <E12 full='true' />
+                <E13 full='true' />
+                <E14 full='true' />
+
+                <F01 full='false' />
+                <F02 full='false' />
+                <F03 full='false' />
+                <F04 full='true' />
+                <F05 full='false' />
+                <F06 full='false' />
+                <F07 full='false' />
+                <F08 full='false' />
+                <F09 full='true' />
+                <F10 full='true' />
+                <F11 full='true' />
+                <F12 full='true' />
+                <F13 full='true' />
+                <F14 full='true' />
+
+                <G01 full='false' />
+                <G02 full='false' />
+                <G03 full='false' />
+                <G04 full='true' />
+                <G05 full='false' />
+                <G06 full='false' />
+                <G07 full='false' />
+                <G08 full='false' />
+                <G09 full='true' />
+                <G10 full='true' />
+                <G11 full='true' />
+                <G12 full='true' />
+                <G13 full='true' />
+                <G14 full='true' />
+
+                <H01 full='false' />
+                <H02 full='false' />
+                <H03 full='false' />
+                <H04 full='true' />
+                <H05 full='false' />
+                <H10 full='true' />
+                <H11 full='true' />
+                <H12 full='true' />
+                <H13 full='true' />
+                <H14 full='true' />
+            </x9>
+        </Maxima>
+        <Rivola>
+            <x12>
+                <A01 full='false' />
                 <A02 full='false' />
                 <A03 full='false' />
                 <A04 full='true' />
                 <A05 full='false' />
+                <A06 full='false' />
+                <A07 full='false' />
+                <A08 full='false' />
+                <A09 full='true' />
+                <A10 full='true' />
+               
+                <B01 full='false' />
+                <B02 full='false' />
+                <B03 full='false' />
+                <B04 full='true' />
+                <B05 full='false' />
+                <B06 full='false' />
+                <B07 full='false' />
+                <B08 full='false' />
+                <B09 full='true' />
+                <B10 full='true' />
+
+                <C01 full='false' />
+                <C02 full='false' />
+                <C03 full='false' />
+                <C04 full='true' />
+                <C05 full='false' />
+                <C06 full='false' />
+                <C07 full='false' />
+                <C08 full='false' />
+                <C09 full='true' />
+                <C10 full='true' />
+
+                <D01 full='false' />
+                <D02 full='false' />
+                <D03 full='false' />
+                <D04 full='true' />
+                <D05 full='false' />
+                <D06 full='false' />
+                <D07 full='false' />
+                <D08 full='false' />
+                <D09 full='true' />
+                <D10 full='true' />
+            </x12>
+            <x7>
+                <A01 full='false' />
+                <A02 full='false' />
+                <A03 full='false' />
+                <A04 full='true' />
+                <A05 full='false' />
+                <A06 full='false' />
+                <A07 full='false' />
+                <A08 full='false' />
+                <A09 full='true' />
+                <A10 full='true' />
+               
+                <B01 full='false' />
+                <B02 full='false' />
+                <B03 full='false' />
+                <B04 full='true' />
+                <B05 full='false' />
+                <B06 full='false' />
+                <B07 full='false' />
+                <B08 full='false' />
+                <B09 full='true' />
+                <B10 full='true' />
+
+                <C01 full='false' />
+                <C02 full='false' />
+                <C03 full='false' />
+                <C04 full='true' />
+                <C05 full='false' />
+                <C06 full='false' />
+                <C07 full='false' />
+                <C08 full='false' />
+                <C09 full='true' />
+                <C10 full='true' />
+
+                <D01 full='false' />
+                <D02 full='false' />
+                <D03 full='false' />
+                <D04 full='true' />
+                <D05 full='false' />
+                <D06 full='false' />
+                <D07 full='false' />
+                <D08 full='false' />
+                <D09 full='true' />
+                <D10 full='true' />
             </x7>
+        </Rivola>
+    </Wednesday>
+    <Thursday>
+        <Maxima>
+            <x6>
+                <A01 full='false' />
+                <A02 full='false' />
+               
+                <B01 full='false' />
+                <B02 full='false' />
+                <B03 full='false' />
+
+                <C01 full='false' />
+                <C02 full='false' />
+                <C03 full='false' />
+                <C04 full='true' />
+
+                <D01 full='false' />
+                <D02 full='false' />
+                <D03 full='false' />
+                <D04 full='true' />
+
+                <E01 full='false' />
+                <E02 full='false' />
+                <E03 full='false' />
+                <E04 full='true' />
+                <E05 full='false' />
+                <E06 full='false' />
+                <E07 full='false' />
+                <E08 full='false' />
+                <E09 full='true' />
+                <E10 full='true' />
+                <E11 full='true' />
+                <E12 full='true' />
+                <E13 full='true' />
+                <E14 full='true' />
+
+                <F01 full='false' />
+                <F02 full='false' />
+                <F03 full='false' />
+                <F04 full='true' />
+                <F05 full='false' />
+                <F06 full='false' />
+                <F07 full='false' />
+                <F08 full='false' />
+                <F09 full='true' />
+                <F10 full='true' />
+                <F11 full='true' />
+                <F12 full='true' />
+                <F13 full='true' />
+                <F14 full='true' />
+
+                <G01 full='false' />
+                <G02 full='false' />
+                <G03 full='false' />
+                <G04 full='true' />
+                <G05 full='false' />
+                <G06 full='false' />
+                <G07 full='false' />
+                <G08 full='false' />
+                <G09 full='true' />
+                <G10 full='true' />
+                <G11 full='true' />
+                <G12 full='true' />
+                <G13 full='true' />
+                <G14 full='true' />
+
+                <H01 full='false' />
+                <H02 full='false' />
+                <H03 full='false' />
+                <H04 full='true' />
+                <H05 full='false' />
+                <H10 full='true' />
+                <H11 full='true' />
+                <H12 full='true' />
+                <H13 full='true' />
+                <H14 full='true' />
+            </x6>
+            <x9>
+                <A01 full='false' />
+                <A02 full='false' />
+               
+                <B01 full='false' />
+                <B02 full='false' />
+                <B03 full='false' />
+
+                <C01 full='false' />
+                <C02 full='false' />
+                <C03 full='false' />
+                <C04 full='true' />
+
+                <D01 full='false' />
+                <D02 full='false' />
+                <D03 full='false' />
+                <D04 full='true' />
+
+                <E01 full='false' />
+                <E02 full='false' />
+                <E03 full='false' />
+                <E04 full='true' />
+                <E05 full='false' />
+                <E06 full='false' />
+                <E07 full='false' />
+                <E08 full='false' />
+                <E09 full='true' />
+                <E10 full='true' />
+                <E11 full='true' />
+                <E12 full='true' />
+                <E13 full='true' />
+                <E14 full='true' />
+
+                <F01 full='false' />
+                <F02 full='false' />
+                <F03 full='false' />
+                <F04 full='true' />
+                <F05 full='false' />
+                <F06 full='false' />
+                <F07 full='false' />
+                <F08 full='false' />
+                <F09 full='true' />
+                <F10 full='true' />
+                <F11 full='true' />
+                <F12 full='true' />
+                <F13 full='true' />
+                <F14 full='true' />
+
+                <G01 full='false' />
+                <G02 full='false' />
+                <G03 full='false' />
+                <G04 full='true' />
+                <G05 full='false' />
+                <G06 full='false' />
+                <G07 full='false' />
+                <G08 full='false' />
+                <G09 full='true' />
+                <G10 full='true' />
+                <G11 full='true' />
+                <G12 full='true' />
+                <G13 full='true' />
+                <G14 full='true' />
+
+                <H01 full='false' />
+                <H02 full='false' />
+                <H03 full='false' />
+                <H04 full='true' />
+                <H05 full='false' />
+                <H10 full='true' />
+                <H11 full='true' />
+                <H12 full='true' />
+                <H13 full='true' />
+                <H14 full='true' />
+            </x9>
         </Maxima>
         <Rivola>
-            <x9>
-                <B01 full='false'/>
-                <B02 full='true'/>
-                <B03 full='false'/>
-                <B04 full='true'/>
-            </x9>
+            <x12>
+                <A01 full='false' />
+                <A02 full='false' />
+                <A03 full='false' />
+                <A04 full='true' />
+                <A05 full='false' />
+                <A06 full='false' />
+                <A07 full='false' />
+                <A08 full='false' />
+                <A09 full='true' />
+                <A10 full='true' />
+               
+                <B01 full='false' />
+                <B02 full='false' />
+                <B03 full='false' />
+                <B04 full='true' />
+                <B05 full='false' />
+                <B06 full='false' />
+                <B07 full='false' />
+                <B08 full='false' />
+                <B09 full='true' />
+                <B10 full='true' />
+
+                <C01 full='false' />
+                <C02 full='false' />
+                <C03 full='false' />
+                <C04 full='true' />
+                <C05 full='false' />
+                <C06 full='false' />
+                <C07 full='false' />
+                <C08 full='false' />
+                <C09 full='true' />
+                <C10 full='true' />
+
+                <D01 full='false' />
+                <D02 full='false' />
+                <D03 full='false' />
+                <D04 full='true' />
+                <D05 full='false' />
+                <D06 full='false' />
+                <D07 full='false' />
+                <D08 full='false' />
+                <D09 full='true' />
+                <D10 full='true' />
+            </x12>
+            <x7>
+                <A01 full='false' />
+                <A02 full='false' />
+                <A03 full='false' />
+                <A04 full='true' />
+                <A05 full='false' />
+                <A06 full='false' />
+                <A07 full='false' />
+                <A08 full='false' />
+                <A09 full='true' />
+                <A10 full='true' />
+               
+                <B01 full='false' />
+                <B02 full='false' />
+                <B03 full='false' />
+                <B04 full='true' />
+                <B05 full='false' />
+                <B06 full='false' />
+                <B07 full='false' />
+                <B08 full='false' />
+                <B09 full='true' />
+                <B10 full='true' />
+
+                <C01 full='false' />
+                <C02 full='false' />
+                <C03 full='false' />
+                <C04 full='true' />
+                <C05 full='false' />
+                <C06 full='false' />
+                <C07 full='false' />
+                <C08 full='false' />
+                <C09 full='true' />
+                <C10 full='true' />
+
+                <D01 full='false' />
+                <D02 full='false' />
+                <D03 full='false' />
+                <D04 full='true' />
+                <D05 full='false' />
+                <D06 full='false' />
+                <D07 full='false' />
+                <D08 full='false' />
+                <D09 full='true' />
+                <D10 full='true' />
+            </x7>
         </Rivola>
-    </Monday>
-    <Tuesday>
-    </Tuesday>
+    </Thursday>
+    <Friday>
+        <Maxima>
+            <x6>
+                <A01 full='false' />
+                <A02 full='false' />
+               
+                <B01 full='false' />
+                <B02 full='false' />
+                <B03 full='false' />
+
+                <C01 full='false' />
+                <C02 full='false' />
+                <C03 full='false' />
+                <C04 full='true' />
+
+                <D01 full='false' />
+                <D02 full='false' />
+                <D03 full='false' />
+                <D04 full='true' />
+
+                <E01 full='false' />
+                <E02 full='false' />
+                <E03 full='false' />
+                <E04 full='true' />
+                <E05 full='false' />
+                <E06 full='false' />
+                <E07 full='false' />
+                <E08 full='false' />
+                <E09 full='true' />
+                <E10 full='true' />
+                <E11 full='true' />
+                <E12 full='true' />
+                <E13 full='true' />
+                <E14 full='true' />
+
+                <F01 full='false' />
+                <F02 full='false' />
+                <F03 full='false' />
+                <F04 full='true' />
+                <F05 full='false' />
+                <F06 full='false' />
+                <F07 full='false' />
+                <F08 full='false' />
+                <F09 full='true' />
+                <F10 full='true' />
+                <F11 full='true' />
+                <F12 full='true' />
+                <F13 full='true' />
+                <F14 full='true' />
+
+                <G01 full='false' />
+                <G02 full='false' />
+                <G03 full='false' />
+                <G04 full='true' />
+                <G05 full='false' />
+                <G06 full='false' />
+                <G07 full='false' />
+                <G08 full='false' />
+                <G09 full='true' />
+                <G10 full='true' />
+                <G11 full='true' />
+                <G12 full='true' />
+                <G13 full='true' />
+                <G14 full='true' />
+
+                <H01 full='false' />
+                <H02 full='false' />
+                <H03 full='false' />
+                <H04 full='true' />
+                <H05 full='false' />
+                <H10 full='true' />
+                <H11 full='true' />
+                <H12 full='true' />
+                <H13 full='true' />
+                <H14 full='true' />
+            </x6>
+            <x9>
+                <A01 full='false' />
+                <A02 full='false' />
+               
+                <B01 full='false' />
+                <B02 full='false' />
+                <B03 full='false' />
+
+                <C01 full='false' />
+                <C02 full='false' />
+                <C03 full='false' />
+                <C04 full='true' />
+
+                <D01 full='false' />
+                <D02 full='false' />
+                <D03 full='false' />
+                <D04 full='true' />
+
+                <E01 full='false' />
+                <E02 full='false' />
+                <E03 full='false' />
+                <E04 full='true' />
+                <E05 full='false' />
+                <E06 full='false' />
+                <E07 full='false' />
+                <E08 full='false' />
+                <E09 full='true' />
+                <E10 full='true' />
+                <E11 full='true' />
+                <E12 full='true' />
+                <E13 full='true' />
+                <E14 full='true' />
+
+                <F01 full='false' />
+                <F02 full='false' />
+                <F03 full='false' />
+                <F04 full='true' />
+                <F05 full='false' />
+                <F06 full='false' />
+                <F07 full='false' />
+                <F08 full='false' />
+                <F09 full='true' />
+                <F10 full='true' />
+                <F11 full='true' />
+                <F12 full='true' />
+                <F13 full='true' />
+                <F14 full='true' />
+
+                <G01 full='false' />
+                <G02 full='false' />
+                <G03 full='false' />
+                <G04 full='true' />
+                <G05 full='false' />
+                <G06 full='false' />
+                <G07 full='false' />
+                <G08 full='false' />
+                <G09 full='true' />
+                <G10 full='true' />
+                <G11 full='true' />
+                <G12 full='true' />
+                <G13 full='true' />
+                <G14 full='true' />
+
+                <H01 full='false' />
+                <H02 full='false' />
+                <H03 full='false' />
+                <H04 full='true' />
+                <H05 full='false' />
+                <H10 full='true' />
+                <H11 full='true' />
+                <H12 full='true' />
+                <H13 full='true' />
+                <H14 full='true' />
+            </x9>
+        </Maxima>
+        <Rivola>
+            <x12>
+                <A01 full='false' />
+                <A02 full='false' />
+                <A03 full='false' />
+                <A04 full='true' />
+                <A05 full='false' />
+                <A06 full='false' />
+                <A07 full='false' />
+                <A08 full='false' />
+                <A09 full='true' />
+                <A10 full='true' />
+               
+                <B01 full='false' />
+                <B02 full='false' />
+                <B03 full='false' />
+                <B04 full='true' />
+                <B05 full='false' />
+                <B06 full='false' />
+                <B07 full='false' />
+                <B08 full='false' />
+                <B09 full='true' />
+                <B10 full='true' />
+
+                <C01 full='false' />
+                <C02 full='false' />
+                <C03 full='false' />
+                <C04 full='true' />
+                <C05 full='false' />
+                <C06 full='false' />
+                <C07 full='false' />
+                <C08 full='false' />
+                <C09 full='true' />
+                <C10 full='true' />
+
+                <D01 full='false' />
+                <D02 full='false' />
+                <D03 full='false' />
+                <D04 full='true' />
+                <D05 full='false' />
+                <D06 full='false' />
+                <D07 full='false' />
+                <D08 full='false' />
+                <D09 full='true' />
+                <D10 full='true' />
+            </x12>
+            <x7>
+                <A01 full='false' />
+                <A02 full='false' />
+                <A03 full='false' />
+                <A04 full='true' />
+                <A05 full='false' />
+                <A06 full='false' />
+                <A07 full='false' />
+                <A08 full='false' />
+                <A09 full='true' />
+                <A10 full='true' />
+               
+                <B01 full='false' />
+                <B02 full='false' />
+                <B03 full='false' />
+                <B04 full='true' />
+                <B05 full='false' />
+                <B06 full='false' />
+                <B07 full='false' />
+                <B08 full='false' />
+                <B09 full='true' />
+                <B10 full='true' />
+
+                <C01 full='false' />
+                <C02 full='false' />
+                <C03 full='false' />
+                <C04 full='true' />
+                <C05 full='false' />
+                <C06 full='false' />
+                <C07 full='false' />
+                <C08 full='false' />
+                <C09 full='true' />
+                <C10 full='true' />
+
+                <D01 full='false' />
+                <D02 full='false' />
+                <D03 full='false' />
+                <D04 full='true' />
+                <D05 full='false' />
+                <D06 full='false' />
+                <D07 full='false' />
+                <D08 full='false' />
+                <D09 full='true' />
+                <D10 full='true' />
+            </x7>
+        </Rivola>
+    </Friday>
+    <Saturday>
+        <Maxima>
+            <x3>
+                <A01 full='false' />
+                <A02 full='false' />
+               
+                <B01 full='false' />
+                <B02 full='false' />
+                <B03 full='false' />
+
+                <C01 full='false' />
+                <C02 full='false' />
+                <C03 full='false' />
+                <C04 full='true' />
+
+                <D01 full='false' />
+                <D02 full='false' />
+                <D03 full='false' />
+                <D04 full='true' />
+
+                <E01 full='false' />
+                <E02 full='false' />
+                <E03 full='false' />
+                <E04 full='true' />
+                <E05 full='false' />
+                <E06 full='false' />
+                <E07 full='false' />
+                <E08 full='false' />
+                <E09 full='true' />
+                <E10 full='true' />
+                <E11 full='true' />
+                <E12 full='true' />
+                <E13 full='true' />
+                <E14 full='true' />
+
+                <F01 full='false' />
+                <F02 full='false' />
+                <F03 full='false' />
+                <F04 full='true' />
+                <F05 full='false' />
+                <F06 full='false' />
+                <F07 full='false' />
+                <F08 full='false' />
+                <F09 full='true' />
+                <F10 full='true' />
+                <F11 full='true' />
+                <F12 full='true' />
+                <F13 full='true' />
+                <F14 full='true' />
+
+                <G01 full='false' />
+                <G02 full='false' />
+                <G03 full='false' />
+                <G04 full='true' />
+                <G05 full='false' />
+                <G06 full='false' />
+                <G07 full='false' />
+                <G08 full='false' />
+                <G09 full='true' />
+                <G10 full='true' />
+                <G11 full='true' />
+                <G12 full='true' />
+                <G13 full='true' />
+                <G14 full='true' />
+
+                <H01 full='false' />
+                <H02 full='false' />
+                <H03 full='false' />
+                <H04 full='true' />
+                <H05 full='false' />
+                <H10 full='true' />
+                <H11 full='true' />
+                <H12 full='true' />
+                <H13 full='true' />
+                <H14 full='true' />
+            </x3>
+            <x6>
+                <A01 full='false' />
+                <A02 full='false' />
+               
+                <B01 full='false' />
+                <B02 full='false' />
+                <B03 full='false' />
+
+                <C01 full='false' />
+                <C02 full='false' />
+                <C03 full='false' />
+                <C04 full='true' />
+
+                <D01 full='false' />
+                <D02 full='false' />
+                <D03 full='false' />
+                <D04 full='true' />
+
+                <E01 full='false' />
+                <E02 full='false' />
+                <E03 full='false' />
+                <E04 full='true' />
+                <E05 full='false' />
+                <E06 full='false' />
+                <E07 full='false' />
+                <E08 full='false' />
+                <E09 full='true' />
+                <E10 full='true' />
+                <E11 full='true' />
+                <E12 full='true' />
+                <E13 full='true' />
+                <E14 full='true' />
+
+                <F01 full='false' />
+                <F02 full='false' />
+                <F03 full='false' />
+                <F04 full='true' />
+                <F05 full='false' />
+                <F06 full='false' />
+                <F07 full='false' />
+                <F08 full='false' />
+                <F09 full='true' />
+                <F10 full='true' />
+                <F11 full='true' />
+                <F12 full='true' />
+                <F13 full='true' />
+                <F14 full='true' />
+
+                <G01 full='false' />
+                <G02 full='false' />
+                <G03 full='false' />
+                <G04 full='true' />
+                <G05 full='false' />
+                <G06 full='false' />
+                <G07 full='false' />
+                <G08 full='false' />
+                <G09 full='true' />
+                <G10 full='true' />
+                <G11 full='true' />
+                <G12 full='true' />
+                <G13 full='true' />
+                <G14 full='true' />
+
+                <H01 full='false' />
+                <H02 full='false' />
+                <H03 full='false' />
+                <H04 full='true' />
+                <H05 full='false' />
+                <H10 full='true' />
+                <H11 full='true' />
+                <H12 full='true' />
+                <H13 full='true' />
+                <H14 full='true' />
+            </x6>
+            <x9>
+                <A01 full='false' />
+                <A02 full='false' />
+               
+                <B01 full='false' />
+                <B02 full='false' />
+                <B03 full='false' />
+
+                <C01 full='false' />
+                <C02 full='false' />
+                <C03 full='false' />
+                <C04 full='true' />
+
+                <D01 full='false' />
+                <D02 full='false' />
+                <D03 full='false' />
+                <D04 full='true' />
+
+                <E01 full='false' />
+                <E02 full='false' />
+                <E03 full='false' />
+                <E04 full='true' />
+                <E05 full='false' />
+                <E06 full='false' />
+                <E07 full='false' />
+                <E08 full='false' />
+                <E09 full='true' />
+                <E10 full='true' />
+                <E11 full='true' />
+                <E12 full='true' />
+                <E13 full='true' />
+                <E14 full='true' />
+
+                <F01 full='false' />
+                <F02 full='false' />
+                <F03 full='false' />
+                <F04 full='true' />
+                <F05 full='false' />
+                <F06 full='false' />
+                <F07 full='false' />
+                <F08 full='false' />
+                <F09 full='true' />
+                <F10 full='true' />
+                <F11 full='true' />
+                <F12 full='true' />
+                <F13 full='true' />
+                <F14 full='true' />
+
+                <G01 full='false' />
+                <G02 full='false' />
+                <G03 full='false' />
+                <G04 full='true' />
+                <G05 full='false' />
+                <G06 full='false' />
+                <G07 full='false' />
+                <G08 full='false' />
+                <G09 full='true' />
+                <G10 full='true' />
+                <G11 full='true' />
+                <G12 full='true' />
+                <G13 full='true' />
+                <G14 full='true' />
+
+                <H01 full='false' />
+                <H02 full='false' />
+                <H03 full='false' />
+                <H04 full='true' />
+                <H05 full='false' />
+                <H10 full='true' />
+                <H11 full='true' />
+                <H12 full='true' />
+                <H13 full='true' />
+                <H14 full='true' />
+            </x9>
+        </Maxima>
+        <Rivola>
+            <x4>
+                <A01 full='false' />
+                <A02 full='false' />
+                <A03 full='false' />
+                <A04 full='true' />
+                <A05 full='false' />
+                <A06 full='false' />
+                <A07 full='false' />
+                <A08 full='false' />
+                <A09 full='true' />
+                <A10 full='true' />
+               
+                <B01 full='false' />
+                <B02 full='false' />
+                <B03 full='false' />
+                <B04 full='true' />
+                <B05 full='false' />
+                <B06 full='false' />
+                <B07 full='false' />
+                <B08 full='false' />
+                <B09 full='true' />
+                <B10 full='true' />
+
+                <C01 full='false' />
+                <C02 full='false' />
+                <C03 full='false' />
+                <C04 full='true' />
+                <C05 full='false' />
+                <C06 full='false' />
+                <C07 full='false' />
+                <C08 full='false' />
+                <C09 full='true' />
+                <C10 full='true' />
+
+                <D01 full='false' />
+                <D02 full='false' />
+                <D03 full='false' />
+                <D04 full='true' />
+                <D05 full='false' />
+                <D06 full='false' />
+                <D07 full='false' />
+                <D08 full='false' />
+                <D09 full='true' />
+                <D10 full='true' />
+            </x4>
+            <x7>
+                <A01 full='false' />
+                <A02 full='false' />
+                <A03 full='false' />
+                <A04 full='true' />
+                <A05 full='false' />
+                <A06 full='false' />
+                <A07 full='false' />
+                <A08 full='false' />
+                <A09 full='true' />
+                <A10 full='true' />
+               
+                <B01 full='false' />
+                <B02 full='false' />
+                <B03 full='false' />
+                <B04 full='true' />
+                <B05 full='false' />
+                <B06 full='false' />
+                <B07 full='false' />
+                <B08 full='false' />
+                <B09 full='true' />
+                <B10 full='true' />
+
+                <C01 full='false' />
+                <C02 full='false' />
+                <C03 full='false' />
+                <C04 full='true' />
+                <C05 full='false' />
+                <C06 full='false' />
+                <C07 full='false' />
+                <C08 full='false' />
+                <C09 full='true' />
+                <C10 full='true' />
+
+                <D01 full='false' />
+                <D02 full='false' />
+                <D03 full='false' />
+                <D04 full='true' />
+                <D05 full='false' />
+                <D06 full='false' />
+                <D07 full='false' />
+                <D08 full='false' />
+                <D09 full='true' />
+                <D10 full='true' />
+            </x7>
+        </Rivola>
+    </Saturday>
+    <Sunday>
+        <Maxima>
+            <x3>
+                <A01 full='false' />
+                <A02 full='false' />
+               
+                <B01 full='false' />
+                <B02 full='false' />
+                <B03 full='false' />
+
+                <C01 full='false' />
+                <C02 full='false' />
+                <C03 full='false' />
+                <C04 full='true' />
+
+                <D01 full='false' />
+                <D02 full='false' />
+                <D03 full='false' />
+                <D04 full='true' />
+
+                <E01 full='false' />
+                <E02 full='false' />
+                <E03 full='false' />
+                <E04 full='true' />
+                <E05 full='false' />
+                <E06 full='false' />
+                <E07 full='false' />
+                <E08 full='false' />
+                <E09 full='true' />
+                <E10 full='true' />
+                <E11 full='true' />
+                <E12 full='true' />
+                <E13 full='true' />
+                <E14 full='true' />
+
+                <F01 full='false' />
+                <F02 full='false' />
+                <F03 full='false' />
+                <F04 full='true' />
+                <F05 full='false' />
+                <F06 full='false' />
+                <F07 full='false' />
+                <F08 full='false' />
+                <F09 full='true' />
+                <F10 full='true' />
+                <F11 full='true' />
+                <F12 full='true' />
+                <F13 full='true' />
+                <F14 full='true' />
+
+                <G01 full='false' />
+                <G02 full='false' />
+                <G03 full='false' />
+                <G04 full='true' />
+                <G05 full='false' />
+                <G06 full='false' />
+                <G07 full='false' />
+                <G08 full='false' />
+                <G09 full='true' />
+                <G10 full='true' />
+                <G11 full='true' />
+                <G12 full='true' />
+                <G13 full='true' />
+                <G14 full='true' />
+
+                <H01 full='false' />
+                <H02 full='false' />
+                <H03 full='false' />
+                <H04 full='true' />
+                <H05 full='false' />
+                <H10 full='true' />
+                <H11 full='true' />
+                <H12 full='true' />
+                <H13 full='true' />
+                <H14 full='true' />
+            </x3>
+            <x6>
+                <A01 full='false' />
+                <A02 full='false' />
+               
+                <B01 full='false' />
+                <B02 full='false' />
+                <B03 full='false' />
+
+                <C01 full='false' />
+                <C02 full='false' />
+                <C03 full='false' />
+                <C04 full='true' />
+
+                <D01 full='false' />
+                <D02 full='false' />
+                <D03 full='false' />
+                <D04 full='true' />
+
+                <E01 full='false' />
+                <E02 full='false' />
+                <E03 full='false' />
+                <E04 full='true' />
+                <E05 full='false' />
+                <E06 full='false' />
+                <E07 full='false' />
+                <E08 full='false' />
+                <E09 full='true' />
+                <E10 full='true' />
+                <E11 full='true' />
+                <E12 full='true' />
+                <E13 full='true' />
+                <E14 full='true' />
+
+                <F01 full='false' />
+                <F02 full='false' />
+                <F03 full='false' />
+                <F04 full='true' />
+                <F05 full='false' />
+                <F06 full='false' />
+                <F07 full='false' />
+                <F08 full='false' />
+                <F09 full='true' />
+                <F10 full='true' />
+                <F11 full='true' />
+                <F12 full='true' />
+                <F13 full='true' />
+                <F14 full='true' />
+
+                <G01 full='false' />
+                <G02 full='false' />
+                <G03 full='false' />
+                <G04 full='true' />
+                <G05 full='false' />
+                <G06 full='false' />
+                <G07 full='false' />
+                <G08 full='false' />
+                <G09 full='true' />
+                <G10 full='true' />
+                <G11 full='true' />
+                <G12 full='true' />
+                <G13 full='true' />
+                <G14 full='true' />
+
+                <H01 full='false' />
+                <H02 full='false' />
+                <H03 full='false' />
+                <H04 full='true' />
+                <H05 full='false' />
+                <H10 full='true' />
+                <H11 full='true' />
+                <H12 full='true' />
+                <H13 full='true' />
+                <H14 full='true' />
+            </x6>
+            <x9>
+                <A01 full='false' />
+                <A02 full='false' />
+               
+                <B01 full='false' />
+                <B02 full='false' />
+                <B03 full='false' />
+
+                <C01 full='false' />
+                <C02 full='false' />
+                <C03 full='false' />
+                <C04 full='true' />
+
+                <D01 full='false' />
+                <D02 full='false' />
+                <D03 full='false' />
+                <D04 full='true' />
+
+                <E01 full='false' />
+                <E02 full='false' />
+                <E03 full='false' />
+                <E04 full='true' />
+                <E05 full='false' />
+                <E06 full='false' />
+                <E07 full='false' />
+                <E08 full='false' />
+                <E09 full='true' />
+                <E10 full='true' />
+                <E11 full='true' />
+                <E12 full='true' />
+                <E13 full='true' />
+                <E14 full='true' />
+
+                <F01 full='false' />
+                <F02 full='false' />
+                <F03 full='false' />
+                <F04 full='true' />
+                <F05 full='false' />
+                <F06 full='false' />
+                <F07 full='false' />
+                <F08 full='false' />
+                <F09 full='true' />
+                <F10 full='true' />
+                <F11 full='true' />
+                <F12 full='true' />
+                <F13 full='true' />
+                <F14 full='true' />
+
+                <G01 full='false' />
+                <G02 full='false' />
+                <G03 full='false' />
+                <G04 full='true' />
+                <G05 full='false' />
+                <G06 full='false' />
+                <G07 full='false' />
+                <G08 full='false' />
+                <G09 full='true' />
+                <G10 full='true' />
+                <G11 full='true' />
+                <G12 full='true' />
+                <G13 full='true' />
+                <G14 full='true' />
+
+                <H01 full='false' />
+                <H02 full='false' />
+                <H03 full='false' />
+                <H04 full='true' />
+                <H05 full='false' />
+                <H10 full='true' />
+                <H11 full='true' />
+                <H12 full='true' />
+                <H13 full='true' />
+                <H14 full='true' />
+            </x9>
+        </Maxima>
+        <Rivola>
+            <x4>
+                <A01 full='false' />
+                <A02 full='false' />
+                <A03 full='false' />
+                <A04 full='true' />
+                <A05 full='false' />
+                <A06 full='false' />
+                <A07 full='false' />
+                <A08 full='false' />
+                <A09 full='true' />
+                <A10 full='true' />
+               
+                <B01 full='false' />
+                <B02 full='false' />
+                <B03 full='false' />
+                <B04 full='true' />
+                <B05 full='false' />
+                <B06 full='false' />
+                <B07 full='false' />
+                <B08 full='false' />
+                <B09 full='true' />
+                <B10 full='true' />
+
+                <C01 full='false' />
+                <C02 full='false' />
+                <C03 full='false' />
+                <C04 full='true' />
+                <C05 full='false' />
+                <C06 full='false' />
+                <C07 full='false' />
+                <C08 full='false' />
+                <C09 full='true' />
+                <C10 full='true' />
+
+                <D01 full='false' />
+                <D02 full='false' />
+                <D03 full='false' />
+                <D04 full='true' />
+                <D05 full='false' />
+                <D06 full='false' />
+                <D07 full='false' />
+                <D08 full='false' />
+                <D09 full='true' />
+                <D10 full='true' />
+            </x4>
+            <x7>
+                <A01 full='false' />
+                <A02 full='false' />
+                <A03 full='false' />
+                <A04 full='true' />
+                <A05 full='false' />
+                <A06 full='false' />
+                <A07 full='false' />
+                <A08 full='false' />
+                <A09 full='true' />
+                <A10 full='true' />
+               
+                <B01 full='false' />
+                <B02 full='false' />
+                <B03 full='false' />
+                <B04 full='true' />
+                <B05 full='false' />
+                <B06 full='false' />
+                <B07 full='false' />
+                <B08 full='false' />
+                <B09 full='true' />
+                <B10 full='true' />
+
+                <C01 full='false' />
+                <C02 full='false' />
+                <C03 full='false' />
+                <C04 full='true' />
+                <C05 full='false' />
+                <C06 full='false' />
+                <C07 full='false' />
+                <C08 full='false' />
+                <C09 full='true' />
+                <C10 full='true' />
+
+                <D01 full='false' />
+                <D02 full='false' />
+                <D03 full='false' />
+                <D04 full='true' />
+                <D05 full='false' />
+                <D06 full='false' />
+                <D07 full='false' />
+                <D08 full='false' />
+                <D09 full='true' />
+                <D10 full='true' />
+            </x7>
+        </Rivola>
+    </Sunday>
 </seats>

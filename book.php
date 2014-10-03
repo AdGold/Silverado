@@ -34,10 +34,6 @@ foreach ($types as $type)
     <div class="left_column">
         <p class="subtitle">Use the form below to book tickets to our films!</p>
         <form method="POST" action="reserve.php">
-{{movie}} <br>
-{{cinema}} <br>
-{{day}} <br>
-{{time}} <br>
             <div class="subsection">
                 <div class="subtitle gap hero">MOVIE</div>
                 <select name="film" data-ng-model="movie" data-ng-change="movieChange()">
@@ -79,7 +75,7 @@ foreach ($types as $type)
                     {{error}}
                 </div>
                 <br/>
-                <input class="bottom big_submit" type="submit" value="Book tickets" data-ng-disabled="!isValid"/>
+                <input class="bottom big_submit" type="submit" value="Add to cart" data-ng-disabled="!isValid"/>
             </div>
         </form>
     </div>
