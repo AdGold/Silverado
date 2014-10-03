@@ -103,21 +103,21 @@
     </thead>
     <tr>
         <th scope="row">Maxima</th>
-        <td>6pm - The Other Woman<br/>
+        <td>6pm - Once a Princess<br/>
         9pm - Guardians of the Galaxy</td>
-        <td>6pm - The Other Woman<br/>
+        <td>6pm - Once a Princess<br/>
         9pm - Guardians of the Galaxy</td>
-        <td>3pm - Teenage Mutant Ninja Turtles<br/>
-        6pm - The Other Woman<br/>
+        <td>3pm - Planes: Fire and Rescue<br/>
+        6pm - Once a Princess<br/>
         9pm - Guardians of the Galaxy</td>
     </tr>
     <tr>
         <th scope="row">Rivola</th>
         <td>Closed</td>
-        <td>12pm - Teenage Mutant Ninja Turtles<br>
-        7pm - Grand Illusion</td>
+        <td>12pm - Planes: Fire and Rescue<br>
+        7pm - Mardaani</td>
         <td>4pm - Guardians of the Galaxy<br>
-        7pm - Grand Illusion</td>
+        7pm - Mardaani</td>
     </tr>
 </table>
 <?php include_once("footer.php"); ?>
