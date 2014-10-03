@@ -2,6 +2,9 @@ reserve = angular.module('reserve', []);
 
 reserve.controller('reserveController', function($scope, $http) {
     var originalPrice = $("#price").text();
+    $scope.name = '';
+    $scope.phone = '';
+    $scope.email = '';
     $scope.errors = [];
 
     $scope.validate = function() {
@@ -49,5 +52,5 @@ reserve.controller('reserveController', function($scope, $http) {
             $scope.isValid = false;
     };
 
-    // $scope.fullValidate();
+    $scope.fullValidate();
 });
