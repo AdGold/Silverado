@@ -7,14 +7,12 @@ reserve.controller('reserveController', function($scope, $http) {
         {
             $scope.result = "Checking code...";
 
-            $http.post("checkcode.php", { code: check }).success(function(data) {
-                alert('wooo');
+            $http.post("checkcode.php", 'code='+check, {headers: {'Content-Type': 'application/x-www-form-urlencoded'} }).success(function(data) {
                 if (data == "1")
                     $scope.result = "Success :)";
                 else
                     $scope.result = "Invalid code";
             });
-            alert('sent post :) ');
         }
         else if (check.length == 0)
             $scope.result = "";
