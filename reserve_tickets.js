@@ -2,6 +2,7 @@ reserve = angular.module('reserve', []);
 
 reserve.controller('reserveController', function($scope, $http) {
     var originalPrice = $("#price").text();
+    $scope.errors = [];
 
     $scope.validate = function() {
         var check = $("#code").val();
@@ -28,4 +29,25 @@ reserve.controller('reserveController', function($scope, $http) {
             $scope.result = "Wrong format";
         }
     };
+
+    $scope.fullValidate = function() {
+        $scope.errors = [];
+        $scope.isValid = true;
+
+        var phoneRegex = /^(\(04\)|04|\+614) ?\d{4} ?\d{4}$/;
+
+        if ($scope.name.length == 0)
+            $scope.errors.push('You must provide a name.');
+
+        if (!phoneRegex.test($scope.phone) || $scope.phone.length == 0)
+            $scope.errors.push('You must enter a valid Australian mobile phone number (e.g. 04 9090 8080).');
+
+        if ($scope.email.length == 0)
+            $scope.errors.push('You must enter a valid email address.');
+
+        if ($scope.errors.length > 0)
+            $scope.isValid = false;
+    };
+
+    // $scope.fullValidate();
 });
