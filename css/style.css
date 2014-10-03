@@ -336,10 +336,42 @@ th, tr, td {
 .fullwidth {
 	display: inline-block;
 	max-width: 400px;
-	padding-left: 2%;
-	padding-right: 2%;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-bottom: 10%;
 	overflow: hidden;
 	vertical-align: top;
+}
+
+.MS-rating img {
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	padding-right: 10px;
+}
+
+.MS-rating {
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	overflow: hidden;
+}
+
+.MS-title {
+	font-size: 30px;
+	padding-top: 10px;
+}
+
+.MS-film {
+	background: white;
+	padding: 20px;
+	border: 1px solid black;
+	box-shadow: 15px 15px 60px #888888;
+}
+
+.MS-description p {
+	padding: 2px;	
 }
 
 .movieDesc {
