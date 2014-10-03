@@ -1,11 +1,11 @@
 <?php
 session_start();
-//$cinema = $_POST['cinema'];
-//$day = $_POST['day'];
-//$time = $_POST['time'];
-$cinema = 'Rivola';
-$day = 'Monday';
-$time = '9';
+$cinema = $_POST['cinema'];
+$day = $_POST['day'];
+$time = $_POST['time'];
+//$cinema = 'Rivola';
+//$day = 'Monday';
+//$time = '9';
 $xml = simplexml_load_file("seats.xml");
 $seats = array();
 
@@ -37,6 +37,6 @@ foreach($xml->children() as $xmlday)
 }
 foreach($seats as $seat)
 {
-    echo $seat . "\n";
+    echo $seat . " ";
 }
 ?>
