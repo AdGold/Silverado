@@ -1,0 +1,25 @@
+<?xml version='1.0' standalone='yes'?>
+
+<seats>
+    <Monday>
+        <Maxima>
+            <x7>
+                <A01 full='true' />
+                <A02 full='false' />
+                <A03 full='false' />
+                <A04 full='true' />
+                <A05 full='false' />
+            </x7>
+        </Maxima>
+        <Rivola>
+            <x9>
+                <B01 full='false'/>
+                <B02 full='true'/>
+                <B03 full='false'/>
+                <B04 full='true'/>
+            </x9>
+        </Rivola>
+    </Monday>
+    <Tuesday>
+    </Tuesday>
+</seats>
