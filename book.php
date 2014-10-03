@@ -55,6 +55,7 @@ foreach ($types as $type)
                     <select data-ng-model='day' data-ng-options='d+" "+time+"pm" for d in days' data-ng-change='dayChange()'>
                     </select>
                     <input type="hidden" name="day" data-ng-value='day'/>
+                    <input type="hidden" name="time" data-ng-value='time'/>
             </div>
 
             <div class="subsection">
