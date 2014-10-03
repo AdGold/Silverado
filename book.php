@@ -1,10 +1,49 @@
 <?php $page_title = "Book"; include_once("header.php"); ?>
+<?php
+
+function http_post_flds($url, $data, $headers=null) {   
+    $data = http_build_query($data);    
+    $opts = array('http' => array('method' => 'POST', 'content' => $data, 'header' => "Content-Type: application/x-www-form-urlencoded\r\n"));
+
+    if($headers) {
+        $opts['http']['header'] = $headers;
+    }
+    $st = stream_context_create($opts);
+    $fp = fopen($url, 'rb', false, $st);
+
+    if(!$fp) {
+        return false;
+    }
+    return stream_get_contents($fp);
+}
+
+$titles = array();
+$types = array("RC", "CH", "FO", "AC");
+foreach ($types as $type)
+{
+    $response=http_post_flds("http://" . $_SERVER['SERVER_NAME'] . "/~e54061/wp/movie-service.php",
+            array("CRC" => "s3493577", "filmID" => $type));
+    preg_match('/MS-title\'>(.*?)</', $response, $matches);
+    $titles[$type] = $matches[1];
+}
+
+?>
 <h3>BOOK A MOVIE</h3>
 <hr/>
 <div class="columns">
     <div class="left_column">
         <p class="subtitle">Use the form below to book tickets to our films!</p>
         <form method="POST" action="reserve.php">
+            <div class="subsection">
+                <div class="subtitle gap hero">MOVIE</div>
+                <select name="film" data-ng-modle="film" data-ng-change="filmChange">
+                    <?php
+                    foreach($types as $type) { 
+                        echo '<option value="' . $type . '">' . $titles[$type] . '</option>\n';
+                    }
+                    ?>
+                </select>
+            </div>
             <div class="subsection">
                 <div class="subtitle gap hero">CINEMA</div>
                 <input type="radio" name="cinema" value="Maxima" data-ng-model="cinema" data-ng-change="cinemaChange()"/>Cinema Maxima
