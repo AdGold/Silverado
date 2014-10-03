@@ -34,10 +34,6 @@ foreach ($types as $type)
     <div class="left_column">
         <p class="subtitle">Use the form below to book tickets to our films!</p>
         <form method="POST" action="reserve.php">
-{{movie}} <br>
-{{cinema}} <br>
-{{day}} <br>
-{{time}} <br>
             <div class="subsection">
                 <div class="subtitle gap hero">MOVIE</div>
                 <select name="film" data-ng-model="movie" data-ng-change="movieChange()">
@@ -62,12 +58,15 @@ foreach ($types as $type)
             </div>
 
             <div class="subsection">
-                <div class="caption gap hero">Tickets</div>
+                <div class="caption gap hero">Seats</div>
                 <table>
-                    <tr data-ng-repeat='ticket in tprices'>
-                        <td>{{ticket.type}}</td>
-                        <td>${{ticket.price}}</td>
-                        <td><input type="number" name="{{ticket.type}}" min="0" max="100" step="1" data-ng-model='ticket.count'></td>
+                    <tr data-ng-repeat='seat in seatsLeft'>
+                        <td>{{seat.name}}</td>
+                        <td>${{seat.price}}</td>
+                        <td>
+                            <select data-ng-model="seat.type" data-ng-options="type+' - '+tprices[type] for type in tprices" data-ng-change="seatChange(seat.name)">
+                            </select>
+                        </td>
                     </tr>
                 </table>
                 <br>
@@ -79,7 +78,7 @@ foreach ($types as $type)
                     {{error}}
                 </div>
                 <br/>
-                <input class="bottom big_submit" type="submit" value="Book tickets" data-ng-disabled="!isValid"/>
+                <input class="bottom big_submit" type="submit" value="Add to cart" data-ng-disabled="!isValid"/>
             </div>
         </form>
     </div>

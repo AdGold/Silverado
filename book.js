@@ -70,35 +70,35 @@ booking.controller('bookingController', function($scope) {
         'Art/Foreign': 'Mardaani'
     }
     maxPriceMon_Tue = [
-        {'type':'Full','price':12,'count':0},
-        {'type':'Conc','price':10,'count':0},
-        {'type':'Child','price':8,'count':0},
-        {'type':'FirstClass-Adult','price':25,'count':0},
-        {'type':'FirstClass-Child','price':20,'count':0},
-        {'type':'Beanbag','price':20,'count':0}
+        {'Full':12},
+        {'Conc':10},
+        {'Child':8},
+        {'FirstClass-Adult':25},
+        {'FirstClass-Child':20},
+        {'Beanbag':20}
     ];
     maxPriceWed_Sun = [
-        {'type':'Full','price':18,'count':0},
-        {'type':'Conc','price':15,'count':0},
-        {'type':'Child','price':12,'count':0},
-        {'type':'FirstClass-Adult','price':30,'count':0},
-        {'type':'FirstClass-Child','price':25,'count':0},
-        {'type':'Beanbag','price':30,'count':0}
+        {'Full':18},
+        {'Conc':15},
+        {'Child':12},
+        {'FirstClass-Adult':30},
+        {'FirstClass-Child':25},
+        {'Beanbag':30}
     ];
     rivPriceWed_Fri12 = [
-        {'type':'Adult','price':12,'count':0},
-        {'type':'Conc','price':10,'count':0},
-        {'type':'Child','price':8,'count':0}
+        {'Adult':12},
+        {'Conc':10},
+        {'Child':8}
     ];
     rivPriceWed_Fri = [
-        {'type':'Adult','price':18,'count':0},
-        {'type':'Conc','price':15,'count':0},
-        {'type':'Child','price':12,'count':0}
+        {'Adult':18},
+        {'Conc':15},
+        {'Child':12}
     ];
     rivPriceSat_Sun = [
-        {'type':'Adult','price':18,'count':0},
-        {'type':'Conc','price':15,'count':0},
-        {'type':'Child','price':12,'count':0}
+        {'Adult':18},
+        {'Conc':15},
+        {'Child':12}
     ];
     allDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
     Wed_Sun  = ['Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
