@@ -1,8 +1,11 @@
 booking = angular.module('booking', []);
 
 booking.controller('bookingController', function($scope) {
+    $scope.movieChange = function() {
+        alert('movie changed');
+    }
     $scope.cinemaChange = function() {
-        $scope.days = $scope.details[$scope.cinema];
+        $scope.days = $scope.details[$scope.movie][$scope.cinema];
         $scope.day = $scope.days[0];
         $scope.dayChange();
     };
@@ -112,23 +115,25 @@ booking.controller('bookingController', function($scope) {
         {'time':'4','genre':'Action'},
         {'time':'7','genre':'Art/Foreign'}
     ];
+    allDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    Wed_Sun  = ['Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    Wed_Fri  = ['Wednesday', 'Thursday', 'Friday'];
+    Sat_Sun  = ['Friday', 'Saturday', 'Sunday'];
     $scope.details = {
-        'Maxima':[
-            {'day':'Monday','times':maxMon_Fri},
-            {'day':'Tuesday','times':maxMon_Fri},
-            {'day':'Wednesday','times':maxMon_Fri},
-            {'day':'Thursday','times':maxMon_Fri},
-            {'day':'Friday','times':maxMon_Fri},
-            {'day':'Saturday','times':maxSat_Sun},
-            {'day':'Sunday','times':maxSat_Sun}
-        ],
-        'Rivola':[
-            {'day':'Wednesday','times':rivWed_Fri},
-            {'day':'Thursday','times':rivWed_Fri},
-            {'day':'Friday','times':rivWed_Fri},
-            {'day':'Saturday','times':rivSat_Sun},
-            {'day':'Sunday','times':rivSat_Sun}
-        ]
+        'RC':{
+            'Maxima':{time:'6', days:allDays}
+        },
+        'CH':{
+            'Maxima':{time:'3', days:Sat_Sun},
+            'Rivola':{time:'12', days:Wed_Fri}
+        },
+        'FO':{
+            'Rivola':{time:'7', days:Wed_Sun}
+        },
+        'AC':{
+            'Maxima':{time:'9', days:allDays},
+            'Rivola':{time:'4', days:Sat_Sun}
+        }
     };
     $scope.prices = {
         'Maxima':{
@@ -150,6 +155,6 @@ booking.controller('bookingController', function($scope) {
     };
 
     //startup
-    $scope.cinema = 'Maxima';
-    $scope.cinemaChange();
+    $scope.movie = 'RC';
+    $scope.movieChange();
 });
