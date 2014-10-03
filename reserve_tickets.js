@@ -1,34 +1,22 @@
-$(document).ready(function(){
-    function checkValid(type)
-    {
-       $.post(
-        "http://"+server+"/~e54061/wp/movie-service.php" ,
-        {
-            CRC:'s3493577',
-            filmID:type
-        },
-        function(data){
-            $('#'+type).html(data);
-        });
-    }
-    $("#code").on('input', function() {
-        $("#result").html("Checking code...");
+reserve = angular.module('reserve', []);
+
+reserve.controller('reserveController', function($scope) {
+    $scope.validate = function() {
         var check = $("#code").val();
         if (/\d{5}-\d{5}-[A-Z]{2}/g.test(check))
         {
-            $.post(
-            "checkcode.php", { code:$("#code").val() },
-            function(data) {
+            $scope.result = "Checking code...";
+
+            $http.post("checkcode.php", { code: check }).success(function(data) {
                 if (data == "1")
-                    $("#result").html("Success :)");
+                    $scope.result = "Success :)";
                 else
-                    $("#result").html("Invalid code");
+                    $scope.result = "Invalid code";
             });
         }
         else if (check.length == 0)
-            $("#result").html("");
+            $scope.result = "";
         else
-            $("#result").html("Wrong format");
-    });
+            $scope.result = "Wrong format";
+    };
 });
-

@@ -20,8 +20,8 @@ include_once("header.php");
 <hr />
 
 <p class="subtitle">You can choose to reserve your tickets right now if you wish. <br/>You can also browse the website and add more tickets or return to your cart if you wish!</p>
-<p>Enter promotional code (optional): <input type='text' id='code' placeholder='Enter code'/></p>
-<p id="result"></p>
+<p>Enter promotional code (optional): <input data-ng-model="voucher" data-ng-change="validate()" type='text' id='code' placeholder='Enter code'/></p>
+<p>{{result}}</p>
 <br/>
 <div class="subtitle">TOTAL PRICE: 
     <div class="hero enlarge">$<?php echo $_SESSION['totalPrice']; ?></div>

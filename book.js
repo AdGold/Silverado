@@ -59,10 +59,10 @@ booking.controller('bookingController', function($scope) {
         'Maxima':{'normal':40, 'first-class':12, 'beanbag':13}
     }
     $scope.movies = {
-        'Romantic Comedy': 'The Other Woman',
-        'Childrens': 'Teenage Mutant Ninja Turtles',
+        'Romantic Comedy': 'Once a Princess',
+        'Childrens': 'Planes: Fire and Rescue',
         'Action': 'Guardians of the Galaxy',
-        'Art/Foreign': 'Grand Illusion'
+        'Art/Foreign': 'Mardaani'
     }
     maxPriceMon_Tue = [
         {'type':'Full','price':12,'count':0},

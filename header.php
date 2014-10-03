@@ -3,7 +3,7 @@ if (session_status() == PHP_SESSION_NONE) {
         session_start();
 } ?>
 <!DOCTYPE html>
-<html <?php if ($page_title == "Book") { ?> data-ng-app="booking" <?php } ?> >
+<html <?php if ($page_title == "Book") { echo 'data-ng-app="booking"'; } elseif ($page_title == "Reserve Tickets") { echo 'data-ng-app="reserve"'; } ?> >
     <head>
         <meta charset="utf-8">
         <title><?php echo $page_title; ?></title>
@@ -22,7 +22,7 @@ if (session_status() == PHP_SESSION_NONE) {
         }
         ?>
     </head>
-    <body <?php if ($page_title == "Book") { ?> data-ng-controller="bookingController" <?php } ?> >
+    <body <?php if ($page_title == "Book") { echo 'data-ng-controller="bookingController"'; } elseif ($page_title == "Reserve Tickets") { echo 'data-ng-controller="reserveController"'; } ?> >
         <div class="container">
             <header>
                 <div id="titleBar">
