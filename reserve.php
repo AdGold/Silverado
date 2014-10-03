@@ -24,7 +24,7 @@ include_once("header.php");
 <p>{{result}}</p>
 <br/>
 <div class="subtitle">TOTAL PRICE: 
-    <div class="hero enlarge">$<?php echo $_SESSION['totalPrice']; ?></div>
+    <div class="hero enlarge" id="price">$<?php echo $_SESSION['totalPrice']; ?></div>
 </div>
 <br/>
 <form method="POST" action="reserve-tickets.php">
