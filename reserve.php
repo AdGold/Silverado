@@ -16,12 +16,17 @@ $page_title = "Reserve Tickets";
 include_once("header.php");
 ?>
 
-<h3>Reserve tickets</h3>
+<h3>RESERVE TICKETS</h3>
 <hr />
-<p>Either reserve tickets here or continue browsing and add more to your cart</p>
-<p>Enter promotional code: <input type='text' id='code' placeholder='Enter code'/></p>
-<p id="result"></p>
 
+<p class="subtitle">You can choose to reserve your tickets right now if you wish. <br/>You can also browse the website and add more tickets or return to your cart if you wish!</p>
+<p>Enter promotional code (optional): <input type='text' id='code' placeholder='Enter code'/></p>
+<p id="result"></p>
+<br/>
+<div class="subtitle">TOTAL PRICE: 
+    <div class="hero enlarge">$<?php echo $_SESSION['totalPrice']; ?></div>
+</div>
+<br/>
 <form method="POST" action="reserve-tickets.php">
 <input type="submit" value="Reserve tickets"/>
 </form>
