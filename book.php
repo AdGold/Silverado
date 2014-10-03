@@ -34,39 +34,35 @@ foreach ($types as $type)
     <div class="left_column">
         <p class="subtitle">Use the form below to book tickets to our films!</p>
         <form method="POST" action="reserve.php">
+{{movie}} <br>
+{{cinema}} <br>
+{{day}} <br>
+{{time}} <br>
             <div class="subsection">
                 <div class="subtitle gap hero">MOVIE</div>
-                <select name="film" data-ng-modle="film" data-ng-change="filmChange">
+                <select name="film" data-ng-model="movie" data-ng-change="movieChange()">
                     <?php
                     foreach($types as $type) { 
-                        echo '<option value="' . $type . '">' . $titles[$type] . '</option>\n';
+                        echo '<option value="' . $type . '">' . $titles[$type] . "</option>\n";
                     }
                     ?>
                 </select>
             </div>
             <div class="subsection">
                 <div class="subtitle gap hero">CINEMA</div>
-                <input type="radio" name="cinema" value="Maxima" data-ng-model="cinema" data-ng-change="cinemaChange()"/>Cinema Maxima
-                <input type="radio" name="cinema" value="Rivola" data-ng-model="cinema" data-ng-change="cinemaChange()"/>Cinema Rivola
+                <input type="radio" name="cinema" value="Maxima" data-ng-model="cinema" data-ng-change="cinemaChange()" data-ng-disabled="!details[movie].hasOwnProperty('Maxima')">Cinema Maxima</input>
+                <input type="radio" name="cinema" value="Rivola" data-ng-model="cinema" data-ng-change="cinemaChange()" data-ng-disabled="!details[movie].hasOwnProperty('Rivola')">Cinema Rivola</input>
             </div>
 
             <div class="subsection">
                 <div class="subtitle gap hero">DAY</div>
-                    <select data-ng-model='day' data-ng-options='d.day for d in days' data-ng-change='dayChange()'>
+                    <select data-ng-model='day' data-ng-options='d+" "+time+"pm" for d in days' data-ng-change='dayChange()'>
                     </select>
-                    <input type="hidden" name="day" data-ng-value='day.day'/>
+                    <input type="hidden" name="day" data-ng-value='day'/>
             </div>
 
             <div class="subsection">
-                <div class="subtitle gap hero">TIME</div>
-                    <select data-ng-model='time' data-ng-options='t.time+"pm - "+movies[t.genre] for t in times' data-ng-change='timeChange()'>
-                    </select>
-                    <input type="hidden" name="time" data-ng-value='time.time'/>
-            </div>
-
-            <div class="subsection">
-                <b></b>
-                <div class="caption gap hero">{{movies[time.genre]}} ({{time.genre}}) - Tickets</div>
+                <div class="caption gap hero">Tickets</div>
                 <table>
                     <tr data-ng-repeat='ticket in tprices'>
                         <td>{{ticket.type}}</td>
@@ -74,11 +70,8 @@ foreach ($types as $type)
                         <td><input type="number" name="{{ticket.type}}" min="0" max="100" step="1" data-ng-model='ticket.count'></td>
                     </tr>
                 </table>
-                <input type="hidden" name="normal-seats" data-ng-value="normalSeats"/>
-                <input type="hidden" name="first-class-seats" data-ng-value="firstClassSeats"/>
-                <input type="hidden" name="beanbag-seats" data-ng-value="beanbagSeats"/>
-                <input type="hidden" name="price" data-ng-value="totalPrice"/>
                 <br>
+                <input type="hidden" name="price" data-ng-value="totalPrice"/>
                 <div class="subtitle">TOTAL PRICE: 
                     <div class="hero enlarge">${{totalPrice}}</div>
                 </div>

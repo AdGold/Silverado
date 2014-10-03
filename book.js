@@ -2,20 +2,22 @@ booking = angular.module('booking', []);
 
 booking.controller('bookingController', function($scope) {
     $scope.movieChange = function() {
-        alert('movie changed');
+        if ($scope.cinema != 'Rivola' && $scope.cinema != 'Maxima')
+            $scope.cinema = 'Maxima';
+        if ($scope.cinema == 'Maxima' && !$scope.details[$scope.movie].hasOwnProperty('Maxima'))
+            $scope.cinema = 'Rivola';
+        if ($scope.cinema == 'Rivola' && !$scope.details[$scope.movie].hasOwnProperty('Rivola'))
+            $scope.cinema = 'Maxima';
+        $scope.cinemaChange();
     }
     $scope.cinemaChange = function() {
-        $scope.days = $scope.details[$scope.movie][$scope.cinema];
+        $scope.days = $scope.details[$scope.movie][$scope.cinema].days;
+        $scope.time = $scope.details[$scope.movie][$scope.cinema].time;
         $scope.day = $scope.days[0];
         $scope.dayChange();
     };
     $scope.dayChange = function() {
-        $scope.times = $scope.day.times;
-        $scope.time = $scope.times[0];
-        $scope.timeChange();
-    };
-    $scope.timeChange = function() {
-        $scope.tprices = $scope.prices[$scope.cinema][$scope.day.day][$scope.time.time];
+        $scope.tprices = $scope.prices[$scope.cinema][$scope.day][$scope.time];
         $scope.calculateValidate();
     };
     $scope.calculateValidate = function() {
@@ -98,27 +100,10 @@ booking.controller('bookingController', function($scope) {
         {'type':'Conc','price':15,'count':0},
         {'type':'Child','price':12,'count':0}
     ];
-    maxMon_Fri = [
-        {'time':'6','genre':'Romantic Comedy'},
-        {'time':'9','genre':'Action'}
-    ];
-    maxSat_Sun = [
-        {'time':'3','genre':'Childrens'},
-        {'time':'6','genre':'Romantic Comedy'},
-        {'time':'9','genre':'Action'}
-    ];
-    rivWed_Fri = [
-        {'time':'12','genre':'Childrens'},
-        {'time':'7','genre':'Art/Foreign'}
-    ];
-    rivSat_Sun = [
-        {'time':'4','genre':'Action'},
-        {'time':'7','genre':'Art/Foreign'}
-    ];
     allDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
     Wed_Sun  = ['Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
     Wed_Fri  = ['Wednesday', 'Thursday', 'Friday'];
-    Sat_Sun  = ['Friday', 'Saturday', 'Sunday'];
+    Sat_Sun  = ['Saturday', 'Sunday'];
     $scope.details = {
         'RC':{
             'Maxima':{time:'6', days:allDays}
