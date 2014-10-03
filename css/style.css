@@ -174,10 +174,13 @@ h3 {
     font-size: 18px;
 }
 
+#ticket-holder{
+	height: 300px;
+	overflow-y: scroll;
+}
+
 #ticket-table {
-    height: 300px;
-    overflow: auto;
-    display: block;
+	margin: 0 auto;
     width: 100%;
 }
 

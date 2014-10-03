@@ -60,16 +60,18 @@ foreach ($types as $type)
 
             <div class="subsection">
                 <div class="caption gap hero">Seats</div>
-                <table id="ticket-table">
-                    <tr data-ng-repeat='(seat,info) in seatsLeft'>
-                        <td>{{seat}}</td>
-                        <td>${{info.price}}</td>
-                        <td>
-                            <select data-ng-model="info.type" data-ng-options="type+' - $'+tprices[type] for type in info.types" data-ng-change="seatChange(seat)">
-                            </select>
-                        </td>
-                    </tr>
-                </table>
+                <div id="ticket-holder">
+                    <table id="ticket-table">
+                        <tr data-ng-repeat='(seat,info) in seatsLeft'>
+                            <td>{{seat}}</td>
+                            <td>${{info.price}}</td>
+                            <td>
+                                <select data-ng-model="info.type" data-ng-options="type+' - $'+tprices[type] for type in info.types" data-ng-change="seatChange(seat)">
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
                 <br>
                 <input type="hidden" name="price" data-ng-value="totalPrice"/>
                 <input type="hidden" name="tickets" data-ng-value="ticketString"/>
