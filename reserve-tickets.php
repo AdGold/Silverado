@@ -48,7 +48,7 @@ $xml->asXML("seats.xml");
 <hr />
 <p>Thank you for reserving tickets, your receipt is below</p>
 
-<p>TODO: add receipt</p>
+<p>TODO: style receipt</p>
 
 <p>
 <?php echo $name; ?><br/>
@@ -76,9 +76,7 @@ foreach($_SESSION['tickets'] as $day => $daytickets)
             }
             foreach ($movietickets as $ticket => $count)
             {
-                echo $ticket;
                 $price = $ticketPrices[$cinema][$day][$time][$ticket];
-                echo "$price   $count<br/>";
                 $tickettotal = intval($price) * intval($count);
                 echo "$ticket x $count at $" . $price . " each = $tickettotal <br/>\n";
                 $movietotal += $tickettotal;
@@ -88,7 +86,25 @@ foreach($_SESSION['tickets'] as $day => $daytickets)
         }
     }
 }
-echo "Total: $total";
+echo "Total: $total<br/>\n";
+
+
+foreach($_SESSION['tickets'] as $day => $daytickets)
+{
+    foreach($daytickets as $cinema => $cinematickets)
+    {
+        foreach ($cinematickets as $time => $timetickets)
+        {
+            foreach ($timetickets as $ticket)
+            {
+                echo "================TICKET================<br/>\n";
+                echo "Cinema $cinema <br/>\n $day $time:00pm <br/>\n" . getMovie($time, $titles) . "<br/>\n";
+                echo "$ticket[1] Ticket <br/>\nSeat $ticket[0]<br/>\n";
+            }
+        }
+    }
+}
+
 ?>
 </p>
 <?php session_destroy(); include_once("footer.php"); ?>
