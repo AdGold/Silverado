@@ -11,6 +11,39 @@ if (isset($_POST['cinema']))
         $_SESSION['cart'] = 'woo';
         $_SESSION['totalPrice'] = $_POST['price'];
     }
+
+    // STORING EVERYTHING IN TICKET
+    // $_SESSION['tickets']
+    // day=>
+    // 	cinema=>
+    // 		time=>
+    // 			seat, ticket-type
+
+    if (!isset($_SESSION['tickets']))
+    	$_SESSION['tickets'] = [];
+
+    if (!isset($_SESSION['tickets'][$_POST['day']]))
+    	$_SESSION['tickets'][$_POST['day']] = array();
+
+    if (!isset($_SESSION['tickets'][$_POST['day']][$_POST['cinema']]))
+    	$_SESSION['tickets'][$_POST['day']][$_POST['cinema']] = array();
+
+    if (!isset($_SESSION['tickets'][$_POST['day']][$_POST['cinema']][$_POST['time']]))
+    	$_SESSION['tickets'][$_POST['day']][$_POST['cinema']][$_POST['time']] = array();
+
+    $tickets = trim($_POST['tickets']);
+    $tickets = explode(' ', $tickets);
+
+    $splitTickets = [];
+
+    foreach ($tickets as &$ticket) {
+    	$tempTicket = explode(':', $ticket);
+    	array_push($splitTickets, $tempTicket);
+    }
+
+    foreach ($splitTickets as &$splitTicket) {
+    	array_push($_SESSION['tickets'][$_POST['day']][$_POST['cinema']][$_POST['time']], $splitTicket);
+    }
 }
 $page_title = "Reserve Tickets";
 include_once("header.php");
@@ -36,9 +69,23 @@ include_once("header.php");
 <div class="subtitle">TOTAL PRICE: 
     <div class="hero enlarge" id="price">$<?php echo $_SESSION['totalPrice']; ?></div>
 </div>
+<hr>
+<div class="caption">
+	PURCHASED TICKETS
+</div>
+<?php 
+foreach ($_SESSION['tickets'] as $day => $dayVal) {
+	foreach ($dayVal as $cinema => $cinemaVal) {
+		foreach ($cinemaVal as $time => $timeVal) {
+			foreach ($timeVal as $seat) {
+				echo '<p class="subtitle">', $day, ' ', $cinema, ' ', $time, ' ',  $seat[0], ' - ', $seat[1],  '</p>';
+			}
+		}
+	}
+} ?>
 <br/>
 <form method="POST" action="reserve-tickets.php">
-<input data-ng-disabled="!isValid" type="submit" value="Reserve tickets"/>
+<input class="last" data-ng-disabled="!isValid" type="submit" value="Reserve tickets"/>
 </form>
 
 <?php include_once("footer.php"); ?>
