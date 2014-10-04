@@ -59,11 +59,15 @@
         </form>
     </div>
     <div class="right_column">
+        <div data-ng-bind="movieHTML" data-compile-template></div>
+        <div id="movieDescription"></div>
+    <!--
         <p class="caption">Cheapest prices in town.</p>
         <p class="subtitle small">We have the cheapest prices anywhere, we won't be beaten on value!</p>
         <hr>
         <p class="caption">Change your seat to your desire.</p>
         <p class="subtitle small">Our variety of special seats will have you craving for more!</p>
+    -->
     </div>
 </div>
 <?php include_once("footer.php"); ?>

@@ -2,6 +2,18 @@ booking = angular.module('booking', []);
 
 booking.controller('bookingController', function($scope, $http) {
     $scope.movieChange = function() {
+        if ($scope.movies.hasOwnProperty($scope.movie))
+            $('#movieDescription').html($scope.movies[$scope.movie]);
+        else
+        {
+            var data = "CRC=s3493577&filmID="+$scope.movie;
+            var header = {headers: {'Content-Type': 'application/x-www-form-urlencoded'} };
+            $http.post("http://"+server+"/~e54061/wp/movie-service.php" ,
+                data, header).success(function(data) {
+                    $scope.movies[$scope.movie] = data;
+                    $('#movieDescription').html(data);
+            });
+        }
         if ($scope.cinema != 'Rivola' && $scope.cinema != 'Maxima' ||
             $scope.cinema == 'Rivola' && !$scope.details[$scope.movie].hasOwnProperty('Rivola') )
             $scope.cinema = 'Maxima';
@@ -58,6 +70,7 @@ booking.controller('bookingController', function($scope, $http) {
         else if (seatName[1] == '0' && '6' <= seatName[2]) return ['None', 'FirstClass-Adult', 'FirstClass-Child'];
         else return ['None', 'Adult', 'Conc', 'Child'];
     }
+    $scope.movies = {};
     maxPriceMon_Tue = {
         'Adult':12, 'Conc':10, 'Child':8, 'FirstClass-Adult':25, 'FirstClass-Child':20, 'Beanbag':20, 'None':0
     };
