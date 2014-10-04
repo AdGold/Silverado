@@ -46,6 +46,7 @@ if (isset($_POST['cinema']))
     }
 }
 $page_title = "Reserve Tickets";
+include_once("moviedetails.php");
 include_once("header.php");
 ?>
 
@@ -60,7 +61,7 @@ include_once("header.php");
 
 <p class="subtitle">NAME<br/><input ng-change="fullValidate()" type='text' name="name" data-ng-model='name' placeholder='John Doe'/></p><br/>
 <p class="subtitle">PHONE NUMBER<br/><input ng-change="fullValidate()" type='text' name="phone" data-ng-model='phone' placeholder='04 9090 8080'/></p><br/>
-<p class="subtitle">EMAIL ADDRESS<br/><input ng-change="fullValidate()" type='text' name="email" data-ng-model="email" placeholder="me@gmail.com"/></p><br/>
+<p class="subtitle">EMAIL ADDRESS<br/><input ng-change="fullValidate()" type='email' name="email" data-ng-model="email" placeholder="me@gmail.com"/></p><br/>
 
 <div class="error" data-ng-repeat="error in errors">
     {{error}}
@@ -78,7 +79,7 @@ foreach ($_SESSION['tickets'] as $day => $dayVal) {
 		foreach ($cinemaVal as $time => $timeVal) {
 			foreach ($timeVal as $seat) {
 				$count = $count + 1;
-				echo '<p class="subtitle">', $count, '. ', $day, ', ', $time, 'pm at Cinema ', $cinema, ': Seat ',  $seat[0], ' - ', $seat[1],  '</p>';
+				echo '<p class="subtitle">', $count, '. ', $day, ', ', $time, 'pm at Cinema ', $cinema, ': Seat ',  $seat[0], ' - ', $seat[1], " --------- $", $ticketPrices[$cinema][$day][$time][$seat[1]],  '</p>';
 			}
 		}
 	}

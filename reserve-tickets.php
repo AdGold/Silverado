@@ -16,9 +16,10 @@ $hide_cart = true;
 include_once("header.php");
 include_once("moviedata.php");
 include_once("moviedetails.php");
+include_once("codevalidation.php");
 
 //test stuff...
-$_SESSION['tickets'] = array('Monday'=>array('Maxima'=>array('9'=>array(array('A01', 'Beanbag'), array('E07', 'FirstClass-Adult')))),'Saturday'=>array('Rivola'=>array('4'=>array(array('D05','Conc')))));
+//$_SESSION['tickets'] = array('Monday'=>array('Maxima'=>array('9'=>array(array('A01', 'Beanbag'), array('E07', 'FirstClass-Adult')))),'Saturday'=>array('Rivola'=>array('4'=>array(array('D05','Conc')))));
                             
 $xml = simplexml_load_file("seats.xml");
 foreach($_SESSION['tickets'] as $day => $daytickets)
@@ -82,6 +83,12 @@ foreach($_SESSION['tickets'] as $day => $daytickets)
             $total += $movietotal;
         }
     }
+}
+if (checkcode($code))
+{
+    echo "<p class='total'>SubTotal: $$total</p>\n";
+    echo "Promotional code: $code - 20% off<br/>\n";
+    $total *= 0.8;
 }
 echo "<p class='total'>Total: $$total</p></div>\n";
 
