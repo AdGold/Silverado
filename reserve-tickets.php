@@ -15,6 +15,7 @@ $page_title = "Tickets Reserved";
 $hide_cart = true;
 include_once("header.php");
 include_once("moviedata.php");
+include_once("moviedetails.php");
 
 //test stuff...
 $_SESSION['tickets'] = array('Monday'=>array('Maxima'=>array('9'=>array(array('A01', 'Beanbag'), array('E07', 'FirstClass-Adult')))),'Saturday'=>array('Rivola'=>array('4'=>array(array('D05','Conc')))));
@@ -56,15 +57,6 @@ $xml->asXML("seats.xml");
 
 <?php
 
-function getMovie($time, $titles)
-{
-    if ($time == '6') return $titles['RC'];
-    if ($time == '7') return $titles['FO'];
-    if ($time == '9' || $time == '4') return $titles['AC'];
-    if ($time == '3' || $time == '12') return $titles['CH'];
-}
-
-
 $total = 0;
 foreach($_SESSION['tickets'] as $day => $daytickets)
 {
@@ -84,8 +76,10 @@ foreach($_SESSION['tickets'] as $day => $daytickets)
             }
             foreach ($movietickets as $ticket => $count)
             {
-                $price = ticketPrice($day, $time);
-                $tickettotal = $price * $count;
+                echo $ticket;
+                $price = $ticketPrices[$cinema][$day][$time][$ticket];
+                echo "$price   $count<br/>";
+                $tickettotal = intval($price) * intval($count);
                 echo "$ticket x $count at $" . $price . " each = $tickettotal <br/>\n";
                 $movietotal += $tickettotal;
             }
