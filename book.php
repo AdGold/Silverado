@@ -8,7 +8,7 @@
         <form method="POST" action="reserve.php">
             <div class="subsection">
                 <div class="subtitle gap hero">MOVIE</div>
-                <select name="film" data-ng-model="movie" data-ng-change="movieChange()">
+                <select name="film" class="film" data-ng-model="movie" data-ng-change="movieChange()">
                     <?php
                     foreach($types as $type) { 
                         echo '<option value="' . $type . '">' . $titles[$type] . "</option>\n";
@@ -24,7 +24,7 @@
 
             <div class="subsection">
                 <div class="subtitle gap hero">DAY</div>
-                    <select data-ng-model='day' data-ng-options='d+" "+time+"pm" for d in days' data-ng-change='dayChange()'>
+                    <select class="day" data-ng-model='day' data-ng-options='d+" "+time+"pm" for d in days' data-ng-change='dayChange()'>
                     </select>
                     <input type="hidden" name="day" data-ng-value='day'/>
                     <input type="hidden" name="time" data-ng-value='time'/>

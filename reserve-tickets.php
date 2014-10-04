@@ -1,16 +1,16 @@
 <?php
 session_start();
 //* test stuff...
-$email = $_GET['email'];
-$phone = $_GET['phone'];
-$name = $_GET['name'];
-$code = $_GET['code'];
-/*/
+// $email = $_GET['email'];
+// $phone = $_GET['phone'];
+// $name = $_GET['name'];
+// $code = $_GET['code'];
+
 $email = $_POST['email'];
 $phone = $_POST['phone'];
 $name = $_POST['name'];
 $code = $_POST['code'];
-*/
+
 $page_title = "Tickets Reserved";
 $hide_cart = true;
 include_once("header.php");

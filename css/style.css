@@ -2,7 +2,8 @@ html, body {
 	padding: 0;
 	margin: 0;
 	height: 100%;
-    background: #ecf0f1;
+    
+	/* background: #ecf0f1; */
 	font-family: Oswald, Helvetica, Arial, free-sans, clean, sans-serif;
 }
 
@@ -24,7 +25,7 @@ header {
 nav {
 	margin: 0 auto 0px;
 	text-align: center;
-	background: #2980b9;
+	background: #3498db;
 	color: #FFFFFF;
 	font-family: Oswald, Helvetica, Arial, free-sans, clean, sans-serif;
 	font-weight: 700;
@@ -51,7 +52,7 @@ nav li:hover {
 	min-width: 600px;
 	text-align: center;
 	padding: 20px;
-	background: #3498db;
+	background: #2980b9;
 	font-family: Oswald, Helvetica, Arial, free-sans, clean, sans-serif;
 	font-weight: 700;
 	font-size: 25pt;
@@ -106,7 +107,7 @@ a {
 	padding-left: 20%;
 	padding-right: 20%;
 	min-width: 300px;
-	background: #ecf0f1;
+	/* background: #ecf0f1; */
 	text-align: center;
 }
 
@@ -144,7 +145,7 @@ h3 {
 	margin: 0;
 	padding: 20px;
 	text-align: center;
-	background: #FFFFFF;
+	background: #ecf0f1;
 	width: 166%;
 	margin-left: -33%;
 	padding-right: 0px;
@@ -171,12 +172,15 @@ h3 {
 }
 
 .big_submit {
-    font-size: 18px;
+    /* font-size: 18px; */
+    width: 20%;
+    min-width: 100px;
 }
 
 #ticket-holder{
 	height: 300px;
 	overflow-y: scroll;
+	border: 1px gray dotted;
 }
 
 #ticket-table {
@@ -219,7 +223,7 @@ h4 {
 }
 
 hr {
-	opacity: 0.2;
+	opacity: 0.5;
 }
 
 @keyframes zoomIn {
@@ -401,4 +405,8 @@ th, tr, td {
 	position: absolute;
 	right: 0;
 	background: #2c3e50;
+}
+
+.film, .day {
+	min-width: 200px;
 }

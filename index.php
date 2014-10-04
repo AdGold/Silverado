@@ -59,6 +59,7 @@
 
 <div class="featureset">
     <h3>WANT TO SEE OUR RATES?</h3>
+    <hr/>
     <div class="joined">
         <p class="subtitle extend">
             <a class="fadeIn" href="prices.php">VIEW OUR PRICES HERE!</a>
@@ -69,6 +70,7 @@
 <div class="bottom">
     <div class="joined">
         <h3>SPECIAL OCCASIONS?</h3>
+        <hr/>
         <p class="caption extend">
             WE'RE HAPPY TO SERVE YOU AT ANY TIME!
         </p>
