@@ -410,3 +410,30 @@ th, tr, td {
 .film, .day {
 	min-width: 200px;
 }
+
+.ticket {
+	font-family: monospace;
+	border: 1px solid;
+	width: 310px;
+	height: 100px;
+	padding: 20px;
+	margin: 10px auto;
+}
+
+.majorTicket {
+	width: 310px;
+	margin: 0 auto;
+	padding: 20px;
+	border: 1px solid;
+}
+
+.name, .email, .phone, .price, .date, .ticketCount, .subtotal, .total {
+	font-family: monospace;
+	margin: 0 auto;
+	padding: 0;
+	text-align: right;
+}
+
+.subtotal, .phone {
+	padding-bottom: 10px;
+}

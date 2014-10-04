@@ -46,17 +46,14 @@ $xml->asXML("seats.xml");
 ?>
 <h3>TICKETS RESERVED SUCCESSFULLY</h3>
 <hr />
-<p>Thank you for reserving tickets, your receipt is below</p>
+<p>Thank you for reserving your tickets, your receipt is below.</p>
 
-<p>TODO: style receipt</p>
-
-<p>
-<?php echo $name; ?><br/>
-<?php echo $email; ?><br/>
-<?php echo $phone; ?><br/>
+<div class='majorTicket'>
+<?php echo "<p class='name'>", $name, "</p>"; ?>
+<?php echo "<p class='email'>", $email, "</p>"; ?>
+<?php echo "<p class='phone'>", $phone, "</p>"; ?>
 
 <?php
-
 $total = 0;
 foreach($_SESSION['tickets'] as $day => $daytickets)
 {
@@ -66,7 +63,7 @@ foreach($_SESSION['tickets'] as $day => $daytickets)
         {
             $movietotal = 0;
             $movietickets = array();
-            echo getMovie($time, $titles) . " on $day at $time" . "pm at Cinema $cinema <br/>\n";
+            echo "<p class='date'>" . getMovie($time, $titles) . " on $day at $time" . "pm at Cinema $cinema</p>\n";
             foreach ($timetickets as $ticket)
             {
                 if (isset($movietickets[$ticket[1]]))
@@ -78,15 +75,15 @@ foreach($_SESSION['tickets'] as $day => $daytickets)
             {
                 $price = $ticketPrices[$cinema][$day][$time][$ticket];
                 $tickettotal = $price * $count;
-                echo "$ticket x $count at $" . $price . " each = $tickettotal <br/>\n";
+                echo "<p class='ticketCount'> $ticket x $count</p><p class='price'> at $" . $price . " each = $$tickettotal.</p>\n";
                 $movietotal += $tickettotal;
             }
-            echo "Movie subtotal = $movietotal <br/>\n";
+            echo "<p class='subtotal'>Movie Subtotal: $$movietotal</p>\n";
             $total += $movietotal;
         }
     }
 }
-echo "Total: $total<br/>\n";
+echo "<p class='total'>Total: $$total</p></div>\n";
 
 
 foreach($_SESSION['tickets'] as $day => $daytickets)
@@ -97,9 +94,9 @@ foreach($_SESSION['tickets'] as $day => $daytickets)
         {
             foreach ($timetickets as $ticket)
             {
-                echo "================TICKET================<br/>\n";
+                echo "<p class='ticket'>================TICKET================<br/>\n";
                 echo "Cinema $cinema <br/>\n $day $time:00pm <br/>\n" . getMovie($time, $titles) . "<br/>\n";
-                echo "$ticket[1] Ticket <br/>\nSeat $ticket[0]<br/>\n";
+                echo "$ticket[1] Ticket <br/>\nSeat $ticket[0]</p>\n";
             }
         }
     }
