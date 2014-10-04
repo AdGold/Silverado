@@ -77,7 +77,7 @@ foreach($_SESSION['tickets'] as $day => $daytickets)
             foreach ($movietickets as $ticket => $count)
             {
                 $price = $ticketPrices[$cinema][$day][$time][$ticket];
-                $tickettotal = intval($price) * intval($count);
+                $tickettotal = $price * $count;
                 echo "$ticket x $count at $" . $price . " each = $tickettotal <br/>\n";
                 $movietotal += $tickettotal;
             }
