@@ -52,14 +52,15 @@ include_once("header.php");
 <h3>RESERVE TICKETS</h3>
 <hr />
 
+<form method="POST" action="reserve-tickets.php">
 <p class="subtitle">You can choose to reserve your tickets right now if you wish. <br/>You can also browse the website and add more tickets or return to your cart if you wish!</p>
-<p>Enter promotional code (optional): <input data-ng-model="voucher" data-ng-change="validate()" type='text' id='code' placeholder='Enter code'/></p>
+<p>Enter promotional code (optional): <input data-ng-model="voucher" data-ng-change="validate()" type='text' id="code" name='code' placeholder='Enter code'/></p>
 <p>{{result}}</p>
 <hr/>
 
-<p class="subtitle">NAME<br/><input ng-change="fullValidate()" type='text' data-ng-model='name' placeholder='John Doe'></p><br/>
-<p class="subtitle">PHONE NUMBER<br/><input ng-change="fullValidate()" type='text' data-ng-model='phone' placeholder='04 9090 8080'></p><br/>
-<p class="subtitle">EMAIL ADDRESS<br/><input ng-change="fullValidate()" type='text' data-ng-model="email" placeholder="me@me.com"></p><br/>
+<p class="subtitle">NAME<br/><input ng-change="fullValidate()" type='text' name="name" data-ng-model='name' placeholder='John Doe'/></p><br/>
+<p class="subtitle">PHONE NUMBER<br/><input ng-change="fullValidate()" type='text' name="phone" data-ng-model='phone' placeholder='04 9090 8080'/></p><br/>
+<p class="subtitle">EMAIL ADDRESS<br/><input ng-change="fullValidate()" type='text' name="email" data-ng-model="email" placeholder="me@gmail.com"/></p><br/>
 
 <div class="error" data-ng-repeat="error in errors">
     {{error}}
@@ -84,7 +85,6 @@ foreach ($_SESSION['tickets'] as $day => $dayVal) {
 	}
 } ?>
 <br/>
-<form method="POST" action="reserve-tickets.php">
 <input class="last" data-ng-disabled="!isValid" type="submit" value="Reserve tickets"/>
 </form>
 
