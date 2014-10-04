@@ -38,7 +38,7 @@ if (session_status() == PHP_SESSION_NONE) {
                         <li><a class="fadeIn" href="book.php">BOOK</a></li>
                         <li><a class="fadeIn" href="contact.php">CONTACT</a></li>
                     <?php 
-                    if (isset($_SESSION['cart'])) { ?>
+                    if (isset($_SESSION['cart']) && !isset($hide_cart)) { ?>
                         <li id="cart"><a class="fadeIn" href="reserve.php">CART TOTAL: $<?php echo $_SESSION['totalPrice'] ?></a></li>
                     <?php } ?>
                     </ul>
