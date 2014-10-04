@@ -14,14 +14,14 @@ reserve.controller('reserveController', function($scope, $http) {
             $scope.result = "Checking code...";
             $http.post("checkcode.php", 'code='+check, {headers: {'Content-Type': 'application/x-www-form-urlencoded'} }).success(function(data) {
                 if (data == "1") {
-                    $scope.result = "Success :)";
+                    $scope.result = "Success! Your total price has been discounted by 20%.";
                     var price = originalPrice;
                     price = price.replace("$", '');
                     price = parseInt(price) * 0.8;
                     $("#price").html("$" + price);
                 }
                 else
-                    $scope.result = "Invalid code";
+                    $scope.result = "You have entered an invalid code.";
             });
         }
         else if (check.length == 0)
@@ -29,7 +29,7 @@ reserve.controller('reserveController', function($scope, $http) {
         else 
         {
             $("#price").html(originalPrice);
-            $scope.result = "Wrong format";
+            $scope.result = "You have not entered a code in the right format. Try again.";
         }
     };
 
