@@ -66,24 +66,28 @@ include_once("header.php");
     {{error}}
 </div>
 <hr>
-
-<div class="subtitle">TOTAL PRICE: 
-    <div class="hero enlarge" id="price">$<?php echo $_SESSION['totalPrice']; ?></div>
-</div>
-<hr>
+<br/>
 <div class="caption">
-	PURCHASED TICKETS
+	SELECTED TICKETS
 </div>
+<br/>
 <?php 
+$count = 0;
 foreach ($_SESSION['tickets'] as $day => $dayVal) {
 	foreach ($dayVal as $cinema => $cinemaVal) {
 		foreach ($cinemaVal as $time => $timeVal) {
 			foreach ($timeVal as $seat) {
-				echo '<p class="subtitle">', $day, ' ', $cinema, ' ', $time, ' ',  $seat[0], ' - ', $seat[1],  '</p>';
+				$count = $count + 1;
+				echo '<p class="subtitle">', $count, '. ', $day, ', ', $time, 'pm at Cinema ', $cinema, ': Seat ',  $seat[0], ' - ', $seat[1],  '</p>';
 			}
 		}
 	}
 } ?>
+<br>
+<hr>
+<div class="subtitle">TOTAL PRICE: 
+    <div class="hero enlarge" id="price">$<?php echo $_SESSION['totalPrice']; ?></div>
+</div>
 <br/>
 <input class="last" data-ng-disabled="!isValid" type="submit" value="Reserve tickets"/>
 </form>
