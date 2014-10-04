@@ -37,9 +37,12 @@ booking.controller('bookingController', function($scope, $http) {
             $scope.seatsLeft = {};
             for (var i in seats)
             {
+                if (seats[i].length == 0) continue;
                 var tickets = $scope.getTicketTypes(seats[i], $scope.cinema);
                 $scope.seatsLeft[seats[i]] = {types:tickets, type:tickets[0], price:$scope.tprices[tickets[0]]};
             }
+            $scope.anySeatsLeft = Object.keys($scope.seatsLeft).length > 0;
+            $scope.anySeatsLeft = Object.keys($scope.seatsLeft).length > 0;
         });
     };
     $scope.seatChange = function(seat)

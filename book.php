@@ -33,7 +33,7 @@
             <div class="subsection">
                 <div class="caption gap hero">Seats</div>
                 <div id="ticket-holder">
-                    <table id="ticket-table">
+                    <table id="ticket-table" data-ng-if='anySeatsLeft'>
                         <tr data-ng-repeat='(seat,info) in seatsLeft'>
                             <td>{{seat}}</td>
                             <td>${{info.price}}</td>
@@ -43,6 +43,9 @@
                             </td>
                         </tr>
                     </table>
+                    <div class="error" data-ng-if="!anySeatsLeft">
+                        Sorry, there are no empty seats left for this movie.
+                    </div>
                 </div>
                 <br>
                 <input type="hidden" name="price" data-ng-value="totalPrice"/>
