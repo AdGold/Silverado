@@ -1,4 +1,5 @@
 <?php $page_title="Prices"; include_once("header.php"); ?>
+<?php include_once("moviedata.php"); ?>
 <h3>PRICES</h3>
 <hr/>
 <p class="hero caption">
@@ -103,21 +104,21 @@
     </thead>
     <tr>
         <th scope="row">Maxima</th>
-        <td>6pm - Once a Princess<br/>
-        9pm - Guardians of the Galaxy</td>
-        <td>6pm - Once a Princess<br/>
-        9pm - Guardians of the Galaxy</td>
-        <td>3pm - Planes: Fire and Rescue<br/>
-        6pm - Once a Princess<br/>
-        9pm - Guardians of the Galaxy</td>
+        <td>6pm - <?php echo $titles['RC']; ?><br/>
+        9pm - <?php echo $titles['AC']; ?></td>
+        <td>6pm - <?php echo $titles['RC']; ?><br/>
+        9pm - <?php echo $titles['AC']; ?></td>
+        <td>3pm - <?php echo $titles['CH']; ?><br/>
+        6pm - <?php echo $titles['RC']; ?><br/>
+        9pm - <?php echo $titles['AC']; ?></td>
     </tr>
     <tr>
         <th scope="row">Rivola</th>
         <td>Closed</td>
-        <td>12pm - Planes: Fire and Rescue<br>
-        7pm - Mardaani</td>
-        <td>4pm - Guardians of the Galaxy<br>
-        7pm - Mardaani</td>
+        <td>12pm - <?php echo $titles['CH']; ?><br>
+        7pm - <?php echo $titles['FO']; ?></td>
+        <td>4pm - <?php echo $titles['AC']; ?><br>
+        7pm - <?php echo $titles['FO']; ?></td>
     </tr>
 </table>
 <?php include_once("footer.php"); ?>
