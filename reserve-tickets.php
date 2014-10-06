@@ -50,7 +50,9 @@ $xml->asXML("seats.xml");
 <p>Thank you for reserving your tickets, your receipt is below.</p>
 
 <div class='majorTicket'>
+<p class="logo">SILVERADO CINEMA</p>
 <?php echo "<p class='name'>", $name, "</p>"; ?>
+<p class="logoCaption">Visit us again soon!</p>
 <?php echo "<p class='email'>", $email, "</p>"; ?>
 <?php echo "<p class='phone'>", $phone, "</p>"; ?>
 
@@ -87,7 +89,7 @@ foreach($_SESSION['tickets'] as $day => $daytickets)
 if (checkcode($code))
 {
     echo "<p class='total'>SubTotal: $$total</p>\n";
-    echo "Promotional code: $code - 20% off<br/>\n";
+    echo "<p class='promo'>Promotional code: $code - 20% off</p>\n";
     $total *= 0.8;
 }
 echo "<p class='total'>Total: $$total</p></div>\n";

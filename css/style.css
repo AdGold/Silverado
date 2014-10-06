@@ -427,7 +427,7 @@ th, tr, td {
 	border: 1px solid;
 }
 
-.name, .email, .phone, .price, .date, .ticketCount, .subtotal, .total {
+.name, .email, .phone, .price, .date, .ticketCount, .subtotal, .total, .logo, .logoCaption, .promo {
 	font-family: monospace;
 	margin: 0 auto;
 	padding: 0;
@@ -436,4 +436,12 @@ th, tr, td {
 
 .subtotal, .phone {
 	padding-bottom: 10px;
+}
+
+.logo, .logoCaption {
+	float: left;
+}
+
+.logoCaption {
+	padding-left: 20px;
 }
