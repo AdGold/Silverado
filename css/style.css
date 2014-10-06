@@ -467,3 +467,11 @@ th, tr, td {
 .mono, .name, .email, .phone, .logoCaption {
 	color: #2c3e50;
 }
+
+.ticket:last-of-type {
+	margin-bottom: 50px;
+}
+
+#movieDescription {
+	margin-bottom: 40px;
+}
