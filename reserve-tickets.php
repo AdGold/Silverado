@@ -105,7 +105,7 @@ foreach($_SESSION['tickets'] as $day => $daytickets)
             {
                 echo "<div class='ticket'>TICKET\n";
                 echo "<p class='mono'>Cinema $cinema</p>\n<p class='mono'>$day $time:00pm</p>\n<p class='mono'>" . getMovie($time, $titles) . "</p>\n";
-                echo "<p class='mono'>$ticket[1] Ticket</p>\n<p class='mono'>Seat $ticket[0]</p><p class="logoCaption">For the best viewing experience,</p><p class="logoCaption indented">Visit Silverado!</p></div>\n";
+                echo "<p class='mono'>$ticket[1] Ticket</p>\n<p class='mono'>Seat $ticket[0]</p><p class='logoCaption'>For the best viewing experience,</p><p class='logoCaption indented'>Visit Silverado!</p></div>\n";
             }
         }
     }
