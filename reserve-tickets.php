@@ -112,5 +112,4 @@ foreach($_SESSION['tickets'] as $day => $daytickets)
 }
 
 ?>
-</p>
 <?php session_destroy(); include_once("footer.php"); ?>
