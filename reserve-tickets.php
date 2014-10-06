@@ -18,7 +18,7 @@ include_once("moviedata.php");
 include_once("moviedetails.php");
 
 //test stuff...
-$_SESSION['tickets'] = array('Monday'=>array('Maxima'=>array('9'=>array(array('A01', 'Beanbag'), array('E07', 'FirstClass-Adult')))),'Saturday'=>array('Rivola'=>array('4'=>array(array('D05','Conc')))));
+// $_SESSION['tickets'] = array('Monday'=>array('Maxima'=>array('9'=>array(array('A01', 'Beanbag'), array('E07', 'FirstClass-Adult')))),'Saturday'=>array('Rivola'=>array('4'=>array(array('D05','Conc')))));
                             
 $xml = simplexml_load_file("seats.xml");
 foreach($_SESSION['tickets'] as $day => $daytickets)
@@ -75,7 +75,7 @@ foreach($_SESSION['tickets'] as $day => $daytickets)
             {
                 $price = $ticketPrices[$cinema][$day][$time][$ticket];
                 $tickettotal = $price * $count;
-                echo "<p class='ticketCount'> $ticket x $count</p><p class='price'> at $" . $price . " each = $$tickettotal.</p>\n";
+                echo "<p class='ticketCount'> $ticket x $count</p><p class='price'> at $" . $price . " each = $$tickettotal</p>\n";
                 $movietotal += $tickettotal;
             }
             echo "<p class='subtotal'>Movie Subtotal: $$movietotal</p>\n";
