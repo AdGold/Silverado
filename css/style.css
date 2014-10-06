@@ -415,9 +415,10 @@ th, tr, td {
 	font-family: monospace;
 	border: 1px solid;
 	width: 310px;
-	height: 100px;
+	height: 130px;
 	padding: 20px;
 	margin: 10px auto;
+	overflow: visible;
 }
 
 .majorTicket {
@@ -440,6 +441,7 @@ th, tr, td {
 
 .logo, .logoCaption {
 	float: left;
+
 }
 
 .logoCaption {
@@ -448,4 +450,20 @@ th, tr, td {
 
 .indented {
 	padding-left: 40px;
+}
+
+.mono {
+	text-align: center;
+}
+
+.logo {
+	color: #2980B9;
+}
+
+.total, .subtotal {
+	color: #FF3D2E;
+}
+
+.mono, .name, .email, .phone, .logoCaption {
+	color: #2c3e50;
 }
