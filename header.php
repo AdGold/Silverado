@@ -8,6 +8,9 @@ if (session_status() == PHP_SESSION_NONE) {
         <meta charset="utf-8">
         <title><?php echo $page_title; ?></title>
         <link rel=stylesheet href="css/style.css">
+        <?php if($page_title == "Book") { ?>
+        <link rel=stylesheet href="css/seats.css">
+        <?php } ?>
         <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
         <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
         <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js'></script>

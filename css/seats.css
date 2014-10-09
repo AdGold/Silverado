@@ -1,0 +1,150 @@
+.screenM, .screenR
+{
+	border: 2px solid black;
+	height: 25px;
+	text-align: center;
+	float: none;
+    display: inline-block;
+
+}
+
+.screenM
+{
+	width: 400px;
+}
+
+.screenR
+{
+	width: 200px;
+}
+
+.cinema
+{
+	line-height: 200%;
+}
+
+.tiltLeft
+{
+	-webkit-transform: rotate(345deg);
+	-moz-transform: rotate(345deg);
+	-o-transform: rotate(345deg);
+	position: relative;
+}
+
+.tiltRight
+{
+	-webkit-transform: rotate(15deg);
+	-moz-transform: rotate(15deg);
+	-o-transform: rotate(15deg);
+	position: relative;
+}
+
+.left, .right
+{
+	width: 150px;
+	float: left;
+}
+
+.centre
+{
+	width: 350 px;
+	float: left;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 12px;
+}
+
+.right
+{
+	padding-left: 20px;
+	padding-top: 3px;
+}
+
+.nseat
+{
+	width: 26px;
+	height: 28px;
+	float:left;
+}
+
+.nselected:hover,  .nempty:hover
+{
+	background-image: url(../images/nseatHover.png);
+	cursor: pointer;
+}
+
+.nempty
+{
+	background-image: url(../images/nseatNormal.png);
+}
+
+.ntaken
+{
+	background-image: url(../images/nseatTaken.png);
+}
+
+.nselected
+{
+	background-image: url(../images/nseatSelected.png);
+}
+
+
+
+.bseat
+{
+	width: 52px;
+	height: 44px;
+	float:left;
+}
+
+.bselected:hover,  .bempty:hover
+{
+	background-image: url(../images/bseatHover.png);
+	cursor: pointer;
+}
+
+.bempty
+{
+	background-image: url(../images/bseatNormal.png);
+}
+
+.btaken
+{
+	background-image: url(../images/bseatTaken.png);
+}
+
+.bselected
+{
+	background-image: url(../images/bseatSelected.png);
+}
+
+
+.fseat
+{
+	width: 41px;
+	height: 42px;
+	float:left;
+}
+
+.fselected:hover,  .fempty:hover
+{
+	background-image: url(../images/fseatHover.png);
+	cursor: pointer;
+}
+
+.fempty
+{
+	background-image: url(../images/fseatNormal.png);
+}
+
+.ftaken
+{
+	background-image: url(../images/fseatTaken.png);
+}
+
+.fselected
+{
+	background-image: url(../images/fseatSelected.png);
+}
+
+.clear { clear:both; }

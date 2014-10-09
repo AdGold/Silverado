@@ -31,22 +31,14 @@
             </div>
 
             <div class="subsection">
-                <div class="caption gap hero">Seats</div>
-                <div id="ticket-holder">
-                    <table id="ticket-table" data-ng-if='anySeatsLeft'>
-                        <tr data-ng-repeat='(seat,info) in seatsLeft'>
-                            <td>{{seat}}</td>
-                            <td>${{info.price}}</td>
-                            <td>
-                                <select data-ng-model="info.type" data-ng-options="type+' - $'+tprices[type] for type in info.types" data-ng-change="seatChange(seat)">
-                                </select>
-                            </td>
-                        </tr>
-                    </table>
-                    <div class="error" data-ng-if="!anySeatsLeft">
-                        Sorry, there are no empty seats left for this movie.
-                    </div>
-                </div>
+                <div class="caption gap hero">Tickets</div>
+                <table>
+                    <tr data-ng-repeat='(ticket,price) in tprices'>
+                        <td>{{ticket}}</td>
+                        <td>${{price}}</td>
+                        <td><input type="number" min="0" max="100" step="1" data-ng-model='tcounts[ticket]'></td>
+                    </tr>
+                </table>
                 <br>
                 <input type="hidden" name="price" data-ng-value="totalPrice"/>
                 <input type="hidden" name="tickets" data-ng-value="ticketString"/>
@@ -56,7 +48,9 @@
                 <div class="error" data-ng-repeat="error in errors track by $index">
                     {{error}}
                 </div>
-                <br/>
+                <br>
+                <?php include_once("seats.php"); ?>
+                <br>
                 <input class="bottom big_submit" type="submit" value="Add to cart" data-ng-disabled="!isValid"/>
             </div>
         </form>

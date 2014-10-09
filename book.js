@@ -30,59 +30,98 @@ booking.controller('bookingController', function($scope, $http) {
     $scope.dayChange = function() {
         $scope.totalPrice = 0;
         $scope.tprices = $scope.prices[$scope.cinema][$scope.day][$scope.time];
+        for (var ticket in $scope.tprices)
+        {
+            $scope.tcounts[ticket] = 0;
+        }
+        $scope.resetSeats();
         var data = 'cinema='+$scope.cinema+'&day='+$scope.day+'&time='+$scope.time;
         var header = {headers: {'Content-Type': 'application/x-www-form-urlencoded'} };
         $http.post('seatsleft.php', data, header).success(function(data) {
             var seats = data.trim().split(' ');
-            $scope.seatsLeft = {};
+            $scope.cinemaCapacity = { Maxima:{b:13, f:12, n:40}, Rivola:{b:0, f:0, n:40} }
             for (var i in seats)
             {
                 if (seats[i].length == 0) continue;
-                var tickets = $scope.getTicketTypes(seats[i], $scope.cinema);
-                $scope.seatsLeft[seats[i]] = {types:tickets, type:tickets[0], price:$scope.tprices[tickets[0]]};
+                var type = $scope.getTicketType(seats[i], $scope.cinema);
+                $scope.cinemaCapacity[$scope.cinema][type] -= 1;
+                $scope.seatClasses[$scope.cinema][seats[i]][type+'taken'] = true;
+                $scope.seatClasses[$scope.cinema][seats[i]][type+'empty'] = false;
+                $scope.seatClasses[$scope.cinema][seats[i]][type+'selected'] = false;
             }
-            $scope.anySeatsLeft = Object.keys($scope.seatsLeft).length > 0;
-            $scope.anySeatsLeft = Object.keys($scope.seatsLeft).length > 0;
+            $scope.calculateValidate();
         });
     };
-    $scope.seatChange = function(seat)
+    $scope.seatClick = function(seat)
     {
-        var oldPrice = parseInt($scope.seatsLeft[seat].price);
-        var newPrice = $scope.tprices[$scope.seatsLeft[seat].type];
-        $scope.seatsLeft[seat].price = newPrice;
-        newPrice = parseInt(newPrice);
-        $scope.totalPrice += newPrice-oldPrice;
-        $scope.isValid = true;
-        $scope.updateTickets();
-    }
-    $scope.updateTickets = function()
-    {
-        $scope.ticketString = '';
-        for (var seat in $scope.seatsLeft)
+        var type = $scope.getTicketType(seat, $scope.cinema);
+        if ($scope.seatClasses[$scope.cinema][seat][type+'taken']) return;
+        if ($scope.seatClasses[$scope.cinema][seat][type+'empty'])
         {
-            if ($scope.seatsLeft[seat].type != 'None')
-            {
-                $scope.ticketString += seat + ':' + $scope.seatsLeft[seat].type + ' ';
-            }
+            $scope.seatClasses[$scope.cinema][seat][type+'empty'] = false;
+            $scope.seatClasses[$scope.cinema][seat][type+'selected'] = true;
+        }
+        else
+        {
+            $scope.seatClasses[$scope.cinema][seat][type+'empty'] = true;
+            $scope.seatClasses[$scope.cinema][seat][type+'selected'] = false;
         }
     }
-    $scope.getTicketTypes = function(seatName, cinema)
+    $scope.getTicketType = function(seatName, cinema)
     {
-        if (cinema == 'Rivola') return ['None', 'Adult', 'Conc', 'Child'];
-        else if (seatName[0] <= 'D') return ['None', 'Beanbag'];
-        else if (seatName[1] == '0' && '6' <= seatName[2]) return ['None', 'FirstClass-Adult', 'FirstClass-Child'];
-        else return ['None', 'Adult', 'Conc', 'Child'];
+        if (cinema == 'Rivola') return 'n';
+        else if (seatName[0] <= 'D') return 'b';
+        else if (seatName[1] == '0' && '6' <= seatName[2]) return 'f';
+        else return 'n';
     }
+    $scope.calculateValidate = function() {
+        $scope.totalPrice = 0;
+        $scope.normalSeats = 0;
+        $scope.firstClassSeats = 0;
+        $scope.beanbagSeats = 0;
+        $scope.isValid = true;
+        for (var ticket in $scope.tprices)
+        {
+            if ($scope.tcounts[ticket] % 1 != 0) $scope.isValid=false;
+            $scope.totalPrice += $scope.tprices[ticket] * $scope.tcounts[ticket];
+            if (ticket == 'Beanbag')
+                $scope.beanbagSeats += $scope.tcounts[ticket];
+            else if (ticket.indexOf('FirstClass') > -1)
+                $scope.firstClassSeats += $scope.tcounts[ticket];
+            else
+                $scope.normalSeats += $scope.tcounts[ticket];
+        }
+        $scope.errors = [];
+        if ($scope.normalSeats > $scope.cinemaCapacity[$scope.cinema]['n'])
+        {
+            $scope.errors.push('Too many standard seats booked');
+            $scope.isValid = false;
+        }
+        if ($scope.firstClassSeats > $scope.cinemaCapacity[$scope.cinema]['f'])
+        {
+            $scope.errors.push('Too many First Class seats booked');
+            $scope.isValid = false;
+        }
+        if ($scope.beanbagSeats > $scope.cinemaCapacity[$scope.cinema]['b'])
+        {
+            $scope.errors.push('Too many beanbag seats booked');
+            $scope.isValid = false;
+        }
+    }
+    $scope.$watch('tcounts', function(newValue, oldValue) {
+        $scope.calculateValidate();
+    }, true);
     $scope.movies = {};
+    $scope.tcounts = {};
     maxPriceMon_Tue = {
-        'Adult':12, 'Conc':10, 'Child':8, 'FirstClass-Adult':25, 'FirstClass-Child':20, 'Beanbag':20, 'None':0
+        'Adult':12, 'Conc':10, 'Child':8, 'FirstClass-Adult':25, 'FirstClass-Child':20, 'Beanbag':20
     };
     maxPriceWed_Sun = {
-        'Adult':18, 'Conc':15, 'Child':12, 'FirstClass-Adult':30, 'FirstClass-Child':25, 'Beanbag':30, 'None':0
+        'Adult':18, 'Conc':15, 'Child':12, 'FirstClass-Adult':30, 'FirstClass-Child':25, 'Beanbag':30
     };
-    rivPriceWed_Fri12 = { 'Adult':12, 'Conc':10, 'Child':8, 'None':0 };
-    rivPriceWed_Fri = { 'Adult':18, 'Conc':15, 'Child':12, 'None':0 };
-    rivPriceSat_Sun = { 'Adult':18, 'Conc':15, 'Child':12, 'None':0 };
+    rivPriceWed_Fri12 = { 'Adult':12, 'Conc':10, 'Child':8 };
+    rivPriceWed_Fri = { 'Adult':18, 'Conc':15, 'Child':12 };
+    rivPriceSat_Sun = { 'Adult':18, 'Conc':15, 'Child':12 };
     allDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
     Wed_Sun  = ['Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
     Wed_Fri  = ['Wednesday', 'Thursday', 'Friday'];
@@ -111,8 +150,31 @@ booking.controller('bookingController', function($scope, $http) {
             Sunday:{'4':rivPriceSat_Sun, '7':rivPriceSat_Sun}
         }
     };
+    $scope.resetSeats = function()
+    {
+        var rows = "ABCDEFGH";
+        for (var i in rows)
+        {
+            for (var col = 1; col < 15; col++)
+            {
+                var seat = rows[i] + ((col < 10)?'0':'') + col.toString();
+                var cinemas = ['Maxima', 'Rivola'];
+                for (var c in cinemas)
+                {
+                    var type = $scope.getTicketType(seat, cinemas[c]);
+                    $scope.seatClasses[cinemas[c]][seat] = {};
+                    $scope.seatClasses[cinemas[c]][seat][type+'seat'] = true;
+                    $scope.seatClasses[cinemas[c]][seat][type+'empty'] = true;
+                    $scope.seatClasses[cinemas[c]][seat][type+'selected'] = false;
+                    $scope.seatClasses[cinemas[c]][seat][type+'taken'] = false;
+                }
+            }
+        }
+    }
 
     //startup
     $scope.movie = 'RC';
+    $scope.seatClasses = {'Maxima':{}, 'Rivola':{}};
     $scope.movieChange();
+    $scope.resetSeats();
 });
