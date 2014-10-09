@@ -32,11 +32,11 @@ if (session_status() == PHP_SESSION_NONE) {
             <nav>
                 <div class="navigation">
                     <ul>
-                        <li><a class="fadeIn" href="index.php">HOME</a></li>
-                        <li><a class="fadeIn" href="prices.php">PRICES</a></li>
-                        <li><a class="fadeIn" href="movies.php">MOVIES</a></li>
-                        <li><a class="fadeIn" href="book.php">BOOK</a></li>
-                        <li><a class="fadeIn" href="contact.php">CONTACT</a></li>
+                        <a class="fadeIn" href="index.php"><li>HOME</li></a>
+                        <a class="fadeIn" href="prices.php"><li>PRICES</li></a>
+                        <a class="fadeIn" href="movies.php"><li>MOVIES</li></a>
+                        <a class="fadeIn" href="book.php"><li>BOOK</li></a>
+                        <a class="fadeIn" href="contact.php"><li>CONTACT</li></a>
                     <?php 
                     if (isset($_SESSION['cart']) && !isset($hide_cart)) { ?>
                         <li id="cart"><a class="fadeIn" href="reserve.php">CART TOTAL: $<?php echo $_SESSION['totalPrice'] ?></a></li>
