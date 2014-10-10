@@ -21,14 +21,17 @@
 .cinema
 {
 	line-height: 200%; 
-	margin-top: 40px;
-	min-width: 560px;
+	padding-top: 40px;
+	/* min-width: 560px; */
 	overflow: hidden;
 
+	border: 1px solid;
+	border-top: 0px;
 }
 
 .rivola {
 	display: inline-block;
+	padding-bottom: 20px;
 }
 
 .tiltLeft

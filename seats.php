@@ -87,8 +87,6 @@
 	<!--<div class="screenM">Screen (Cinema Maxima)</div>-->
 </div>
 
-<br class="clear">
-
 <div class="cinema" data-ng-if="cinema=='Rivola'">
 	<div class="rivola">
 	<?php 
@@ -102,6 +100,7 @@
 			<?php }} ?>
 			<br class="clear">
 		<?php } ?>
+	<br class="clear">
 	</div>
 <!--<div class="screenR">Screen (Cinema Rivola)</div>-->
 </div>
