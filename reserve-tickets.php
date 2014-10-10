@@ -58,6 +58,7 @@ $xml->asXML("seats.xml");
 
 <?php
 $total = 0;
+$all = "";
 foreach($_SESSION['tickets'] as $day => $daytickets)
 {
     foreach($daytickets as $cinema => $cinematickets)
@@ -65,26 +66,39 @@ foreach($_SESSION['tickets'] as $day => $daytickets)
         foreach ($cinematickets as $time => $timetickets)
         {
             $movietotal = 0;
-            echo "<p class='date'>" . getMovie($time, $titles) . " on $day at $time" . "pm at Cinema $cinema</p>\n";
+            $line = getMovie($time, $titles) . " on $day at $time" . "pm at Cinema $cinema";
+            $all .= $line . "\n";
+            echo "<p class='date'>$line</p>\n";
             foreach ($timetickets as $ticket => $count)
             {
                 if ($ticket == 'seats' || $count == 0) continue;
                 $price = $ticketPrices[$cinema][$day][$time][$ticket];
                 $tickettotal = $price * $count;
-                echo "<p class='ticketCount'> $ticket x $count</p><p class='price'> at $" . $price . " each = $$tickettotal</p>\n";
+                $line1 = "$ticket x $count ";
+                $line2 = " at $" . $price . " each = $$tickettotal";
+                $all .= $line1 . $line2 . "\n";
+                echo "<p class='ticketCount'>$line1</p><p class='price'>$line2</p>\n";
                 $movietotal += $tickettotal;
             }
-            echo "<p class='subtotal'>Movie Subtotal: $$movietotal</p>\n";
+            $line = "Movie Subtotal: $$movietotal";
+            $all .= $line . "\n";
+            echo "<p class='subtotal'>$line</p>\n";
             $total += $movietotal;
         }
     }
 }
 if (checkcode($code))
 {
-    echo "<p class='total'>SubTotal: $$total</p>\n";
+    $line = "SubTotal: $$total";
+    $all .= $line . "\n";
+    echo "<p class='total'>$line</p>\n";
+    $line = "Promotional code: $code - 20% off";
+    $all .= $line . "\n";
     echo "<p class='promo'>Promotional code: $code - 20% off</p>\n";
     $total *= 0.8;
 }
+$line = "Total: $$total";
+$all .= $line . "\n";
 echo "<p class='total'>Total: $$total</p></div>\n";
 
 
@@ -96,6 +110,16 @@ foreach($_SESSION['tickets'] as $day => $daytickets)
         {
             foreach ($timetickets['seats'] as $ticket)
             {
+                $movie = getMovie($time, $titles);
+                $fileTicket = "\n" . 
+"==============TICKET==============\n" . 
+" Cinema $cinema, $day $time:00pm\n" . 
+"            $movie\n" . 
+"Seat $ticket\n" .
+"For the best viewing experience,\n" .
+"    Visit Silverado!\n" .
+"\n";
+                $all .= $fileTicket . "\n";
                 echo "<div class='ticket'>TICKET\n";
                 echo "<p class='mono'>Cinema $cinema</p>\n<p class='mono'>$day $time:00pm</p>\n<p class='mono'>" . getMovie($time, $titles) . "</p>\n";
                 echo "<p class='mono'>Ticket</p>\n<p class='mono'>Seat $ticket</p><br/><p class='logoCaption'>For the best viewing experience,</p><p class='logoCaption indented'>Visit Silverado!</p></div>\n";
@@ -103,6 +127,7 @@ foreach($_SESSION['tickets'] as $day => $daytickets)
         }
     }
 }
-
+$filename = $name . "_" . date('Y-m-d_H:i:s');
+file_put_contents("receipts/$filename.txt", $all);
 ?>
 <?php session_destroy(); include_once("footer.php"); ?>
