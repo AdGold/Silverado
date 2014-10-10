@@ -9,8 +9,8 @@ $result = $xml->xpath("/seats/$day/$cinema/x$time");
 $xmlseats = $result[0];
 
 $incart = array();
-if (isset($_SESSION['tickets'][$day][$cinema][$time]))
-    $incart = $_SESSION['tickets'][$day][$cinema][$time];
+if (isset($_SESSION['tickets'][$day][$cinema][$time]['seats']))
+    $incart = $_SESSION['tickets'][$day][$cinema][$time]['seats'];
 
 foreach($xmlseats->children() as $xmlseat)
 {
@@ -20,8 +20,8 @@ foreach($xmlseats->children() as $xmlseat)
         $good = true;
         foreach ($incart as $beingbooked)
         {
-            //echo $beingbooked[0] . "in cart <br>";
-            if ($beingbooked[0] == $xmlseat->getName())
+            //echo $beingbooked . " in cart <br>";
+            if ($beingbooked == $xmlseat->getName())
                 $good = false;
         }
         if ($good)

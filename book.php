@@ -36,12 +36,15 @@
                     <tr data-ng-repeat='(ticket,price) in tprices'>
                         <td>{{ticket}}</td>
                         <td>${{price}}</td>
-                        <td><input type="number" min="0" max="100" step="1" data-ng-model='tcounts[ticket]'></td>
+                        <td><input type="number" name="{{ticket}}" min="0" max="100" step="1" data-ng-model='tcounts[ticket]'></td>
                     </tr>
                 </table>
                 <br>
                 <input type="hidden" name="price" data-ng-value="totalPrice"/>
                 <input type="hidden" name="tickets" data-ng-value="ticketString"/>
+                <input type="hidden" name="normal" data-ng-value="nseats['n']"/>
+                <input type="hidden" name="first-class" data-ng-value="nseats['f']"/>
+                <input type="hidden" name="beanbag" data-ng-value="nseats['b']"/>
                 <div class="subtitle">TOTAL PRICE: 
                     <div class="hero enlarge">${{totalPrice}}</div>
                 </div>

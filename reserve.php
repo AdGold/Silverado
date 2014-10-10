@@ -1,5 +1,6 @@
 <?php
 session_start();
+include_once("moviedetails.php");
 if (isset($_POST['cinema']))
 {
     if (isset($_SESSION['cart']))
@@ -12,41 +13,60 @@ if (isset($_POST['cinema']))
         $_SESSION['totalPrice'] = $_POST['price'];
     }
 
+    $day = $_POST['day'];
+    $cinema = $_POST['cinema'];
+    $time = $_POST['time'];
+    $ticketTypes = $ticketPrices[$cinema][$day][$time];
+
     // STORING EVERYTHING IN TICKET
     // $_SESSION['tickets']
     // day=>
     // 	cinema=>
     // 		time=>
-    // 			seat, ticket-type
+    // 			seat
 
     if (!isset($_SESSION['tickets']))
-    	$_SESSION['tickets'] = [];
+        $_SESSION['tickets'] = [];
 
-    if (!isset($_SESSION['tickets'][$_POST['day']]))
-    	$_SESSION['tickets'][$_POST['day']] = array();
+    if (!isset($_SESSION['tickets'][$day]))
+        $_SESSION['tickets'][$day] = array();
 
-    if (!isset($_SESSION['tickets'][$_POST['day']][$_POST['cinema']]))
-    	$_SESSION['tickets'][$_POST['day']][$_POST['cinema']] = array();
+    if (!isset($_SESSION['tickets'][$day][$cinema]))
+        $_SESSION['tickets'][$day][$cinema] = array();
 
-    if (!isset($_SESSION['tickets'][$_POST['day']][$_POST['cinema']][$_POST['time']]))
-    	$_SESSION['tickets'][$_POST['day']][$_POST['cinema']][$_POST['time']] = array();
+    if (!isset($_SESSION['tickets'][$day][$cinema][$time]))
+        $_SESSION['tickets'][$day][$cinema][$time] = array();
+
+    if (!isset($_SESSION['tickets'][$day][$cinema][$time]['seats']))
+        $_SESSION['tickets'][$day][$cinema][$time]['seats'] = array();
+
+    foreach ($ticketTypes as $type => $ignore)
+    {
+        if (!isset($_SESSION['tickets'][$day][$cinema][$time][$type]))
+            $_SESSION['tickets'][$day][$cinema][$time][$type] = 0;
+        if (isset($_POST[$type]))
+            $_SESSION['tickets'][$day][$cinema][$time][$type] += $_POST[$type];
+    }
 
     $tickets = trim($_POST['tickets']);
     $tickets = explode(' ', $tickets);
+    foreach ($tickets as &$ticket) {
+        array_push($_SESSION['tickets'][$day][$cinema][$time]['seats'], $ticket);
+    }
 
+    /*
     $splitTickets = [];
 
     foreach ($tickets as &$ticket) {
-    	$tempTicket = explode(':', $ticket);
-    	array_push($splitTickets, $tempTicket);
+        $tempTicket = explode(':', $ticket);
+        array_push($splitTickets, $tempTicket);
     }
 
     foreach ($splitTickets as &$splitTicket) {
-    	array_push($_SESSION['tickets'][$_POST['day']][$_POST['cinema']][$_POST['time']], $splitTicket);
-    }
+        array_push($_SESSION['tickets'][$_POST['day']][$_POST['cinema']][$_POST['time']], $splitTicket);
+    }*/
 }
 $page_title = "Reserve Tickets";
-include_once("moviedetails.php");
 include_once("header.php");
 ?>
 
@@ -69,20 +89,28 @@ include_once("header.php");
 <hr>
 <br/>
 <div class="caption">
-	SELECTED TICKETS
+    SELECTED TICKETS
 </div>
 <br/>
 <?php 
 $count = 0;
 foreach ($_SESSION['tickets'] as $day => $dayVal) {
-	foreach ($dayVal as $cinema => $cinemaVal) {
-		foreach ($cinemaVal as $time => $timeVal) {
-			foreach ($timeVal as $seat) {
-				$count = $count + 1;
-				echo '<p class="subtitle">', $count, '. ', $day, ', ', $time, 'pm at Cinema ', $cinema, ': Seat ',  $seat[0], ' - ', $seat[1], " --------- $", $ticketPrices[$cinema][$day][$time][$seat[1]],  '</p>';
-			}
-		}
-	}
+    foreach ($dayVal as $cinema => $cinemaVal) {
+        foreach ($cinemaVal as $time => $timeVal) {
+            $count = $count + 1;
+            echo "<p class='subtitle'>$count. $day, $time" . "pm at Cinema $cinema:</p>";
+            foreach ($ticketPrices[$cinema][$day][$time] as $type => $ignore)
+            {
+                $num = $timeVal[$type];
+                if ($num > 0)
+                {
+                    $price = $ticketPrices[$cinema][$day][$time][$type] * $num;
+                    echo "<p>$type: " . $timeVal[$type] . " x $" . $ticketPrices[$cinema][$day][$time][$type] . " = $$price</p>";
+                }
+            }
+            //echo '<p class="subtitle">', $count, '. ', $day, ', ', $time, 'pm at Cinema ', $cinema, ': Seat ',  $seat[0], ' - ', $seat[1], " --------- $", $ticketPrices[$cinema][$day][$time][$seat[1]],  '</p>';
+        }
+    }
 } ?>
 <br>
 <hr>

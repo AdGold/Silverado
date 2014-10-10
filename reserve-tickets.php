@@ -28,9 +28,9 @@ foreach($_SESSION['tickets'] as $day => $daytickets)
     {
         foreach ($cinematickets as $time => $timetickets)
         {
-            foreach ($timetickets as $ticket)
+            foreach ($timetickets['seats'] as $ticket)
             {
-                $result = $xml->xpath("$day/$cinema/x$time/$ticket[0]");
+                $result = $xml->xpath("$day/$cinema/x$time/$ticket");
                 $xseat = $result[0];
                 $xseat['full'] = 'true';
                 $xseat->addChild('name', $name);
@@ -65,17 +65,10 @@ foreach($_SESSION['tickets'] as $day => $daytickets)
         foreach ($cinematickets as $time => $timetickets)
         {
             $movietotal = 0;
-            $movietickets = array();
             echo "<p class='date'>" . getMovie($time, $titles) . " on $day at $time" . "pm at Cinema $cinema</p>\n";
-            foreach ($timetickets as $ticket)
+            foreach ($timetickets as $ticket => $count)
             {
-                if (isset($movietickets[$ticket[1]]))
-                    $movietickets[$ticket[1]] += 1;
-                else
-                    $movietickets[$ticket[1]] = 1;
-            }
-            foreach ($movietickets as $ticket => $count)
-            {
+                if ($ticket == 'seats' || $count == 0) continue;
                 $price = $ticketPrices[$cinema][$day][$time][$ticket];
                 $tickettotal = $price * $count;
                 echo "<p class='ticketCount'> $ticket x $count</p><p class='price'> at $" . $price . " each = $$tickettotal</p>\n";
@@ -101,11 +94,11 @@ foreach($_SESSION['tickets'] as $day => $daytickets)
     {
         foreach ($cinematickets as $time => $timetickets)
         {
-            foreach ($timetickets as $ticket)
+            foreach ($timetickets['seats'] as $ticket)
             {
                 echo "<div class='ticket'>TICKET\n";
                 echo "<p class='mono'>Cinema $cinema</p>\n<p class='mono'>$day $time:00pm</p>\n<p class='mono'>" . getMovie($time, $titles) . "</p>\n";
-                echo "<p class='mono'>$ticket[1] Ticket</p>\n<p class='mono'>Seat $ticket[0]</p><br/><p class='logoCaption'>For the best viewing experience,</p><p class='logoCaption indented'>Visit Silverado!</p></div>\n";
+                echo "<p class='mono'>Ticket</p>\n<p class='mono'>Seat $ticket</p><br/><p class='logoCaption'>For the best viewing experience,</p><p class='logoCaption indented'>Visit Silverado!</p></div>\n";
             }
         }
     }
