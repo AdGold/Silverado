@@ -97,7 +97,7 @@ if (checkcode($code))
     echo "<p class='promo'>Promotional code: $code - 20% off</p>\n";
     $total *= 0.8;
 }
-$line = "Total: $$total";
+$line = "Total: $" . number_format($total, 2);
 $all .= $line . "\n";
 echo "<p class='total'>Total: $$total</p></div>\n";
 
