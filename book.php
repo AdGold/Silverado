@@ -31,7 +31,7 @@
             </div>
 
             <div class="subsection">
-                <div class="caption gap hero">Tickets</div>
+                <div class="caption gap hero">TICKETS</div>
                 <table>
                     <tr data-ng-repeat='(ticket,price) in tprices'>
                         <td>{{ticket}}</td>
@@ -48,7 +48,24 @@
                 <div class="error" data-ng-repeat="error in errors track by $index">
                     {{error}}
                 </div>
-                <br>
+            </div>
+            <div class="subsection">
+                <div class="caption gap hero">CHOOSE SEATS</div>
+                {{cinemaCapacity}}
+                [['{{left}}']]
+                <table>
+                    <tr>
+                        <td rowspan='2'>Left to place</td>
+                        <td>Standard seats</td>
+                        <td>First Class seats</td>
+                        <td>Beanbag seats</td>
+                    </tr>
+                    <tr>
+                        <td>{{left['n']}}</td>
+                        <td data-ng-if='cinema=="Maxima"'>{{left['f']}}</td>
+                        <td data-ng-if='cinema=="Maxima"'>{{left['b']}}</td>
+                    </tr>
+                </table>
                 <?php include_once("seats.php"); ?>
                 <br>
                 <input class="bottom big_submit" type="submit" value="Add to cart" data-ng-disabled="!isValid"/>
