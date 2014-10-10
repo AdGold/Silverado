@@ -21,6 +21,10 @@
 .cinema
 {
 	line-height: 200%;
+	margin-top: 40px;
+	min-width: 560px;
+	overflow: hidden;
+
 }
 
 .tiltLeft
@@ -42,22 +46,28 @@
 .left, .right
 {
 	width: 150px;
-	float: left;
 }
 
 .centre
 {
 	width: 350 px;
-	float: left;
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-top: 12px;
+	padding-left: 2%;
+	padding-right: 2%;
+	vertical-align: top;
 }
 
 .right
 {
-	padding-left: 20px;
-	padding-top: 3px;
+	padding-left: 2%;
+	padding-top: 0.5%;
+}
+
+.bottom {
+	margin-left: -130px;
+}
+
+.left, .right, .centre, .bottom {
+	display: inline-block;
 }
 
 .nseat

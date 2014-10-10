@@ -194,14 +194,15 @@ h3 {
 
 /* Column Layout inspired by Github, https://github.com/contact */
 .right_column {
-	padding-left: 2%;
-	width: 44%;
-	float: right;
-	min-width: 100px;
+	padding-left: 5%;
+	width: 40%;
+	display: inline-block;
+	min-width: 300px;
+	vertical-align: top;
 }
 
 .left_column {
-	float: left;
+	display: inline-block;
 	width: 80%;
 	min-width: 300px;
 }
@@ -381,7 +382,10 @@ th, tr, td {
 	background: white;
 	padding: 20px;
 	border: 1px solid black;
+	width: 40%;
 	box-shadow: 10px 10px 30px #888888;
+	margin: 0 auto;
+	margin-top: 20px;
 }
 
 .MS-description p {
