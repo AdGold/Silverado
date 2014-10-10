@@ -90,17 +90,18 @@
 <br class="clear">
 
 <div class="cinema" data-ng-if="cinema=='Rivola'">
+	<div class="rivola">
 	<?php 
-	for ($row = 0; $row < 4; $row++) {
-		for ($i=1; $i < 11; $i++) { 
-			$seat = "'" . chr(3-$row+65) . sprintf("%02d",$i) . "'"; ?>
-			<div data-ng-class="seatClasses[cinema][<?php echo $seat;?>]" data-ng-click="seatClick(<?php echo $seat;?>)"></div>
-		<?php if ($i == 5) { ?>
-			<div class="nseat"></div>
-			<div class="nseat"></div>
-		<?php }} ?>
-		<br class="clear">
-	<?php } ?>
-
+		for ($row = 0; $row < 4; $row++) {
+			for ($i=1; $i < 11; $i++) { 
+				$seat = "'" . chr(3-$row+65) . sprintf("%02d",$i) . "'"; ?>
+				<div data-ng-class="seatClasses[cinema][<?php echo $seat;?>]" data-ng-click="seatClick(<?php echo $seat;?>)"></div>
+			<?php if ($i == 5) { ?>
+				<div class="nseat"></div>
+				<div class="nseat"></div>
+			<?php }} ?>
+			<br class="clear">
+		<?php } ?>
+	</div>
 <!--<div class="screenR">Screen (Cinema Rivola)</div>-->
 </div>

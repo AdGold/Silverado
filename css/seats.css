@@ -20,11 +20,15 @@
 
 .cinema
 {
-	/* line-height: 200%; */
+	line-height: 200%; 
 	margin-top: 40px;
 	min-width: 560px;
 	overflow: hidden;
 
+}
+
+.rivola {
+	display: inline-block;
 }
 
 .tiltLeft
