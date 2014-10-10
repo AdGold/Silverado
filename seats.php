@@ -85,6 +85,7 @@
 		<div data-ng-class="seatClasses[cinema]['A02']" data-ng-click="seatClick('A02')"></div>
 	</div>
 	<!--<div class="screenM">Screen (Cinema Maxima)</div>-->
+	<div class="screen">CINEMA SCREEN</div>
 </div>
 
 <div class="cinema" data-ng-if="cinema=='Rivola'">
@@ -103,4 +104,5 @@
 	<br class="clear">
 	</div>
 <!--<div class="screenR">Screen (Cinema Rivola)</div>-->
+	<div class="screen">CINEMA SCREEN</div>
 </div>
