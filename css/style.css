@@ -194,21 +194,6 @@ h3 {
     color: #FF0000;
 }
 
-/* Column Layout inspired by Github, https://github.com/contact */
-.right_column {
-	padding-left: 5%;
-	width: 40%;
-	display: inline-block;
-	min-width: 300px;
-	vertical-align: top;
-}
-
-.left_column {
-	display: inline-block;
-	width: 80%;
-	min-width: 300px;
-}
-
 .columns {
 	position: relative;
 	min-height: 400px;
@@ -385,7 +370,6 @@ th, tr, td {
 	background: white;
 	padding: 20px;
 	border: 1px solid black;
-	width: 40%;
 	box-shadow: 10px 10px 30px #888888;
 	margin: 0 auto;
 	margin-top: 20px;
@@ -480,5 +464,7 @@ th, tr, td {
 }
 
 #movieDescription {
-	margin-bottom: 40px;
+	width: 50%;
+	margin: 0 auto;
+	margin-bottom: 60px;
 }
