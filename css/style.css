@@ -194,6 +194,21 @@ h3 {
     color: #FF0000;
 }
 
+/* Column Layout inspired by Github, https://github.com/contact */
+.right_column {
+	padding-left: 5%;
+	width: 40%;
+	display: inline-block;
+	min-width: 300px;
+	vertical-align: top;
+}
+
+.left_column {
+	display: inline-block;
+	width: 80%;
+	min-width: 300px;
+}
+
 .columns {
 	position: relative;
 	min-height: 400px;
