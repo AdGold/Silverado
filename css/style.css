@@ -75,18 +75,20 @@ a:hover > li, a:active > li {
 	color: #FFFFFF;
 }
 
-a:link, a:visited {
+.subtitle > a:link, .subtitle > a:visited {
 	color: #c0392b;
 	text-decoration: underline;
 }
 
-a:hover, a:active {
+.subtitle > a:hover, .subtitle > a:active {
 	color: #34495e;
 }
 
 a {
 	text-decoration: none;
+	color: #FFFFFF;
 }
+
 
 #message {
 	min-height: 100px;
@@ -196,16 +198,15 @@ h3 {
 
 /* Column Layout inspired by Github, https://github.com/contact */
 .right_column {
-	padding-left: 5%;
-	width: 40%;
-	display: inline-block;
-	min-width: 300px;
-	vertical-align: top;
+	padding-left: 2%;
+	width: 32%;
+	float: left;
+	min-width: 100px;
 }
 
 .left_column {
-	display: inline-block;
-	width: 80%;
+	float: left;
+	width: 66%;
 	min-width: 300px;
 }
 
