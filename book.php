@@ -51,14 +51,12 @@
             </div>
             <div class="subsection">
                 <div class="caption gap hero">CHOOSE SEATS</div>
-                {{cinemaCapacity}}
-                [['{{left}}']]
                 <table>
                     <tr>
                         <td rowspan='2'>Left to place</td>
                         <td>Standard seats</td>
-                        <td>First Class seats</td>
-                        <td>Beanbag seats</td>
+                        <td data-ng-if='cinema=="Maxima"'>First Class seats</td>
+                        <td data-ng-if='cinema=="Maxima"'>Beanbag seats</td>
                     </tr>
                     <tr>
                         <td>{{left['n']}}</td>
