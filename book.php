@@ -71,6 +71,8 @@
             <?php include_once("seats.php"); ?>
             <br>
             <input class="big_submit" type="submit" value="Add to cart" data-ng-disabled="!isValid"/>
+            <br>
+            <br>
         </div>
     </form>
 </div>
