@@ -175,6 +175,8 @@ h3 {
     /* font-size: 18px; */
     width: 20%;
     min-width: 100px;
+    margin: 0 auto;
+    margin-bottom: 40px;
 }
 
 #ticket-holder{
@@ -210,7 +212,7 @@ h3 {
 .columns {
 	position: relative;
 	min-height: 400px;
-	min-width: 500px;
+	min-width: 560px;
 	overflow: hidden;
 }
 
@@ -284,6 +286,7 @@ main {
 
 .bottom {
 	margin-bottom: 20px;
+	margin-top: 20px;
 }
 
 .subsection {

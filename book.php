@@ -70,7 +70,7 @@
             </table>
             <?php include_once("seats.php"); ?>
             <br>
-            <input class="bottom big_submit" type="submit" value="Add to cart" data-ng-disabled="!isValid"/>
+            <input class="big_submit" type="submit" value="Add to cart" data-ng-disabled="!isValid"/>
         </div>
     </form>
 </div>

@@ -105,7 +105,6 @@
 			<div class="nseat"></div>
 			<div class="nseat"></div>
 		<?php }} ?>
-		<br class="clear">
 	<?php } ?>
 
 <!--<div class="screenR">Screen (Cinema Rivola)</div>-->

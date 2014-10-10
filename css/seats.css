@@ -20,7 +20,7 @@
 
 .cinema
 {
-	line-height: 200%;
+	/* line-height: 200%; */
 	margin-top: 40px;
 	min-width: 560px;
 	overflow: hidden;
@@ -29,9 +29,9 @@
 
 .tiltLeft
 {
-	-webkit-transform: rotate(345deg);
-	-moz-transform: rotate(345deg);
-	-o-transform: rotate(345deg);
+	-webkit-transform: rotate(-15deg);
+	-moz-transform: rotate(-15deg);
+	-o-transform: rotate(-15deg);
 	position: relative;
 }
 
@@ -56,14 +56,14 @@
 	vertical-align: top;
 }
 
-.right
+.right, .left
 {
 	padding-left: 2%;
 	padding-top: 0.5%;
 }
 
 .bottom {
-	margin-left: -130px;
+	margin-left: -110px;
 }
 
 .left, .right, .centre, .bottom {
